@@ -1,0 +1,15 @@
+:host {
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  display: inline-block;
+  color: white;
+  @apply rounded px-2 py-1;
+}
+
+:host(.pp-badge-primary) {
+  @apply bg-blue-500;
+}
+:host(.pp-badge-secondary) {
+  @apply bg-gray-500;
+}

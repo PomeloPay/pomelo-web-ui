@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+@import "../node_modules/tailwindcss/base.css";
+
+@import "../src/components/pp-select/pp-select.css";
+@import "../src/components/pp-input/pp-input.css";
+
+
+:root {
+  --color-primary: #16cd88;
+  --color-secondary: #141d36;
+}
+
+*,::after,::before {
+  border-color: var(--border-color, currentColor);
+}
+
+
+@tailwind components;
+
+@tailwind utilities;

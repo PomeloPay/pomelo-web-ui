@@ -1,0 +1,19 @@
+@layer components {
+  .pp-select {
+    @apply block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded;
+    background-image: url(data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAIBAMAAAA/ygPCAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAJFBMVEUAAABdZ25dZ25dZ25dZ25dZ25dZ25dZ25dZ25dZ25dZ24AAADaHLy8AAAACnRSTlMAZogzVZnuIhHMCbsUzQAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAA3SURBVAjXY2AUYGBgMmDwWsjAEJXO0LlKgHVVAAPHrIVRSxkYgFwgh4GBPWslAwiYzQBTHEAMAEnXCpEPACM2AAAAAElFTkSuQmCC) !important;
+    background-repeat: no-repeat;
+    appearance: none;
+    background-position: 98%;
+
+    &:focus {
+      @apply outline-none bg-white border-gray-500;
+      background-position: 98%;
+    }
+
+    &::-ms-expand {
+      display: none;
+    }
+  }
+
+}

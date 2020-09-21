@@ -1,0 +1,43 @@
+
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  cursor: pointer;
+  display: none;
+  opacity: 0;
+  transition: all 0.35s ease-in;
+  @apply p-1 bg-black bg-opacity-75;
+}
+
+:host([open]) {
+  display: flex;
+  opacity: 1;
+}
+
+/* stylelint-disable-next-line selector-type-no-unknown */
+pp-card::part(pp-card) {
+  position: relative;
+  max-width: 800px;
+  max-height: 80vh;
+  min-width: 300px;
+  min-height: 200px;
+  border-radius: 5px;
+  overflow: auto;
+  cursor: default;
+  @apply bg-white;
+}
+
+::slotted(.pp-modal-body) {
+  @apply py-4 px-6 h-40;
+}
+
+::slotted(.pp-modal-title) {
+  @apply font-bold text-xl mb-2;
+}
+

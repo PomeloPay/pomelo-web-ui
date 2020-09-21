@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/build/pomelopay-webui.css">
+    <script type="module" src="/build/pomelopay-webui.esm.js"></script>
+    <script nomodule src="/build/pomelopay-webui.js"></script>
+
+    <style>
+      /* .pp-modal-body {
+        background-color: red;
+      } */
+
+    </style>
+  </head>
+  <body>
+    <pp-button>text button</pp-button>
+    <br />
+    <pp-button class="pp-btn-contained">contained</pp-button>
+    <br />
+    <pp-button class="pp-btn-outline">outline</pp-button>
+    <br />
+    <pp-button disabled class="pp-btn-outline">disabled</pp-button>
+
+
+    <br />
+    <br />
+
+    <pp-card>
+      <p class="pp-card-title">
+        The Coldest Sunset
+      </p>
+
+      <div class="pp-card-body pp-prose">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+
+      </div>
+    </pp-card>
+    <br />
+    <p class="pp-prose pp-prose-sm pp-font-body">
+      New
+      <pp-badge class="pp-badge-primary">
+        Badge
+      </pp-badge>
+    </p>
+
+    <br />
+
+    <pp-alert class="pp-alert-primary">
+      <p class="pp-prose pp-prose-lg pp-font-body pp-text-white font-extrabold min-w-full w-full">
+        Simple alert
+      </p>
+    </pp-alert>
+
+    <br />
+    <select class="pp-select">
+      <option>New Mexico</option>
+      <option> Missouri</option>
+      <option>Texas</option>
+    </select>
+
+    <br />
+
+    <input type="text" value="input" class="pp-input" />
+
+    <br />
+
+
+    <label class="pp-md:w-2/3 pp-mt-4 pp-block pp-text-gray-500 pp-font-bold">
+      <input class="pp-mr-2 pp-leading-tight" type="checkbox">
+      <span class="text-sm">
+        Send me your newsletter!
+      </span>
+    </label>
+
+    <br />
+
+    <button onclick="document.querySelector('pp-modal').setAttribute('open', '')">
+      open modal
+    </button>
+
+    <pp-modal attach-close-action>
+      <header slot="pp-modal-header" class="pp-modal-header pp-justify-end">
+        <button class="pp-modal-close" aria-label="close modal" data-close>✕</button>
+      </header>
+      <section slot="pp-modal-body" class="pp-modal-body">
+        Modal content
+      </section>
+    </pp-modal>
+
+    <br />
+    <br />
+    <pp-tabs>
+      <span slot="pp-tab" class="pp-tab pp-prose pp-font-body pp-prose-sm pp-active">
+        Tab 1
+      </span>
+      <span slot="pp-tab" class="pp-tab pp-prose pp-font-body pp-prose-sm">
+        Tab 2
+      </span>
+    </pp-tabs>
+  </body>
+</html>

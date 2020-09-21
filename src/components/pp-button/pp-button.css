@@ -1,0 +1,41 @@
+:host {
+  display: inline-block;
+  appearance: none;
+  outline: 0;
+  border: none;
+  border-radius: theme('radii.md')px;
+
+  font-size: theme('fontSize.base');
+  font-weight: theme('fontWeight.semibold');
+  font-family: theme('fontFamily.body');
+  padding: theme('spacing.2') theme('spacing.4');
+  cursor: pointer;
+  @apply text-black transition-all;
+}
+
+:host(.pp-btn-contained) {
+  background-color: theme('colors.primary');
+  color: color-mod(theme('colors.primary') l(100%));
+}
+
+:host(.pp-btn-contained:hover) {
+  background-color: color-mod(theme('colors.primary') b(+10%));
+}
+
+:host(.pp-btn-outline) {
+  background-color: transparent;
+  color: theme('colors.black');
+  @apply border !important;
+}
+
+:host(.pp-btn-outline:hover) {
+  background-color: color-mod(theme('colors.black') l(90%) a(80%));
+}
+
+:host([disabled]) {
+  background-color: theme('colors.gray.400');
+  color: theme('colors.white')
+}
+:host([disabled]:hover) {
+  background-color: color-mod(theme('colors.gray.400') b(+10%));
+}
