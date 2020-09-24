@@ -26,7 +26,8 @@
   "dependencies": {
     "@stencil/core": "^2.0.1",
     "clsx": "^1.1.1",
-    "tailwindcss": "^1.8.10"
+    "tailwindcss": "^1.8.10",
+    "tippy.js": "^6.2.6"
   },
   "license": "MIT",
   "devDependencies": {

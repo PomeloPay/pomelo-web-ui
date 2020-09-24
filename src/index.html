@@ -10,7 +10,7 @@
     <script nomodule src="/build/pomelopay-webui.js"></script>
 
     <style>
-      /* .pp-modal-body {
+      /* .modal-body {
         background-color: red;
       } */
 
@@ -50,7 +50,7 @@
     <br />
 
     <pp-alert class="pp-alert-primary">
-      <p class="pp-prose pp-prose-lg pp-font-body pp-text-white font-extrabold min-w-full w-full">
+      <p class="pp-prose pp-prose-lg pp-font-body pp-text-white pp-font-extrabold pp-min-w-full pp-w-full">
         Simple alert
       </p>
     </pp-alert>
@@ -101,5 +101,19 @@
         Tab 2
       </span>
     </pp-tabs>
+
+    <br />
+    <p popper-anchor class="pp-prose pp-prose-lg">
+      POPPER
+    </p>
+    <pp-popper anchor="popper-anchor">
+      taena
+      potana
+    </pp-popper>
+
+    <pp-toast>
+      Toast
+    </pp-toast>
+
   </body>
 </html>

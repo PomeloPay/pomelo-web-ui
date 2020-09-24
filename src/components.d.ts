@@ -7,20 +7,6 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ButtonVariant } from "./components/pp-button/pp-button";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
-    }
     interface PpAlert {
     }
     interface PpBadge {
@@ -36,16 +22,16 @@ export namespace Components {
         "attachCloseAction": boolean;
         "open": boolean;
     }
+    interface PpPopper {
+        "anchor": string;
+        "open": boolean;
+    }
     interface PpTabs {
+    }
+    interface PpToast {
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
     interface HTMLPpAlertElement extends Components.PpAlert, HTMLStencilElement {
     }
     var HTMLPpAlertElement: {
@@ -76,37 +62,36 @@ declare global {
         prototype: HTMLPpModalElement;
         new (): HTMLPpModalElement;
     };
+    interface HTMLPpPopperElement extends Components.PpPopper, HTMLStencilElement {
+    }
+    var HTMLPpPopperElement: {
+        prototype: HTMLPpPopperElement;
+        new (): HTMLPpPopperElement;
+    };
     interface HTMLPpTabsElement extends Components.PpTabs, HTMLStencilElement {
     }
     var HTMLPpTabsElement: {
         prototype: HTMLPpTabsElement;
         new (): HTMLPpTabsElement;
     };
+    interface HTMLPpToastElement extends Components.PpToast, HTMLStencilElement {
+    }
+    var HTMLPpToastElement: {
+        prototype: HTMLPpToastElement;
+        new (): HTMLPpToastElement;
+    };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
         "pp-alert": HTMLPpAlertElement;
         "pp-badge": HTMLPpBadgeElement;
         "pp-button": HTMLPpButtonElement;
         "pp-card": HTMLPpCardElement;
         "pp-modal": HTMLPpModalElement;
+        "pp-popper": HTMLPpPopperElement;
         "pp-tabs": HTMLPpTabsElement;
+        "pp-toast": HTMLPpToastElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
     interface PpAlert {
     }
     interface PpBadge {
@@ -122,29 +107,37 @@ declare namespace LocalJSX {
         "attachCloseAction"?: boolean;
         "open"?: boolean;
     }
+    interface PpPopper {
+        "anchor"?: string;
+        "open"?: boolean;
+    }
     interface PpTabs {
     }
+    interface PpToast {
+    }
     interface IntrinsicElements {
-        "my-component": MyComponent;
         "pp-alert": PpAlert;
         "pp-badge": PpBadge;
         "pp-button": PpButton;
         "pp-card": PpCard;
         "pp-modal": PpModal;
+        "pp-popper": PpPopper;
         "pp-tabs": PpTabs;
+        "pp-toast": PpToast;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "pp-alert": LocalJSX.PpAlert & JSXBase.HTMLAttributes<HTMLPpAlertElement>;
             "pp-badge": LocalJSX.PpBadge & JSXBase.HTMLAttributes<HTMLPpBadgeElement>;
             "pp-button": LocalJSX.PpButton & JSXBase.HTMLAttributes<HTMLPpButtonElement>;
             "pp-card": LocalJSX.PpCard & JSXBase.HTMLAttributes<HTMLPpCardElement>;
             "pp-modal": LocalJSX.PpModal & JSXBase.HTMLAttributes<HTMLPpModalElement>;
+            "pp-popper": LocalJSX.PpPopper & JSXBase.HTMLAttributes<HTMLPpPopperElement>;
             "pp-tabs": LocalJSX.PpTabs & JSXBase.HTMLAttributes<HTMLPpTabsElement>;
+            "pp-toast": LocalJSX.PpToast & JSXBase.HTMLAttributes<HTMLPpToastElement>;
         }
     }
 }

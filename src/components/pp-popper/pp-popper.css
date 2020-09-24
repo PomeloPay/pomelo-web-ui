@@ -1,0 +1,3 @@
+section {
+  @apply max-w-sm rounded overflow-hidden shadow-lg p-4;
+}
