@@ -1,0 +1,22 @@
+:host {
+  display: block;
+}
+
+section {
+  display: inline-block;
+  vertical-align: middle;
+  height: 2rem;
+  width: 2rem;
+  color: theme("colors.primary");
+  & > svg {
+    height: 100%;
+    width: 100%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

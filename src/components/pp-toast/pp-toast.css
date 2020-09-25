@@ -5,6 +5,27 @@ section input:checked ~ * {
 }
 
 section {
-  -webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-				animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  width: 400px;
+  padding: 6px;
+  transition: opacity 0.2s, top 0.2s, visibility 0.2s;
+}
+
+
+section[data-position="bottom"] {
+  bottom: 40px;
+}
+section[data-position="top"] {
+  top: 40px;
+}
+section[data-position="left"] {
+  left: 40px;
+}
+section[data-position="right"] {
+  bottom: 40px;
 }

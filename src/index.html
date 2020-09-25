@@ -4,8 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/build/pomelopay-webui.css">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/brands.min.css" integrity="sha512-AMDXrE+qaoUHsd0DXQJr5dL4m5xmpkGLxXZQik2TvR2VCVKT/XRPQ4e/LTnwl84mCv+eFm92UG6ErWDtGM/Q5Q==" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="/build/pomelopay-webui.css" />
     <script type="module" src="/build/pomelopay-webui.esm.js"></script>
     <script nomodule src="/build/pomelopay-webui.js"></script>
 
@@ -13,7 +20,6 @@
       /* .modal-body {
         background-color: red;
       } */
-
     </style>
   </head>
   <body>
@@ -25,7 +31,6 @@
     <br />
     <pp-button disabled class="pp-btn-outline">disabled</pp-button>
 
-
     <br />
     <br />
 
@@ -36,7 +41,6 @@
 
       <div class="pp-card-body pp-prose">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-
       </div>
     </pp-card>
     <br />
@@ -68,9 +72,8 @@
 
     <br />
 
-
     <label class="pp-md:w-2/3 pp-mt-4 pp-block pp-text-gray-500 pp-font-bold">
-      <input class="pp-mr-2 pp-leading-tight" type="checkbox">
+      <input class="pp-mr-2 pp-leading-tight" type="checkbox" />
       <span class="text-sm">
         Send me your newsletter!
       </span>
@@ -107,13 +110,42 @@
       POPPER
     </p>
     <pp-popper anchor="popper-anchor">
-      taena
-      potana
+      taena potana
     </pp-popper>
 
-    <pp-toast>
-      Toast
-    </pp-toast>
+    <div>
+      <button id="toast-btn">open toast</button>
+      <pp-toast position="top">
+        Toast Sample
+      </pp-toast>
+    </div>
 
+    <pp-avatar src="https://i.pinimg.com/originals/c4/c9/cb/c4c9cb80ab686411c5560c94032abd22.jpg"></pp-avatar>
+    <pp-avatar src="https://i.pinimg.com/originals/c4/c9/cb/c4c9cb80ab686411c5560c94032abd22.jpg" size="sm"></pp-avatar>
+    <pp-avatar src="https://i.pinimg.com/originals/c4/c9/cb/c4c9cb80ab686411c5560c94032abd22.jpg" size="lg"></pp-avatar>
+
+    <pp-avatar alt="heath ledger" ></pp-avatar>
+    <pp-avatar alt="heath ledger"  size="sm" status="offline"></pp-avatar>
+    <pp-avatar alt="heath ledger" size="lg" status="offline"></pp-avatar>
+
+    <pp-spinner></pp-spinner>
+
+    <pp-toggle on></pp-toggle>
+    <pp-icon-button>
+      <i class="fas fa-camera pp-text-green-500"></i>
+    </pp-icon-button>
+    <pp-icon-button>
+      <i class="fas fa-camera"></i>
+    </pp-icon-button>
+    <br />
+    <script>
+      var toastbtn = document.getElementById("toast-btn");
+      toastbtn.addEventListener('click', function() {
+        const $toast = document.querySelector('pp-toast')
+
+        $toast.toggleAttribute('open')
+      });
+
+    </script>
   </body>
 </html>

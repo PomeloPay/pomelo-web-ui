@@ -5,9 +5,16 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { AvatarSizes, AvatarStatus } from "./components/pp-avatar/pp-avatar";
 import { ButtonVariant } from "./components/pp-button/pp-button";
 export namespace Components {
     interface PpAlert {
+    }
+    interface PpAvatar {
+        "alt": string;
+        "size": AvatarSizes;
+        "src": string;
+        "status": AvatarStatus;
     }
     interface PpBadge {
     }
@@ -18,6 +25,8 @@ export namespace Components {
     interface PpCard {
         "class": string;
     }
+    interface PpIconButton {
+    }
     interface PpModal {
         "attachCloseAction": boolean;
         "open": boolean;
@@ -26,9 +35,17 @@ export namespace Components {
         "anchor": string;
         "open": boolean;
     }
+    interface PpSpinner {
+    }
     interface PpTabs {
     }
     interface PpToast {
+        "open": boolean;
+        "position": string;
+    }
+    interface PpToggle {
+        "on": boolean;
+        "onChange": (val, e) => void;
     }
 }
 declare global {
@@ -37,6 +54,12 @@ declare global {
     var HTMLPpAlertElement: {
         prototype: HTMLPpAlertElement;
         new (): HTMLPpAlertElement;
+    };
+    interface HTMLPpAvatarElement extends Components.PpAvatar, HTMLStencilElement {
+    }
+    var HTMLPpAvatarElement: {
+        prototype: HTMLPpAvatarElement;
+        new (): HTMLPpAvatarElement;
     };
     interface HTMLPpBadgeElement extends Components.PpBadge, HTMLStencilElement {
     }
@@ -56,6 +79,12 @@ declare global {
         prototype: HTMLPpCardElement;
         new (): HTMLPpCardElement;
     };
+    interface HTMLPpIconButtonElement extends Components.PpIconButton, HTMLStencilElement {
+    }
+    var HTMLPpIconButtonElement: {
+        prototype: HTMLPpIconButtonElement;
+        new (): HTMLPpIconButtonElement;
+    };
     interface HTMLPpModalElement extends Components.PpModal, HTMLStencilElement {
     }
     var HTMLPpModalElement: {
@@ -67,6 +96,12 @@ declare global {
     var HTMLPpPopperElement: {
         prototype: HTMLPpPopperElement;
         new (): HTMLPpPopperElement;
+    };
+    interface HTMLPpSpinnerElement extends Components.PpSpinner, HTMLStencilElement {
+    }
+    var HTMLPpSpinnerElement: {
+        prototype: HTMLPpSpinnerElement;
+        new (): HTMLPpSpinnerElement;
     };
     interface HTMLPpTabsElement extends Components.PpTabs, HTMLStencilElement {
     }
@@ -80,19 +115,35 @@ declare global {
         prototype: HTMLPpToastElement;
         new (): HTMLPpToastElement;
     };
+    interface HTMLPpToggleElement extends Components.PpToggle, HTMLStencilElement {
+    }
+    var HTMLPpToggleElement: {
+        prototype: HTMLPpToggleElement;
+        new (): HTMLPpToggleElement;
+    };
     interface HTMLElementTagNameMap {
         "pp-alert": HTMLPpAlertElement;
+        "pp-avatar": HTMLPpAvatarElement;
         "pp-badge": HTMLPpBadgeElement;
         "pp-button": HTMLPpButtonElement;
         "pp-card": HTMLPpCardElement;
+        "pp-icon-button": HTMLPpIconButtonElement;
         "pp-modal": HTMLPpModalElement;
         "pp-popper": HTMLPpPopperElement;
+        "pp-spinner": HTMLPpSpinnerElement;
         "pp-tabs": HTMLPpTabsElement;
         "pp-toast": HTMLPpToastElement;
+        "pp-toggle": HTMLPpToggleElement;
     }
 }
 declare namespace LocalJSX {
     interface PpAlert {
+    }
+    interface PpAvatar {
+        "alt"?: string;
+        "size"?: AvatarSizes;
+        "src"?: string;
+        "status"?: AvatarStatus;
     }
     interface PpBadge {
     }
@@ -103,6 +154,8 @@ declare namespace LocalJSX {
     interface PpCard {
         "class"?: string;
     }
+    interface PpIconButton {
+    }
     interface PpModal {
         "attachCloseAction"?: boolean;
         "open"?: boolean;
@@ -111,19 +164,31 @@ declare namespace LocalJSX {
         "anchor"?: string;
         "open"?: boolean;
     }
+    interface PpSpinner {
+    }
     interface PpTabs {
     }
     interface PpToast {
+        "open"?: boolean;
+        "position"?: string;
+    }
+    interface PpToggle {
+        "on"?: boolean;
+        "onChange"?: (val, e) => void;
     }
     interface IntrinsicElements {
         "pp-alert": PpAlert;
+        "pp-avatar": PpAvatar;
         "pp-badge": PpBadge;
         "pp-button": PpButton;
         "pp-card": PpCard;
+        "pp-icon-button": PpIconButton;
         "pp-modal": PpModal;
         "pp-popper": PpPopper;
+        "pp-spinner": PpSpinner;
         "pp-tabs": PpTabs;
         "pp-toast": PpToast;
+        "pp-toggle": PpToggle;
     }
 }
 export { LocalJSX as JSX };
@@ -131,13 +196,17 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "pp-alert": LocalJSX.PpAlert & JSXBase.HTMLAttributes<HTMLPpAlertElement>;
+            "pp-avatar": LocalJSX.PpAvatar & JSXBase.HTMLAttributes<HTMLPpAvatarElement>;
             "pp-badge": LocalJSX.PpBadge & JSXBase.HTMLAttributes<HTMLPpBadgeElement>;
             "pp-button": LocalJSX.PpButton & JSXBase.HTMLAttributes<HTMLPpButtonElement>;
             "pp-card": LocalJSX.PpCard & JSXBase.HTMLAttributes<HTMLPpCardElement>;
+            "pp-icon-button": LocalJSX.PpIconButton & JSXBase.HTMLAttributes<HTMLPpIconButtonElement>;
             "pp-modal": LocalJSX.PpModal & JSXBase.HTMLAttributes<HTMLPpModalElement>;
             "pp-popper": LocalJSX.PpPopper & JSXBase.HTMLAttributes<HTMLPpPopperElement>;
+            "pp-spinner": LocalJSX.PpSpinner & JSXBase.HTMLAttributes<HTMLPpSpinnerElement>;
             "pp-tabs": LocalJSX.PpTabs & JSXBase.HTMLAttributes<HTMLPpTabsElement>;
             "pp-toast": LocalJSX.PpToast & JSXBase.HTMLAttributes<HTMLPpToastElement>;
+            "pp-toggle": LocalJSX.PpToggle & JSXBase.HTMLAttributes<HTMLPpToggleElement>;
         }
     }
 }

@@ -10,7 +10,7 @@ export class PpTabs {
 
   @State() $tabs: Array<HTMLElement> = [];
 
-  componentDidLoad() {
+  componentWillLoad() {
     this.$tabs = [].slice.call(this.$el.querySelectorAll('pp-tabs [slot="pp-tab"]'));
 
 
@@ -24,7 +24,6 @@ export class PpTabs {
     this.$tabs.forEach(($tabEl) => {
       $tabEl.classList.remove('pp-active')
     })
-    console.log(this.$tabs)
     target.classList.add('pp-active')
 
   }

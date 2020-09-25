@@ -1,0 +1,20 @@
+button {
+  display: inline-block;
+  appearance: none;
+  outline: 0;
+  border: 1px solid theme('colors.gray.400');
+  border-radius: theme('radii.md')px;
+
+  font-weight: theme('fontWeight.semibold');
+  font-family: theme('fontFamily.body');
+  padding: theme('spacing.2') theme('spacing.2');
+  cursor: pointer;
+  height: 42px;
+  width: 42px;
+  font-size: calc(theme('fontSize.base') * 1.25);
+  @apply text-black transition-all bg-white;
+
+  &:hover {
+    background-color: color-mod(theme('colors.gray.100') b(+1%));
+  }
+}
