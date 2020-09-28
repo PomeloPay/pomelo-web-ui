@@ -1,4 +1,4 @@
-import { Component, Prop, h, Listen } from '@stencil/core';
+import { Component, Prop, EventEmitter, h, Listen, Event } from '@stencil/core';
 import clsx from 'clsx';
 
 @Component({
@@ -8,14 +8,12 @@ import clsx from 'clsx';
 })
 export class PpToggle {
   @Prop() on: boolean = false;
-  @Prop() onChange: (val, e) => void;
+
+  @Event({ eventName: 'toggleChange'}) toggleChange: EventEmitter;
 
   @Listen('click')
-  handleClick(e) {
+  handleClick() {
     this.on = !this.on;
-    if (typeof this.onChange === 'function') {
-      this.onChange(this.on, e);
-    }
   }
 
   render() {

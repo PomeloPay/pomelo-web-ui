@@ -25,6 +25,10 @@ export namespace Components {
     interface PpCard {
         "class": string;
     }
+    interface PpDrawer {
+        "attachCloseAction": boolean;
+        "open": boolean;
+    }
     interface PpIconButton {
     }
     interface PpModal {
@@ -45,7 +49,6 @@ export namespace Components {
     }
     interface PpToggle {
         "on": boolean;
-        "onChange": (val, e) => void;
     }
 }
 declare global {
@@ -78,6 +81,12 @@ declare global {
     var HTMLPpCardElement: {
         prototype: HTMLPpCardElement;
         new (): HTMLPpCardElement;
+    };
+    interface HTMLPpDrawerElement extends Components.PpDrawer, HTMLStencilElement {
+    }
+    var HTMLPpDrawerElement: {
+        prototype: HTMLPpDrawerElement;
+        new (): HTMLPpDrawerElement;
     };
     interface HTMLPpIconButtonElement extends Components.PpIconButton, HTMLStencilElement {
     }
@@ -127,6 +136,7 @@ declare global {
         "pp-badge": HTMLPpBadgeElement;
         "pp-button": HTMLPpButtonElement;
         "pp-card": HTMLPpCardElement;
+        "pp-drawer": HTMLPpDrawerElement;
         "pp-icon-button": HTMLPpIconButtonElement;
         "pp-modal": HTMLPpModalElement;
         "pp-popper": HTMLPpPopperElement;
@@ -154,6 +164,11 @@ declare namespace LocalJSX {
     interface PpCard {
         "class"?: string;
     }
+    interface PpDrawer {
+        "attachCloseAction"?: boolean;
+        "onBackdropClick"?: (event: CustomEvent<any>) => void;
+        "open"?: boolean;
+    }
     interface PpIconButton {
     }
     interface PpModal {
@@ -174,7 +189,7 @@ declare namespace LocalJSX {
     }
     interface PpToggle {
         "on"?: boolean;
-        "onChange"?: (val, e) => void;
+        "onToggleChange"?: (event: CustomEvent<any>) => void;
     }
     interface IntrinsicElements {
         "pp-alert": PpAlert;
@@ -182,6 +197,7 @@ declare namespace LocalJSX {
         "pp-badge": PpBadge;
         "pp-button": PpButton;
         "pp-card": PpCard;
+        "pp-drawer": PpDrawer;
         "pp-icon-button": PpIconButton;
         "pp-modal": PpModal;
         "pp-popper": PpPopper;
@@ -200,6 +216,7 @@ declare module "@stencil/core" {
             "pp-badge": LocalJSX.PpBadge & JSXBase.HTMLAttributes<HTMLPpBadgeElement>;
             "pp-button": LocalJSX.PpButton & JSXBase.HTMLAttributes<HTMLPpButtonElement>;
             "pp-card": LocalJSX.PpCard & JSXBase.HTMLAttributes<HTMLPpCardElement>;
+            "pp-drawer": LocalJSX.PpDrawer & JSXBase.HTMLAttributes<HTMLPpDrawerElement>;
             "pp-icon-button": LocalJSX.PpIconButton & JSXBase.HTMLAttributes<HTMLPpIconButtonElement>;
             "pp-modal": LocalJSX.PpModal & JSXBase.HTMLAttributes<HTMLPpModalElement>;
             "pp-popper": LocalJSX.PpPopper & JSXBase.HTMLAttributes<HTMLPpPopperElement>;

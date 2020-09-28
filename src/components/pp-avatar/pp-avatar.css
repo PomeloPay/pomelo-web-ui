@@ -1,7 +1,7 @@
 
 section[data-size="sm"] {
   @apply relative w-12 h-12;
-
+  display: inline-block;
   & > img {
     @apply rounded-full border border-gray-100 shadow-sm;
     height: 100%;
@@ -36,7 +36,7 @@ section[data-size="md"] {
 }
 
 section[data-size="lg"] {
-  @apply relative w-24 h-24;
+  @apply relative w-20 h-20;
 
   & > img {
     @apply rounded-full border border-gray-100 shadow-sm;

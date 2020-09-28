@@ -11,6 +11,7 @@ export class Modal {
   @Prop({ reflect: false }) attachCloseAction: boolean = false;
   @Element() $el: HTMLElement;
 
+
   componentDidLoad() {
     if (this.attachCloseAction) {
       this.$closeEl = this.$el.querySelector('.pp-modal-close');

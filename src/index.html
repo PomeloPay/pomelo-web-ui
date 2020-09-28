@@ -138,6 +138,14 @@
       <i class="fas fa-camera"></i>
     </pp-icon-button>
     <br />
+
+    <pp-drawer>
+      <div class="pp-drawer-content">
+        taena
+      </div>
+    </pp-drawer>
+
+    <button id="drawer-btn">open drawer</button>
     <script>
       var toastbtn = document.getElementById("toast-btn");
       toastbtn.addEventListener('click', function() {
@@ -145,6 +153,18 @@
 
         $toast.toggleAttribute('open')
       });
+
+      var $drawerBtn = document.getElementById("drawer-btn");
+      const $drawer = document.querySelector('pp-drawer')
+
+      function toggleDrawer() {
+
+        $drawer.toggleAttribute('open')
+      }
+      $drawerBtn.addEventListener('click', toggleDrawer);
+      $drawer.addEventListener('backdropClick', toggleDrawer);
+
+
 
     </script>
   </body>
