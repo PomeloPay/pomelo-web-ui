@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { AvatarSizes, AvatarStatus } from "./components/pp-avatar/pp-avatar";
 import { ButtonVariant } from "./components/pp-button/pp-button";
+import { Options } from "@popperjs/core";
 export namespace Components {
     interface PpAlert {
     }
@@ -36,8 +37,9 @@ export namespace Components {
         "open": boolean;
     }
     interface PpPopper {
-        "anchor": string;
         "open": boolean;
+        "options": Options;
+        "reference": HTMLElement | string;
     }
     interface PpSpinner {
     }
@@ -176,8 +178,9 @@ declare namespace LocalJSX {
         "open"?: boolean;
     }
     interface PpPopper {
-        "anchor"?: string;
         "open"?: boolean;
+        "options"?: Options;
+        "reference"?: HTMLElement | string;
     }
     interface PpSpinner {
     }

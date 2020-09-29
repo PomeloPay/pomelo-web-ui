@@ -23,7 +23,22 @@
     </style>
   </head>
   <body>
+    <div class="pp-flex pp-items-center pp-justify-center pp-h-64">
+      <p popper-anchor class="pp-prose pp-prose-lg">
+        POPPER
+      </p>
+
+    </div>
+    <!-- <div>
+      <pp-popper reference="[popper-anchor]">
+        <div class="pp-h-64 pp-w-64">
+          potana popper
+        </div>
+      </pp-popper>
+
+    </div> -->
     <pp-button>text button</pp-button>
+    <!-- <pp-button>text button</pp-button>
     <br />
     <pp-button class="pp-btn-contained">contained</pp-button>
     <br />
@@ -145,26 +160,31 @@
       </div>
     </pp-drawer>
 
-    <button id="drawer-btn">open drawer</button>
+    <button id="drawer-btn">open drawer</button> -->
     <script>
-      var toastbtn = document.getElementById("toast-btn");
-      toastbtn.addEventListener('click', function() {
-        const $toast = document.querySelector('pp-toast')
+      // var toastbtn = document.getElementById("toast-btn");
+      // toastbtn.addEventListener('click', function() {
+      //   const $toast = document.querySelector('pp-toast')
 
-        $toast.toggleAttribute('open')
-      });
+      //   $toast.toggleAttribute('open')
+      // });
 
-      var $drawerBtn = document.getElementById("drawer-btn");
-      const $drawer = document.querySelector('pp-drawer')
+      // var $drawerBtn = document.getElementById("drawer-btn");
+      // const $drawer = document.querySelector('pp-drawer')
 
-      function toggleDrawer() {
+      // function toggleDrawer() {
 
-        $drawer.toggleAttribute('open')
-      }
-      $drawerBtn.addEventListener('click', toggleDrawer);
-      $drawer.addEventListener('backdropClick', toggleDrawer);
+      //   $drawer.toggleAttribute('open')
+      // }
+      // $drawerBtn.addEventListener('click', toggleDrawer);
+      // $drawer.addEventListener('backdropClick', toggleDrawer);
 
+      const anchor = document.querySelector('[popper-anchor]')
+      const popper = document.querySelector('pp-popper')
 
+      anchor.addEventListener('click', () => {
+        popper.toggleAttribute('open')
+      })
 
     </script>
   </body>

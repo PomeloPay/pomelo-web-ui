@@ -1,5 +1,30 @@
 import { Component, Element, h, State, Prop } from '@stencil/core';
-import tippy from 'tippy.js/headless';
+import { createPopper, Instance, Options, Placement, detectOverflow } from '@popperjs/core';
+import {
+  computeStyles,
+  popperOffsets,
+  flip,
+  applyStyles,
+  preventOverflow,
+  eventListeners,
+  offset,
+} from '@popperjs/core/lib/modifiers';
+console.log({ detectOverflow });
+const placement: Placement = 'bottom-start';
+const strategy = 'absolute'
+const defaultOptions: Options = {
+  placement,
+  modifiers: [
+    computeStyles,
+    popperOffsets,
+    flip,
+    applyStyles,
+    preventOverflow,
+    eventListeners,
+    offset,
+  ],
+  strategy,
+};
 
 @Component({
   tag: 'pp-popper',
@@ -7,52 +32,46 @@ import tippy from 'tippy.js/headless';
   shadow: true,
 })
 export class PpPopper {
-  @Prop() anchor: string;
+  @Prop() reference: HTMLElement | string;
   @Element() $el: HTMLElement;
   @Prop() open: boolean = false;
+  @Prop() options: Options;
   @State() ready: boolean = false;
-  $tippyInstance = null;
-  $popperRef = null;
+
+  instance: Instance = null;
+  $reference: Element = null;
+
+  create() {
+    const finalOptions: Options = {
+      ...defaultOptions,
+      ...this.options,
+      modifiers: [
+        ...defaultOptions.modifiers,
+        ...(this.options?.modifiers || []),
+      ],
+    };
+
+    this.instance = createPopper(this.$reference, this.$el, finalOptions);
+  }
+
+  destroy() {
+    if (this.instance) {
+      this.instance.destroy();
+      this.instance = null;
+    }
+  }
 
   componentDidLoad() {
-    tippy(`[${this.anchor}]`, {
-      animation: true,
-      onHide(instance) {
-        this.open = false
-        requestAnimationFrame(instance.unmount);
-      },
-      onMount: () => {
-        this.ready = true;
-      },
-      render: instance => {
-        const popper = this.$el as any;
-        const box = document.createElement('div');
-
-        popper.appendChild(box);
-
-        box.className = 'my-custom-class';
-        box.textContent = instance.props.content as string;
-
-        function onUpdate(prevProps, nextProps) {
-          // DOM diffing
-          if (prevProps.content !== nextProps.content) {
-            box.textContent = nextProps.content;
-          }
-        }
-
-        return {
-          popper,
-          onUpdate, // optional
-        };
-      },
-    });
+    if (typeof this.reference === 'string') {
+      this.$reference = document.querySelector(this.reference);
+    }
+    this.create();
   }
 
   render() {
-    if (!this.ready) {
-      return '';
+    if (!this.open) {
+      return null;
     }
-
     return (
       <section>
         <slot></slot>
