@@ -1,3 +1,8 @@
 section {
   @apply max-w-sm rounded overflow-hidden pp-shadow-outline p-4;
+  visibility: hidden;
+}
+
+section.pp-open {
+  visibility: visible;
 }

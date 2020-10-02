@@ -1,28 +1,20 @@
 import { Component, Element, h, State, Prop } from '@stencil/core';
 import { createPopper, Instance, Options, Placement, detectOverflow } from '@popperjs/core';
-import {
-  computeStyles,
-  popperOffsets,
-  flip,
-  applyStyles,
-  preventOverflow,
-  eventListeners,
-  offset,
-} from '@popperjs/core/lib/modifiers';
+// import {
+//   computeStyles,
+//   popperOffsets,
+//   flip,
+//   applyStyles,
+//   preventOverflow,
+//   eventListeners,
+//   offset,
+// } from '@popperjs/core/lib/modifiers';
 console.log({ detectOverflow });
-const placement: Placement = 'bottom-start';
-const strategy = 'absolute'
+const placement: Placement = 'bottom';
+const strategy = 'fixed';
 const defaultOptions: Options = {
   placement,
-  modifiers: [
-    computeStyles,
-    popperOffsets,
-    flip,
-    applyStyles,
-    preventOverflow,
-    eventListeners,
-    offset,
-  ],
+  modifiers: [],
   strategy,
 };
 
@@ -45,10 +37,7 @@ export class PpPopper {
     const finalOptions: Options = {
       ...defaultOptions,
       ...this.options,
-      modifiers: [
-        ...defaultOptions.modifiers,
-        ...(this.options?.modifiers || []),
-      ],
+      modifiers: [...defaultOptions.modifiers, ...(this.options?.modifiers || [])],
     };
 
     this.instance = createPopper(this.$reference, this.$el, finalOptions);
@@ -69,11 +58,9 @@ export class PpPopper {
   }
 
   render() {
-    if (!this.open) {
-      return null;
-    }
+    const className = this.open ? 'pp-open' : '';
     return (
-      <section>
+      <section class={className}>
         <slot></slot>
       </section>
     );
