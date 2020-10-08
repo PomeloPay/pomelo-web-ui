@@ -15,7 +15,8 @@
     "loader/"
   ],
   "scripts": {
-    "build": "stencil build --docs",
+    "build:css": "cp www/build/pomelopay-webui.css dist/pomelopay-webui.css",
+    "build": "stencil build --docs && yarn build:css",
     "start": "stencil build --dev --watch --serve --no-open",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
@@ -28,8 +29,7 @@
     "@stencil/core": "^2.0.1",
     "animejs": "^3.2.0",
     "clsx": "^1.1.1",
-    "tailwindcss": "^1.8.10",
-    "tippy.js": "^6.2.6"
+    "tailwindcss": "^1.8.10"
   },
   "license": "MIT",
   "devDependencies": {
