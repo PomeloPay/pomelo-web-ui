@@ -1,5 +1,3 @@
-// const colors = require("./src/colors.json");
-const plugin = require("tailwindcss/plugin");
 const theme = require("./src/config/theme");
 
 const prefix = 'pp-'
