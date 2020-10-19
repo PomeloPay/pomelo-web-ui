@@ -1,4 +1,4 @@
-import { Component, Host, Element, h, State } from '@stencil/core';
+import { Component, Host, Element, h, State, EventEmitter, Event } from '@stencil/core';
 
 @Component({
   tag: 'pp-tabs',
@@ -7,6 +7,7 @@ import { Component, Host, Element, h, State } from '@stencil/core';
 })
 export class PpTabs {
   @Element() $el: HTMLElement;
+  @Event({ eventName: 'tabChange'}) tabChange: EventEmitter;
 
   @State() $tabs: Array<HTMLElement> = [];
 
@@ -25,7 +26,7 @@ export class PpTabs {
       $tabEl.classList.remove('pp-active')
     })
     target.classList.add('pp-active')
-
+    this.tabChange.emit({ id: target.id, event: e })
   }
 
   disconnectedCallback() {

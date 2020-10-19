@@ -185,6 +185,7 @@ declare namespace LocalJSX {
     interface PpSpinner {
     }
     interface PpTabs {
+        "onTabChange"?: (event: CustomEvent<any>) => void;
     }
     interface PpToast {
         "open"?: boolean;
