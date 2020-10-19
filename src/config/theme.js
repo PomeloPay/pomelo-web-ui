@@ -13,6 +13,21 @@ module.exports = {
         maxWidth: 'none'
       },
     },
+    '3xl': {
+      css: {
+        fontSize: '2rem'
+      }
+    },
+    '4xl': {
+      css: {
+        fontSize: '2.5rem'
+      }
+    },
+    '5xl': {
+      css: {
+        fontSize: '3rem'
+      }
+    },
   },
   extend: {
     fontFamily: {
