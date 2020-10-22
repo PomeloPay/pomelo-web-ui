@@ -8,7 +8,7 @@
   flex: 0 0 auto;
   box-sizing: border-box;
   cursor: pointer;
-  padding-left: theme('spacing.4');
+  padding-left: theme('spacing.8');
   max-width: 200px;
   &:first-child {
     padding-left: 0;

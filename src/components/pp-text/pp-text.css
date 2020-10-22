@@ -1,0 +1,36 @@
+/* stylelint-disable-next-line selector-type-no-unknown */
+:host {
+  font-weight: theme('fontWeight.semibold');
+  letter-spacing: 0;
+  color: theme('colors.black');
+}
+
+:host(:--text-size-xs) {
+  line-height: 1.25;
+  @apply text-xs;
+}
+
+:host(:--text-size-s) {
+  line-height: 1.25;
+  @apply text-sm;
+}
+
+:host(:--text-size-m) {
+  line-height: 1.5;
+  @apply text-base;
+}
+
+:host(:--text-size-l) {
+  line-height: 2.25;
+  @apply text-2xl;
+}
+
+:host(:--text-size-xl) {
+  @apply text-4xl;
+}
+
+:host(:--text-size-2xl) {
+  line-height: 3.375;
+  font-size: 2.875rem;
+}
+

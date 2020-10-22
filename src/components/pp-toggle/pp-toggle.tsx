@@ -1,4 +1,4 @@
-import { Component, Prop, EventEmitter, h, Listen, Event } from '@stencil/core';
+import { Component, Prop, EventEmitter, h, Event } from '@stencil/core';
 import clsx from 'clsx';
 
 @Component({
@@ -11,9 +11,9 @@ export class PpToggle {
 
   @Event({ eventName: 'toggleChange'}) toggleChange: EventEmitter;
 
-  @Listen('click')
-  handleClick() {
+  handleClick(event: UIEvent) {
     this.on = !this.on;
+    this.toggleChange.emit({ on: this.on, event })
   }
 
   render() {
@@ -22,7 +22,7 @@ export class PpToggle {
     });
 
     return (
-      <section class={className} onClick={this.handleClick}>
+      <section class={className} onClick={(e) => this.handleClick(e)}>
         <div class="switch-toggle"></div>
       </section>
     );

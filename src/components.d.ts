@@ -45,6 +45,9 @@ export namespace Components {
     }
     interface PpTabs {
     }
+    interface PpText {
+        "size": string;
+    }
     interface PpToast {
         "open": boolean;
         "position": string;
@@ -120,6 +123,12 @@ declare global {
         prototype: HTMLPpTabsElement;
         new (): HTMLPpTabsElement;
     };
+    interface HTMLPpTextElement extends Components.PpText, HTMLStencilElement {
+    }
+    var HTMLPpTextElement: {
+        prototype: HTMLPpTextElement;
+        new (): HTMLPpTextElement;
+    };
     interface HTMLPpToastElement extends Components.PpToast, HTMLStencilElement {
     }
     var HTMLPpToastElement: {
@@ -144,6 +153,7 @@ declare global {
         "pp-popper": HTMLPpPopperElement;
         "pp-spinner": HTMLPpSpinnerElement;
         "pp-tabs": HTMLPpTabsElement;
+        "pp-text": HTMLPpTextElement;
         "pp-toast": HTMLPpToastElement;
         "pp-toggle": HTMLPpToggleElement;
     }
@@ -187,6 +197,9 @@ declare namespace LocalJSX {
     interface PpTabs {
         "onTabChange"?: (event: CustomEvent<any>) => void;
     }
+    interface PpText {
+        "size"?: string;
+    }
     interface PpToast {
         "open"?: boolean;
         "position"?: string;
@@ -207,6 +220,7 @@ declare namespace LocalJSX {
         "pp-popper": PpPopper;
         "pp-spinner": PpSpinner;
         "pp-tabs": PpTabs;
+        "pp-text": PpText;
         "pp-toast": PpToast;
         "pp-toggle": PpToggle;
     }
@@ -226,6 +240,7 @@ declare module "@stencil/core" {
             "pp-popper": LocalJSX.PpPopper & JSXBase.HTMLAttributes<HTMLPpPopperElement>;
             "pp-spinner": LocalJSX.PpSpinner & JSXBase.HTMLAttributes<HTMLPpSpinnerElement>;
             "pp-tabs": LocalJSX.PpTabs & JSXBase.HTMLAttributes<HTMLPpTabsElement>;
+            "pp-text": LocalJSX.PpText & JSXBase.HTMLAttributes<HTMLPpTextElement>;
             "pp-toast": LocalJSX.PpToast & JSXBase.HTMLAttributes<HTMLPpToastElement>;
             "pp-toggle": LocalJSX.PpToggle & JSXBase.HTMLAttributes<HTMLPpToggleElement>;
         }
