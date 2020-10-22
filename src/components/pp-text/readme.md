@@ -9,7 +9,7 @@
 
 | Property | Attribute | Description | Type     | Default |
 | -------- | --------- | ----------- | -------- | ------- |
-| `size`   | `size`    |             | `string` | `''`    |
+| `size`   | `size`    |             | `string` | `'m'`   |
 
 
 ----------------------------------------------

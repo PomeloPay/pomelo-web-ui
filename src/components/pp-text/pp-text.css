@@ -6,22 +6,22 @@
 }
 
 :host(:--text-size-xs) {
-  line-height: 1.25;
+  line-height: 1.25rem;
   @apply text-xs;
 }
 
 :host(:--text-size-s) {
-  line-height: 1.25;
+  line-height: 1.25rem;
   @apply text-sm;
 }
 
 :host(:--text-size-m) {
-  line-height: 1.5;
+  line-height: 1.5rem;
   @apply text-base;
 }
 
 :host(:--text-size-l) {
-  line-height: 2.25;
+  line-height: 2.25rem;
   @apply text-2xl;
 }
 
@@ -30,7 +30,7 @@
 }
 
 :host(:--text-size-2xl) {
-  line-height: 3.375;
+  line-height: 3.375rem;
   font-size: 2.875rem;
 }
 
