@@ -3,6 +3,7 @@
   font-weight: theme('fontWeight.semibold');
   letter-spacing: 0;
   color: theme('colors.black');
+  display: block;
 }
 
 :host(:--text-size-xs) {

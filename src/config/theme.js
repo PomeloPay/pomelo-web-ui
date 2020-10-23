@@ -40,6 +40,7 @@ module.exports = {
         2: '#f5f5f5',
         3: '#e9e9e9',
         4: '#c8c8c8',
+        5: '#909090'
       },
       purple: {
         ...defaultTheme.colors.purple,
