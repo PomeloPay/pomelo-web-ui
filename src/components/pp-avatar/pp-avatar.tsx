@@ -10,7 +10,7 @@ export type AvatarStatus = 'offline' | 'online';
   shadow: true,
 })
 export class PpAvatar {
-  @Prop({ reflect: true }) size: Sizes = Sizes.medium;
+  @Prop({ reflect: true }) size: Sizes = "md";
   @Prop() status: AvatarStatus = 'online';
   @Prop() src: string = '';
   @Prop() alt: string = '';

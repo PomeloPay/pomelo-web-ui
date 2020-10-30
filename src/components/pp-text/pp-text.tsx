@@ -7,7 +7,7 @@ import { Sizes } from '../../types';
   shadow: true,
 })
 export class PpText {
-  @Prop({ reflect: true }) size: Sizes = Sizes.medium;
+  @Prop({ reflect: true }) size: Sizes = 'md';
   render() {
     return (
       <Host>

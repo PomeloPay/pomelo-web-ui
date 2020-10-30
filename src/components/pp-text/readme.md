@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                                                                                                                                                | Default        |
-| -------- | --------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
-| `size`   | `size`    |             | `Sizes.extraLarge \| Sizes.extraLarge2 \| Sizes.extraLarge3 \| Sizes.extraSmall \| Sizes.extraSmall2 \| Sizes.large \| Sizes.medium \| Sizes.small` | `Sizes.medium` |
+| Property | Attribute | Description | Type                                                             | Default |
+| -------- | --------- | ----------- | ---------------------------------------------------------------- | ------- |
+| `size`   | `size`    |             | `"2xl" \| "2xs" \| "3xl" \| "l" \| "md" \| "sm" \| "xl" \| "xs"` | `'md'`  |
 
 
 ## Dependencies
