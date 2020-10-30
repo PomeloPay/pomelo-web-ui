@@ -1,4 +1,5 @@
 import { Component, Host, h, Prop } from '@stencil/core';
+import { Sizes } from '../../types';
 
 @Component({
   tag: 'pp-text',
@@ -6,7 +7,7 @@ import { Component, Host, h, Prop } from '@stencil/core';
   shadow: true,
 })
 export class PpText {
-  @Prop({ reflect: true }) size: string = 'm';
+  @Prop({ reflect: true }) size: Sizes = Sizes.medium;
   render() {
     return (
       <Host>

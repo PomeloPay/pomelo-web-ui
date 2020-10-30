@@ -1,4 +1,5 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h, Prop } from '@stencil/core';
+import { ColorVariants } from '../../types';
 
 @Component({
   tag: 'pp-badge',
@@ -6,7 +7,7 @@ import { Component, Host, h } from '@stencil/core';
   shadow: true,
 })
 export class PpBadge {
-
+  @Prop({ reflect: true }) color: ColorVariants = 'primary'
   render() {
     return (
       <Host>

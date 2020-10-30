@@ -1,5 +1,5 @@
 @custom-selector :--text-size-xs [size="xs"];
-@custom-selector :--text-size-s [size="s"];
+@custom-selector :--text-size-s [size="sm"];
 @custom-selector :--text-size-m [size="m"];
 @custom-selector :--text-size-l [size="l"];
 @custom-selector :--text-size-xl [size="xl"];

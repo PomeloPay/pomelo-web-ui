@@ -5,23 +5,25 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { AvatarSizes, AvatarStatus } from "./components/pp-avatar/pp-avatar";
-import { ButtonVariant } from "./components/pp-button/pp-button";
+import { ButtonVariants, ColorVariants, Sizes } from "./types";
+import { AvatarStatus } from "./components/pp-avatar/pp-avatar";
 import { Options } from "@popperjs/core";
 export namespace Components {
     interface PpAlert {
     }
     interface PpAvatar {
         "alt": string;
-        "size": AvatarSizes;
+        "size": Sizes;
         "src": string;
         "status": AvatarStatus;
     }
     interface PpBadge {
+        "color": ColorVariants;
     }
     interface PpButton {
-        "class": any;
-        "variant": ButtonVariant;
+        "color": ColorVariants | string;
+        "size": Sizes;
+        "variant": ButtonVariants;
     }
     interface PpCard {
         "class": string;
@@ -46,7 +48,7 @@ export namespace Components {
     interface PpTabs {
     }
     interface PpText {
-        "size": string;
+        "size": Sizes;
     }
     interface PpToast {
         "open": boolean;
@@ -163,15 +165,17 @@ declare namespace LocalJSX {
     }
     interface PpAvatar {
         "alt"?: string;
-        "size"?: AvatarSizes;
+        "size"?: Sizes;
         "src"?: string;
         "status"?: AvatarStatus;
     }
     interface PpBadge {
+        "color"?: ColorVariants;
     }
     interface PpButton {
-        "class"?: any;
-        "variant"?: ButtonVariant;
+        "color"?: ColorVariants | string;
+        "size"?: Sizes;
+        "variant"?: ButtonVariants;
     }
     interface PpCard {
         "class"?: string;
@@ -198,7 +202,7 @@ declare namespace LocalJSX {
         "onTabChange"?: (event: CustomEvent<any>) => void;
     }
     interface PpText {
-        "size"?: string;
+        "size"?: Sizes;
     }
     interface PpToast {
         "open"?: boolean;

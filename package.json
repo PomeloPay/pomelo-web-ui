@@ -19,10 +19,11 @@
     "build:config": "cp src/config/theme.js dist/theme.js",
     "build": "stencil build --docs && yarn build:css && yarn build:config",
     "start": "stencil build --dev --watch --serve --no-open",
+    "start:js": "stencil build --dev --watch",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
-    "storybook": "start-storybook -p 6006 -s www",
+    "storybook": "start-storybook -p 6006 -s www --ci && yarn start:js",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
@@ -41,7 +42,6 @@
     "@storybook/addon-links": "^6.0.21",
     "@storybook/addon-storysource": "^6.0.22",
     "@storybook/html": "^6.0.21",
-    "@tailwindcss/typography": "^0.2.0",
     "@types/autoprefixer": "^9.7.2",
     "@types/jest": "^26.0.14",
     "autoprefixer": "9",

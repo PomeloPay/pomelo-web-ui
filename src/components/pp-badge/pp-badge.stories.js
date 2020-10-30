@@ -11,12 +11,12 @@ export default {
 const Template = ({ onClick, children }) => {
   const container = document.createElement('div')
   container.innerHTML = `
-    <p class="pp-prose pp-prose-sm pp-font-body">
+    <pp-text>
       New
       <pp-badge class="pp-badge-primary">
         Badge
       </pp-badge>
-    </p>
+    </pp-text>
   `
   return container;
 };

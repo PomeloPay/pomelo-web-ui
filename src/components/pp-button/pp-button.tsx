@@ -1,21 +1,34 @@
-import { Component, Prop, h, Host } from '@stencil/core';
-
-export type ButtonVariant = 'text' | 'outline' | 'contained';
+import { Component, Prop, h, Host, Element } from '@stencil/core';
+// import clsx from 'clsx';
+import { ButtonVariants, ColorVariants, Sizes } from '../../types';
 
 @Component({
   tag: 'pp-button',
   styleUrl: 'pp-button.css',
-  shadow: true
+  shadow: true,
 })
 export class PpButton {
-  @Prop({ attribute: 'data-variant' }) variant: ButtonVariant = 'text';
-  @Prop() class: any;
+  @Prop({ attribute: 'variant', reflect: true }) variant: ButtonVariants = 'text';
+  @Prop({ attribute: 'color' }) color: ColorVariants | string = '';
+  @Prop({ attribute: 'size', reflect: true }) size: Sizes = Sizes.medium;
 
+  @Element() $el: HTMLElement
+
+  // componentDidLoad() {
+  //   this.$el.className = clsx(
+  //     {
+  //       [`pp-color-${this.color}`]: !!this.color
+  //     },
+  //     this.$el.className
+  //   )
+  // }
 
   render() {
     return (
       <Host>
-        <slot></slot>
+        <button>
+          <slot></slot>
+        </button>
       </Host>
     );
   }

@@ -11,9 +11,13 @@ export default {
 const Template = ({ onClick, children }) => {
   const btnWrapper = document.createElement('div');
   btnWrapper.innerHTML = `
+    <pp-button color="primary" variant="contained">${children}</pp-button>
+    <pp-button color="secondary" variant="contained">${children}</pp-button>
+    <pp-button color="primary" variant="outline">${children}</pp-button>
+    <pp-button color="secondary" variant="outline">${children}</pp-button>
     <pp-button>${children}</pp-button>
-    <pp-button class="pp-btn-contained">${children}</pp-button>
-    <pp-button class="pp-btn-outline">${children}</pp-button>
+    <pp-button color="primary">${children}</pp-button>
+    <pp-button color="secondary">${children}</pp-button>
   `
   btnWrapper.addEventListener('click', onClick);
   return btnWrapper;

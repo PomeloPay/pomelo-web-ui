@@ -1,7 +1,7 @@
-import { Component, h, Prop, Element } from '@stencil/core';
+import { Component, h, Prop, Element, Host } from '@stencil/core';
 import clsx from 'clsx';
+import { Sizes } from '../../types';
 
-export type AvatarSizes = 'sm' | 'md' | 'lg';
 export type AvatarStatus = 'offline' | 'online';
 
 @Component({
@@ -10,16 +10,11 @@ export type AvatarStatus = 'offline' | 'online';
   shadow: true,
 })
 export class PpAvatar {
-  @Prop() size: AvatarSizes = 'md';
+  @Prop({ reflect: true }) size: Sizes = Sizes.medium;
   @Prop() status: AvatarStatus = 'online';
   @Prop() src: string = '';
   @Prop() alt: string = '';
   @Element() $el: HTMLElement;
-
-  componentWillLoad() {
-    this.$el.classList.add('pp-prose')
-    this.$el.classList.add(`pp-prose-${this.size}`)
-  }
 
   render() {
     const statusClass = clsx('status', this.status);
@@ -30,19 +25,17 @@ export class PpAvatar {
       .filter(Boolean)
       .join('');
 
-    const placholderClass = clsx('pp-placeholder', `pp-placeholder-${this.size}`, 'pp-prose', `pp-prose-${this.size}`);
-
     return (
-      <section data-size={this.size}>
+      <Host>
         {this.src ? (
           <img src={this.src} alt={this.alt} />
         ) : (
-          <div data-alt={placholder} class={placholderClass}>
+          <pp-text size={this.size} data-alt={placholder}>
             {placholder}
-          </div>
+          </pp-text>
         )}
-        <div slot="placeholder" class={statusClass} data-size={this.size}></div>
-      </section>
+        {this.status && <div class={statusClass}></div>}
+      </Host>
     );
   }
 }

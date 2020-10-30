@@ -11,18 +11,18 @@ export default {
 const Template = ({ onClick, children }) => {
   const container = document.createElement('div')
   container.innerHTML = `
-    <p class="pp-prose pp-prose-sm pp-font-body">
+    <pp-text size="sm" class="font-body">
       Small
-    </p>
-    <p class="pp-prose pp-font-body">
+    </pp-text>
+    <pp-text size="md"  class="font-body">
       Medium
-    </p>
-    <p class="pp-prose pp-prose-lg pp-font-body">
+    </pp-text>
+    <pp-text size="lg" class="font-body">
       Large
-    </p>
-    <p class="pp-prose pp-prose-lg pp-font-body">
+    </pp-text>
+    <pp-text size="xl" class="font-body">
       XL
-    </p>
+    </pp-text>
   `
   return container;
 };
@@ -37,18 +37,18 @@ Typography.args = {
 export const TypogrpahyOtherVariant = () => {
   const container = document.createElement('div')
   container.innerHTML = `
-    <p class="pp-prose pp-prose-sm pp-font-sans">
+    <pp-text  class="font-sans">
       Small
-    </p>
-    <p class="pp-prose pp-font-sans">
+    </pp-text>
+    <pp-text  class="font-sans">
       Medium
-    </p>
-    <p class="pp-prose pp-prose-lg pp-font-sans">
+    </pp-text>
+    <pp-text  class="font-sans">
       Large
-    </p>
-    <p class="pp-prose pp-prose-lg pp-font-sans">
+    </pp-text>
+    <pp-text  class="font-sans">
       XL
-    </p>
+    </pp-text>
   `
   return container;
 }

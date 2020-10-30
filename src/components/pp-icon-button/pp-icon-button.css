@@ -3,7 +3,7 @@ button {
   appearance: none;
   outline: 0;
   border: 1px solid theme('colors.gray.400');
-  border-radius: theme('radii.md')px;
+  border-radius: theme('radii.md');
 
   font-weight: theme('fontWeight.semibold');
   font-family: theme('fontFamily.body');

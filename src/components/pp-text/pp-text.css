@@ -11,7 +11,7 @@
   @apply text-xs;
 }
 
-:host(:--text-size-s) {
+:host(:--text-size-sm) {
   line-height: 1.25rem;
   @apply text-sm;
 }

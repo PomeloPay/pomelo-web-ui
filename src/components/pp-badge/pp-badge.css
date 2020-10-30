@@ -3,13 +3,13 @@
   font-weight: inherit;
   font-family: inherit;
   display: inline-block;
-  color: white;
+  /* color: white; */
   @apply rounded px-2 py-1;
 }
 
-:host(.pp-badge-primary) {
-  @apply bg-blue-500;
+:host([color="primary"]) {
+  @apply bg-primary;
 }
-:host(.pp-badge-secondary) {
-  @apply bg-gray-500;
+:host([color="secondary"]) {
+  @apply bg-secondary;
 }
