@@ -1,6 +1,6 @@
 import { Component, Prop, h, Host, Element } from '@stencil/core';
 // import clsx from 'clsx';
-import { ButtonVariants, ColorVariants, Sizes } from '../../types';
+import { ButtonVariants, ColorVariants, Sizes } from '../types';
 
 @Component({
   tag: 'pp-button',

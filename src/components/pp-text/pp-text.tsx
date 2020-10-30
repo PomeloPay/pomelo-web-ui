@@ -1,5 +1,5 @@
 import { Component, Host, h, Prop } from '@stencil/core';
-import { Sizes } from '../../types';
+import { Sizes } from '../types';
 
 @Component({
   tag: 'pp-text',

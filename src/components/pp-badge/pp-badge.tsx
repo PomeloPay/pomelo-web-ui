@@ -1,5 +1,5 @@
 import { Component, Host, h, Prop } from '@stencil/core';
-import { ColorVariants } from '../../types';
+import { ColorVariants } from '../types';
 
 @Component({
   tag: 'pp-badge',

@@ -1,6 +1,6 @@
 import { Component, h, Prop, Element, Host } from '@stencil/core';
 import clsx from 'clsx';
-import { Sizes } from '../../types';
+import { Sizes } from '../types';
 
 export type AvatarStatus = 'offline' | 'online';
 
