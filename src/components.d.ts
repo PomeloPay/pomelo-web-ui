@@ -39,8 +39,10 @@ export namespace Components {
         "open": boolean;
     }
     interface PpPopper {
+        "closeOnBlur": boolean;
         "open": boolean;
         "options": Options;
+        "portal": HTMLElement | boolean;
         "reference": HTMLElement | string;
     }
     interface PpSpinner {
@@ -192,8 +194,10 @@ declare namespace LocalJSX {
         "open"?: boolean;
     }
     interface PpPopper {
+        "closeOnBlur"?: boolean;
         "open"?: boolean;
         "options"?: Options;
+        "portal"?: HTMLElement | boolean;
         "reference"?: HTMLElement | string;
     }
     interface PpSpinner {

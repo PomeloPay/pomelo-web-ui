@@ -1,5 +1,5 @@
-import { Component, Element, h, State, Prop } from '@stencil/core';
-import { createPopper, Instance, Options, Placement, detectOverflow } from '@popperjs/core';
+import { Component, Element, h, State, Prop, Listen } from '@stencil/core';
+import { createPopper, Instance, Options, Placement } from '@popperjs/core';
 // import {
 //   computeStyles,
 //   popperOffsets,
@@ -9,7 +9,6 @@ import { createPopper, Instance, Options, Placement, detectOverflow } from '@pop
 //   eventListeners,
 //   offset,
 // } from '@popperjs/core/lib/modifiers';
-console.log({ detectOverflow });
 const placement: Placement = 'bottom';
 const strategy = 'fixed';
 const defaultOptions: Options = {
@@ -28,10 +27,23 @@ export class PpPopper {
   @Element() $el: HTMLElement;
   @Prop() open: boolean = false;
   @Prop() options: Options;
-  @State() ready: boolean = false;
+  @Prop() closeOnBlur: boolean = true;
+  @Prop() portal: HTMLElement | boolean = null
+  @State() originalParent: HTMLElement = null;
 
   instance: Instance = null;
   $reference: Element = null;
+
+  @Listen('click', { target: 'window' })
+  handleCloseOnBlur(ev: MouseEvent) {
+    if (!this.closeOnBlur) {
+      return
+    }
+    if (ev.target === this.$reference || this.$el.contains(ev.target as Node)) {
+      return
+    }
+    this.open = false
+  }
 
   create() {
     const finalOptions: Options = {
@@ -50,6 +62,17 @@ export class PpPopper {
     }
   }
 
+  componentWillLoad() {
+    this.originalParent = this.$el.parentElement
+
+    if (typeof this.portal === 'boolean' && this.portal) {
+      this.portal = document.body
+    }
+
+    if (this.portal) {
+      (this.portal as HTMLElement).appendChild(this.$el)
+    }
+  }
   componentDidLoad() {
     if (typeof this.reference === 'string') {
       this.$reference = document.querySelector(this.reference);

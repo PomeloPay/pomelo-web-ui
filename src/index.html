@@ -23,9 +23,20 @@
     </style>
   </head>
   <body>
-    <pp-avatar src="https://i.pinimg.com/originals/c4/c9/cb/c4c9cb80ab686411c5560c94032abd22.jpg"></pp-avatar>
-    <pp-avatar size="lg" src="https://i.pinimg.com/originals/c4/c9/cb/c4c9cb80ab686411c5560c94032abd22.jpg"></pp-avatar>
-    <pp-avatar alt="heath ledger" />
+
+    <pp-text popper-anchor>
+      POPPER
+    </pp-text>
+
+    <div>
+      <pp-popper portal reference="[popper-anchor]">
+        <pp-text>
+
+          taena potana
+        </pp-text>
+      </pp-popper>
+    </div>
+
     <!-- <pp-avatar src="https://i.pinimg.com/originals/c4/c9/cb/c4c9cb80ab686411c5560c94032abd22.jpg" size="sm"></pp-avatar>
     <pp-avatar src="https://i.pinimg.com/originals/c4/c9/cb/c4c9cb80ab686411c5560c94032abd22.jpg" size="lg"></pp-avatar>
 
@@ -157,6 +168,7 @@
 
     <button id="drawer-btn">open drawer</button> -->
     <script>
+      // toaster
       // var toastbtn = document.getElementById("toast-btn");
       // toastbtn.addEventListener('click', function() {
       //   const $toast = document.querySelector('pp-toast')
@@ -164,6 +176,7 @@
       //   $toast.toggleAttribute('open')
       // });
 
+      // drawer
       // var $drawerBtn = document.getElementById("drawer-btn");
       // const $drawer = document.querySelector('pp-drawer')
 
@@ -174,6 +187,8 @@
       // $drawerBtn.addEventListener('click', toggleDrawer);
       // $drawer.addEventListener('backdropClick', toggleDrawer);
 
+
+      // popper
       const anchor = document.querySelector('[popper-anchor]')
       const popper = document.querySelector('pp-popper')
 

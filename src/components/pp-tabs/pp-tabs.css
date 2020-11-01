@@ -20,7 +20,7 @@
     width: 102%;
     margin-top: theme('spacing.1');
     height: 3px;
-    background-color: var(--color-secondary);
+    background-color: var(--pp-color-secondary, theme('backgroundColor.primary'));
     visibility: hidden;
   }
 }
