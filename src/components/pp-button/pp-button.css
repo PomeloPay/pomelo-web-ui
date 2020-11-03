@@ -18,10 +18,7 @@ button {
   background: var(--background);
   padding: var(--padding);
   transform: var(--transform);
-  width: inherit;
-  height: inherit;
-  max-width: inherit;
-  max-height: inherit;
+  all: inherit;
   @apply transition-all;
 }
 
