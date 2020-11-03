@@ -18,7 +18,7 @@ export class PpButton {
   render() {
     return (
       <Host>
-        <button>
+        <button part="pp-button">
           <slot></slot>
         </button>
       </Host>
