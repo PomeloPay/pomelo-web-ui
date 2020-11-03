@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                                                             | Default |
-| -------- | --------- | ----------- | ---------------------------------------------------------------- | ------- |
-| `size`   | `size`    |             | `"2xl" \| "2xs" \| "3xl" \| "l" \| "md" \| "sm" \| "xl" \| "xs"` | `'md'`  |
+| Property | Attribute | Description | Type                                                              | Default |
+| -------- | --------- | ----------- | ----------------------------------------------------------------- | ------- |
+| `size`   | `size`    |             | `"2xl" \| "2xs" \| "3xl" \| "lg" \| "md" \| "sm" \| "xl" \| "xs"` | `'md'`  |
 
 
 ## Dependencies

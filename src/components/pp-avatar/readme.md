@@ -7,12 +7,12 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                                                             | Default    |
-| -------- | --------- | ----------- | ---------------------------------------------------------------- | ---------- |
-| `alt`    | `alt`     |             | `string`                                                         | `''`       |
-| `size`   | `size`    |             | `"2xl" \| "2xs" \| "3xl" \| "l" \| "md" \| "sm" \| "xl" \| "xs"` | `"md"`     |
-| `src`    | `src`     |             | `string`                                                         | `''`       |
-| `status` | `status`  |             | `"offline" \| "online"`                                          | `'online'` |
+| Property | Attribute | Description | Type                                                              | Default    |
+| -------- | --------- | ----------- | ----------------------------------------------------------------- | ---------- |
+| `alt`    | `alt`     |             | `string`                                                          | `''`       |
+| `size`   | `size`    |             | `"2xl" \| "2xs" \| "3xl" \| "lg" \| "md" \| "sm" \| "xl" \| "xs"` | `"md"`     |
+| `src`    | `src`     |             | `string`                                                          | `''`       |
+| `status` | `status`  |             | `"offline" \| "online"`                                           | `'online'` |
 
 
 ## Dependencies

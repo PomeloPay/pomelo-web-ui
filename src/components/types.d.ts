@@ -7,7 +7,7 @@ export type Sizes =
   'xs' |
   'sm' |
   'md' |
-  'l' |
+  'lg' |
   'xl' |
   '2xl' |
   '3xl'
