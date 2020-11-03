@@ -14,6 +14,13 @@
 | `variant` | `variant` |             | `"contained" \| "outline" \| "text"`                              | `'text'` |
 
 
+## Shadow Parts
+
+| Part          | Description |
+| ------------- | ----------- |
+| `"pp-button"` |             |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
