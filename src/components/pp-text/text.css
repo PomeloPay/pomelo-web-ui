@@ -1,6 +1,9 @@
 @custom-selector :--text-size-xs [size="xs"];
 @custom-selector :--text-size-s [size="sm"];
-@custom-selector :--text-size-m [size="m"];
-@custom-selector :--text-size-l [size="l"];
+@custom-selector :--text-size-m [size="md"];
+@custom-selector :--text-size-l [size="lg"];
 @custom-selector :--text-size-xl [size="xl"];
 @custom-selector :--text-size-2xl [size="2xl"];
+@custom-selector :--text-size-3xl [size="3xl"];
+@custom-selector :--text-size-4xl [size="4xl"];
+@custom-selector :--text-size-5xl [size="5xl"];
