@@ -9,8 +9,8 @@ import { ButtonVariants, ColorVariants, Sizes } from '../types';
 })
 export class PpButton {
   @Prop({ attribute: 'variant', reflect: true }) variant: ButtonVariants = 'text';
-  @Prop({ attribute: 'color', reflect: true }) color: ColorVariants | string = '';
-  @Prop({ attribute: 'size', reflect: true }) size: Sizes = 'md';
+  @Prop({ attribute: 'color', reflect: true }) color: ColorVariants;
+  @Prop({ attribute: 'size', reflect: true }) size: Sizes;
 
   @Element() $el: HTMLElement
 
