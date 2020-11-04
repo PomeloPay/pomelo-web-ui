@@ -21,7 +21,7 @@ export namespace Components {
         "color": ColorVariants;
     }
     interface PpButton {
-        "color": ColorVariants | string;
+        "color": ColorVariants;
         "size": Sizes;
         "variant": ButtonVariants;
     }
@@ -175,7 +175,7 @@ declare namespace LocalJSX {
         "color"?: ColorVariants;
     }
     interface PpButton {
-        "color"?: ColorVariants | string;
+        "color"?: ColorVariants;
         "size"?: Sizes;
         "variant"?: ButtonVariants;
     }
