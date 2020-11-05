@@ -11,6 +11,8 @@ const contentSelector = '.pp-drawer-content';
 })
 export class PpDrawer {
   @Prop({ reflect: true }) open: boolean = false;
+  @Event({ eventName: 'modalOpen'}) modalOpen: EventEmitter
+  @Event({ eventName: 'modalClose'}) modalClose: EventEmitter
 
   @Event({ eventName: 'backdropClick' }) backdropClick: EventEmitter;
   @Prop({ reflect: false }) attachCloseAction: boolean = false;
@@ -22,7 +24,9 @@ export class PpDrawer {
     const targetContent = this.$el.querySelector(contentSelector);
     const easing = 'linear';
     const duration = 300;
+
     if (newOpenVal) {
+      this.modalOpen.emit(this.$el)
       animejs({
         targets: targetContent,
         opacity: [0, 1],
@@ -31,6 +35,8 @@ export class PpDrawer {
         duration,
       });
     } else {
+      this.modalClose.emit(this.$el)
+
       animejs({
         targets: targetContent,
         opacity: [1, 0],

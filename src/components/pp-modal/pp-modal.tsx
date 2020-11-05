@@ -10,7 +10,6 @@ export class Modal {
   @Prop({ reflect: true }) open: boolean = false;
   @Prop({ reflect: false }) attachCloseAction: boolean = false;
   @Element() $el: HTMLElement;
-  // @Event({ eventName: 'tabChange'}) tabChange: EventEmitter;
   @Event({ eventName: 'modalOpen'}) modalOpen: EventEmitter
   @Event({ eventName: 'modalClose'}) modalClose: EventEmitter
 
