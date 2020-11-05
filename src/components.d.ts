@@ -185,6 +185,8 @@ declare namespace LocalJSX {
     interface PpDrawer {
         "attachCloseAction"?: boolean;
         "onBackdropClick"?: (event: CustomEvent<any>) => void;
+        "onModalClose"?: (event: CustomEvent<any>) => void;
+        "onModalOpen"?: (event: CustomEvent<any>) => void;
         "open"?: boolean;
     }
     interface PpIconButton {

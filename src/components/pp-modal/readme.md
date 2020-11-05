@@ -13,6 +13,14 @@
 | `open`              | `open`                |             | `boolean` | `false` |
 
 
+## Events
+
+| Event        | Description | Type               |
+| ------------ | ----------- | ------------------ |
+| `modalClose` |             | `CustomEvent<any>` |
+| `modalOpen`  |             | `CustomEvent<any>` |
+
+
 ## Shadow Parts
 
 | Part                | Description |

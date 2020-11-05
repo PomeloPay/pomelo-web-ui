@@ -18,6 +18,8 @@
 | Event           | Description | Type               |
 | --------------- | ----------- | ------------------ |
 | `backdropClick` |             | `CustomEvent<any>` |
+| `modalClose`    |             | `CustomEvent<any>` |
+| `modalOpen`     |             | `CustomEvent<any>` |
 
 
 ## Shadow Parts
