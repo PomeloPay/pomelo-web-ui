@@ -191,6 +191,8 @@ declare namespace LocalJSX {
     }
     interface PpModal {
         "attachCloseAction"?: boolean;
+        "onModalClose"?: (event: CustomEvent<any>) => void;
+        "onModalOpen"?: (event: CustomEvent<any>) => void;
         "open"?: boolean;
     }
     interface PpPopper {

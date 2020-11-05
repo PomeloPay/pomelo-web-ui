@@ -1,4 +1,4 @@
-import { Component, Host, Prop, State, Element, h } from '@stencil/core';
+import { Component, Host, Prop, State, Element, h, Event, EventEmitter, Watch } from '@stencil/core';
 
 @Component({
   tag: 'pp-modal',
@@ -10,7 +10,9 @@ export class Modal {
   @Prop({ reflect: true }) open: boolean = false;
   @Prop({ reflect: false }) attachCloseAction: boolean = false;
   @Element() $el: HTMLElement;
-
+  // @Event({ eventName: 'tabChange'}) tabChange: EventEmitter;
+  @Event({ eventName: 'modalOpen'}) modalOpen: EventEmitter
+  @Event({ eventName: 'modalClose'}) modalClose: EventEmitter
 
   componentDidLoad() {
     if (this.attachCloseAction) {
@@ -24,6 +26,16 @@ export class Modal {
   disconnectedCallback() {
     if (this.$closeEl) {
       this.$closeEl = null;
+    }
+  }
+
+  @Watch('open')
+  watchOpenHandler(openVal) {
+    console.log(openVal)
+    if (openVal) {
+      this.modalOpen.emit(this.$el)
+    } else {
+      this.modalClose.emit(this.$el)
     }
   }
 
