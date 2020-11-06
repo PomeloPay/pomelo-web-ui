@@ -10,8 +10,8 @@ export class Modal {
   @Prop({ reflect: true }) open: boolean = false;
   @Prop({ reflect: false }) attachCloseAction: boolean = false;
   @Element() $el: HTMLElement;
-  @Event({ eventName: 'modalOpen'}) modalOpen: EventEmitter
-  @Event({ eventName: 'modalClose'}) modalClose: EventEmitter
+  @Event({ eventName: 'modalOpen' }) modalOpen: EventEmitter;
+  @Event({ eventName: 'modalClose' }) modalClose: EventEmitter;
 
   componentDidLoad() {
     if (this.attachCloseAction) {
@@ -30,11 +30,11 @@ export class Modal {
 
   @Watch('open')
   watchOpenHandler(openVal) {
-    console.log(openVal)
+    console.log(openVal);
     if (openVal) {
-      this.modalOpen.emit(this.$el)
+      this.modalOpen.emit(this.$el);
     } else {
-      this.modalClose.emit(this.$el)
+      this.modalClose.emit(this.$el);
     }
   }
 
@@ -46,10 +46,13 @@ export class Modal {
     return (
       <Host>
         <pp-card exportparts="pp-card">
+          <pp-button disabled size="md" variant="contained" color="primary">
+            tae
+          </pp-button>
           <div part="pp-modal-dialog">
             <slot name="pp-modal-header" />
-            <slot name="pp-modal-body"/>
-            <slot name="pp-modal-footer"/>
+            <slot name="pp-modal-body" />
+            <slot name="pp-modal-footer" />
           </div>
         </pp-card>
       </Host>

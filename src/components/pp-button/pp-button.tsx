@@ -19,7 +19,7 @@ export class PpButton implements JSXBase.ButtonHTMLAttributes<HTMLButtonElement>
   render() {
     return (
       <Host>
-        <button part="pp-button">
+        <button part="pp-button" disabled={this.disabled}>
           <slot></slot>
         </button>
       </Host>

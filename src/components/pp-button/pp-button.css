@@ -17,6 +17,10 @@ button {
   padding: var(--padding);
   transform: var(--transform);
   @apply transition-all;
+
+  &:disabled {
+    cursor: auto;
+  }
 }
 
 /* sizes */
