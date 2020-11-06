@@ -12,7 +12,3 @@ export type Sizes =
   '2xl' |
   '3xl'
 
-
-export interface IPpElement {
-  [key: string]: any
-}
