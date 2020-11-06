@@ -46,9 +46,6 @@ export class Modal {
     return (
       <Host>
         <pp-card exportparts="pp-card">
-          <pp-button disabled size="md" variant="contained" color="primary">
-            tae
-          </pp-button>
           <div part="pp-modal-dialog">
             <slot name="pp-modal-header" />
             <slot name="pp-modal-body" />

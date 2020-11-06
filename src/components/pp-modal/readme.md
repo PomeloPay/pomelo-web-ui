@@ -33,11 +33,13 @@
 ### Depends on
 
 - [pp-card](../pp-card)
+- [pp-button](../pp-button)
 
 ### Graph
 ```mermaid
 graph TD;
   pp-modal --> pp-card
+  pp-modal --> pp-button
   style pp-modal fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
