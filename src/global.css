@@ -7,9 +7,13 @@
 
 
 :root {
+  /* colors */
   --pp-color-primary: #16cd88;
   --pp-color-secondary: #141d36;
   --pp-border-color: transparent;
+
+  --pp-color-primary-tint: color-mod(var(--pp-color-primary) tint(10%));
+  --pp-color-secondary-tint: color-mod(var(--pp-color-secondary) tint(10%));
 
   /* fonts */
   --pp-font-size: theme('fontSize.base');

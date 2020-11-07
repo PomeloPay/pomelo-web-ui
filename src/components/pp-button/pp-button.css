@@ -60,7 +60,7 @@ button {
 }
 
 :host([variant="contained"][color="primary"]:hover) {
-  --background: color-mod(theme('colors.primary') b(+10%));
+  --background: var(--pp-color-primary-tint, theme('colors.primary'));
 }
 
 :host([variant="contained"][disabled]) {
@@ -80,6 +80,10 @@ button {
   --color: color-mod(theme('colors.secondary') l(100%));
 }
 
+:host([variant="contained"][color="secondary"]:hover) {
+  --background: var(--pp-color-secondary-tint, theme('colors.secondary'));
+}
+
 /* contained */
 /* :host([variant="contained"][color="tertiary"]) {
   --background: theme('colors.tertiary');
@@ -94,14 +98,14 @@ button {
   --border: 1px solid theme('colors.primary');
 }
 :host([variant="outline"][color="primary"]:hover) {
-  --background: color-mod(theme('colors.primary') l(90%) a(50%));
+  --background: var(--pp-color-primary-tint, theme('colors.primary'));
 }
 
 :host([variant="outline"][color="secondary"]) {
   --border: 1px solid theme('colors.secondary');
 }
 :host([variant="outline"][color="secondary"]:hover) {
-  --background: color-mod(theme('colors.secondary') l(90%) a(50%));
+  --background: var(--pp-color-secondary-tint, theme('colors.secondary'));
 }
 
 
