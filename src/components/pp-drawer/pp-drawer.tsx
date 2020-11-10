@@ -1,4 +1,4 @@
-import { Component, h, Prop, EventEmitter, Event, Element, Watch } from '@stencil/core';
+import { Component, h, Prop, State, EventEmitter, Event, Element, Watch } from '@stencil/core';
 import clsx from 'clsx';
 import animejs from 'animejs';
 
@@ -17,7 +17,16 @@ export class PpDrawer {
   @Event({ eventName: 'backdropClick' }) backdropClick: EventEmitter;
   @Prop({ reflect: false }) attachCloseAction: boolean = false;
   @Element() $el: HTMLElement;
-  componentDidLoad() {}
+  @State() $closeEl: HTMLElement;
+
+  componentDidLoad() {
+    if (this.attachCloseAction) {
+      this.$closeEl = this.$el.querySelector('.pp-modal-close');
+      this.$closeEl.addEventListener('click', () => {
+        this.$el.removeAttribute('open');
+      });
+    }
+  }
 
   @Watch('open')
   handleOpenProp(newOpenVal: boolean) {
