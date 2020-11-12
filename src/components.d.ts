@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { ButtonVariants, ColorVariants, Sizes } from "./components/types";
+import { ButtonVariants, ColorVariants, IInputNumberOptions, Sizes } from "./components/types";
 import { AvatarStatus } from "./components/pp-avatar/pp-avatar";
 import { Options } from "@popperjs/core";
 export namespace Components {
@@ -35,6 +35,13 @@ export namespace Components {
     }
     interface PpIconButton {
     }
+    interface PpInputNumber {
+        "name"?: string;
+        "numeralDecimalScale"?: number;
+        "options": IInputNumberOptions;
+        "prefixValue"?: string;
+        "value": string;
+    }
     interface PpModal {
         "attachCloseAction": boolean;
         "open": boolean;
@@ -45,6 +52,9 @@ export namespace Components {
         "options": Options;
         "portal": HTMLElement | boolean;
         "reference": HTMLElement | string;
+    }
+    interface PpSandbox {
+        "val": string;
     }
     interface PpSpinner {
     }
@@ -104,6 +114,12 @@ declare global {
         prototype: HTMLPpIconButtonElement;
         new (): HTMLPpIconButtonElement;
     };
+    interface HTMLPpInputNumberElement extends Components.PpInputNumber, HTMLStencilElement {
+    }
+    var HTMLPpInputNumberElement: {
+        prototype: HTMLPpInputNumberElement;
+        new (): HTMLPpInputNumberElement;
+    };
     interface HTMLPpModalElement extends Components.PpModal, HTMLStencilElement {
     }
     var HTMLPpModalElement: {
@@ -115,6 +131,12 @@ declare global {
     var HTMLPpPopperElement: {
         prototype: HTMLPpPopperElement;
         new (): HTMLPpPopperElement;
+    };
+    interface HTMLPpSandboxElement extends Components.PpSandbox, HTMLStencilElement {
+    }
+    var HTMLPpSandboxElement: {
+        prototype: HTMLPpSandboxElement;
+        new (): HTMLPpSandboxElement;
     };
     interface HTMLPpSpinnerElement extends Components.PpSpinner, HTMLStencilElement {
     }
@@ -154,8 +176,10 @@ declare global {
         "pp-card": HTMLPpCardElement;
         "pp-drawer": HTMLPpDrawerElement;
         "pp-icon-button": HTMLPpIconButtonElement;
+        "pp-input-number": HTMLPpInputNumberElement;
         "pp-modal": HTMLPpModalElement;
         "pp-popper": HTMLPpPopperElement;
+        "pp-sandbox": HTMLPpSandboxElement;
         "pp-spinner": HTMLPpSpinnerElement;
         "pp-tabs": HTMLPpTabsElement;
         "pp-text": HTMLPpTextElement;
@@ -193,6 +217,14 @@ declare namespace LocalJSX {
     }
     interface PpIconButton {
     }
+    interface PpInputNumber {
+        "name"?: string;
+        "numeralDecimalScale"?: number;
+        "onInputNumberChange"?: (event: CustomEvent<any>) => void;
+        "options"?: IInputNumberOptions;
+        "prefixValue"?: string;
+        "value"?: string;
+    }
     interface PpModal {
         "attachCloseAction"?: boolean;
         "onModalClose"?: (event: CustomEvent<any>) => void;
@@ -205,6 +237,9 @@ declare namespace LocalJSX {
         "options"?: Options;
         "portal"?: HTMLElement | boolean;
         "reference"?: HTMLElement | string;
+    }
+    interface PpSandbox {
+        "val"?: string;
     }
     interface PpSpinner {
     }
@@ -230,8 +265,10 @@ declare namespace LocalJSX {
         "pp-card": PpCard;
         "pp-drawer": PpDrawer;
         "pp-icon-button": PpIconButton;
+        "pp-input-number": PpInputNumber;
         "pp-modal": PpModal;
         "pp-popper": PpPopper;
+        "pp-sandbox": PpSandbox;
         "pp-spinner": PpSpinner;
         "pp-tabs": PpTabs;
         "pp-text": PpText;
@@ -250,8 +287,10 @@ declare module "@stencil/core" {
             "pp-card": LocalJSX.PpCard & JSXBase.HTMLAttributes<HTMLPpCardElement>;
             "pp-drawer": LocalJSX.PpDrawer & JSXBase.HTMLAttributes<HTMLPpDrawerElement>;
             "pp-icon-button": LocalJSX.PpIconButton & JSXBase.HTMLAttributes<HTMLPpIconButtonElement>;
+            "pp-input-number": LocalJSX.PpInputNumber & JSXBase.HTMLAttributes<HTMLPpInputNumberElement>;
             "pp-modal": LocalJSX.PpModal & JSXBase.HTMLAttributes<HTMLPpModalElement>;
             "pp-popper": LocalJSX.PpPopper & JSXBase.HTMLAttributes<HTMLPpPopperElement>;
+            "pp-sandbox": LocalJSX.PpSandbox & JSXBase.HTMLAttributes<HTMLPpSandboxElement>;
             "pp-spinner": LocalJSX.PpSpinner & JSXBase.HTMLAttributes<HTMLPpSpinnerElement>;
             "pp-tabs": LocalJSX.PpTabs & JSXBase.HTMLAttributes<HTMLPpTabsElement>;
             "pp-text": LocalJSX.PpText & JSXBase.HTMLAttributes<HTMLPpTextElement>;
