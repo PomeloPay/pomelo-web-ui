@@ -19,6 +19,8 @@ export class PpInputNumber {
   @Prop() name?: string
   @Prop() prefixValue?: string = ''
   @Prop() numeralDecimalScale?: number
+  @Prop() autoFocus?: boolean
+  @Prop() focusIndex?: number
   @Event({ eventName: 'inputNumberChange' }) inputNumberChange: EventEmitter;
 
   @Prop() options: IInputNumberOptions
@@ -63,7 +65,7 @@ export class PpInputNumber {
   render() {
     return (
       <Host>
-        <input part="pp-input-number" type="text" value={this.value} />
+        <input tabindex={this.focusIndex} part="pp-input-number" autofocus={this.autoFocus} type="text" value={this.value} />
       </Host>
     )
   }

@@ -9,6 +9,8 @@
 
 | Property              | Attribute               | Description | Type                  | Default     |
 | --------------------- | ----------------------- | ----------- | --------------------- | ----------- |
+| `autoFocus`           | `auto-focus`            |             | `boolean`             | `undefined` |
+| `focusIndex`          | `focus-index`           |             | `number`              | `undefined` |
 | `name`                | `name`                  |             | `string`              | `undefined` |
 | `numeralDecimalScale` | `numeral-decimal-scale` |             | `number`              | `undefined` |
 | `options`             | --                      |             | `IInputNumberOptions` | `undefined` |

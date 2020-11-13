@@ -36,6 +36,8 @@ export namespace Components {
     interface PpIconButton {
     }
     interface PpInputNumber {
+        "autoFocus"?: boolean;
+        "focusIndex"?: number;
         "name"?: string;
         "numeralDecimalScale"?: number;
         "options": IInputNumberOptions;
@@ -218,6 +220,8 @@ declare namespace LocalJSX {
     interface PpIconButton {
     }
     interface PpInputNumber {
+        "autoFocus"?: boolean;
+        "focusIndex"?: number;
         "name"?: string;
         "numeralDecimalScale"?: number;
         "onInputNumberChange"?: (event: CustomEvent<any>) => void;
