@@ -27,20 +27,14 @@
     </style>
   </head>
   <body>
-    <div style="width: 400px; padding-left: 100px;">
-      <div>
-        tae
-      </div>
-      <!-- <div class="text-5xl">
-        <pp-sandbox></pp-sandbox>
-      </div> -->
-
-      tae2
-      <div class="text-5xl">
-        <pp-input-number auto-focus options="{prefix: '@'}"></pp-input-number>
-      </div>
-
-    </div>
+    <pp-tabs>
+      <pp-text slot="pp-tab" class="pp-tab pp-active">
+        Tab 1
+      </pp-text>
+      <pp-text slot="pp-tab" class="pp-tab">
+        Tab 2
+      </pp-text>
+    </pp-tabs>
     <!-- <pp-avatar src="https://i.pinimg.com/originals/c4/c9/cb/c4c9cb80ab686411c5560c94032abd22.jpg" size="sm"></pp-avatar>
     <pp-avatar src="https://i.pinimg.com/originals/c4/c9/cb/c4c9cb80ab686411c5560c94032abd22.jpg" size="lg"></pp-avatar>
 
@@ -121,14 +115,7 @@
 
     <br />
     <br />
-    <pp-tabs>
-      <span slot="pp-tab" class="pp-tab pp-prose pp-font-body pp-prose-sm pp-active">
-        Tab 1
-      </span>
-      <span slot="pp-tab" class="pp-tab pp-prose pp-font-body pp-prose-sm">
-        Tab 2
-      </span>
-    </pp-tabs>
+
 
     <br />
     <p popper-anchor class="pp-prose pp-prose-lg">

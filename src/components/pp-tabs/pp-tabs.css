@@ -2,6 +2,7 @@
   list-style: none;
   display: flex;
   align-items: baseline;
+  --color-selected: var(--pp-color-tab-bar-selected, currentColor);
 }
 
 ::slotted(.pp-tab) {
@@ -20,7 +21,7 @@
     width: 102%;
     margin-top: theme('spacing.1');
     height: 3px;
-    background-color: var(--pp-color-secondary, theme('backgroundColor.primary'));
+    background-color: var(--color-selected);
     visibility: hidden;
   }
 }
