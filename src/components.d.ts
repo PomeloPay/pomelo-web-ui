@@ -34,7 +34,6 @@ export namespace Components {
         "open": boolean;
     }
     interface PpFab {
-        "color": ColorVariants;
     }
     interface PpIconButton {
     }
@@ -228,7 +227,6 @@ declare namespace LocalJSX {
         "open"?: boolean;
     }
     interface PpFab {
-        "color"?: ColorVariants;
     }
     interface PpIconButton {
     }
