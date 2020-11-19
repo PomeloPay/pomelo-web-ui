@@ -1,0 +1,8 @@
+:host {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: 2.3em;
+  width: 2.3em;
+  @apply shadow-lg rounded-full;
+}

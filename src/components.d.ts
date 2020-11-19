@@ -33,6 +33,9 @@ export namespace Components {
         "attachCloseAction": boolean;
         "open": boolean;
     }
+    interface PpFab {
+        "color": ColorVariants;
+    }
     interface PpIconButton {
     }
     interface PpInputNumber {
@@ -110,6 +113,12 @@ declare global {
         prototype: HTMLPpDrawerElement;
         new (): HTMLPpDrawerElement;
     };
+    interface HTMLPpFabElement extends Components.PpFab, HTMLStencilElement {
+    }
+    var HTMLPpFabElement: {
+        prototype: HTMLPpFabElement;
+        new (): HTMLPpFabElement;
+    };
     interface HTMLPpIconButtonElement extends Components.PpIconButton, HTMLStencilElement {
     }
     var HTMLPpIconButtonElement: {
@@ -177,6 +186,7 @@ declare global {
         "pp-button": HTMLPpButtonElement;
         "pp-card": HTMLPpCardElement;
         "pp-drawer": HTMLPpDrawerElement;
+        "pp-fab": HTMLPpFabElement;
         "pp-icon-button": HTMLPpIconButtonElement;
         "pp-input-number": HTMLPpInputNumberElement;
         "pp-modal": HTMLPpModalElement;
@@ -216,6 +226,9 @@ declare namespace LocalJSX {
         "onModalClose"?: (event: CustomEvent<any>) => void;
         "onModalOpen"?: (event: CustomEvent<any>) => void;
         "open"?: boolean;
+    }
+    interface PpFab {
+        "color"?: ColorVariants;
     }
     interface PpIconButton {
     }
@@ -268,6 +281,7 @@ declare namespace LocalJSX {
         "pp-button": PpButton;
         "pp-card": PpCard;
         "pp-drawer": PpDrawer;
+        "pp-fab": PpFab;
         "pp-icon-button": PpIconButton;
         "pp-input-number": PpInputNumber;
         "pp-modal": PpModal;
@@ -290,6 +304,7 @@ declare module "@stencil/core" {
             "pp-button": LocalJSX.PpButton & JSXBase.HTMLAttributes<HTMLPpButtonElement>;
             "pp-card": LocalJSX.PpCard & JSXBase.HTMLAttributes<HTMLPpCardElement>;
             "pp-drawer": LocalJSX.PpDrawer & JSXBase.HTMLAttributes<HTMLPpDrawerElement>;
+            "pp-fab": LocalJSX.PpFab & JSXBase.HTMLAttributes<HTMLPpFabElement>;
             "pp-icon-button": LocalJSX.PpIconButton & JSXBase.HTMLAttributes<HTMLPpIconButtonElement>;
             "pp-input-number": LocalJSX.PpInputNumber & JSXBase.HTMLAttributes<HTMLPpInputNumberElement>;
             "pp-modal": LocalJSX.PpModal & JSXBase.HTMLAttributes<HTMLPpModalElement>;
