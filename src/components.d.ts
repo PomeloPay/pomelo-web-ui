@@ -27,7 +27,6 @@ export namespace Components {
         "variant": ButtonVariants;
     }
     interface PpCard {
-        "class": string;
     }
     interface PpDrawer {
         "attachCloseAction": boolean;
@@ -48,6 +47,7 @@ export namespace Components {
     }
     interface PpModal {
         "attachCloseAction": boolean;
+        "gutter"?: boolean;
         "open": boolean;
     }
     interface PpPopper {
@@ -217,7 +217,6 @@ declare namespace LocalJSX {
         "variant"?: ButtonVariants;
     }
     interface PpCard {
-        "class"?: string;
     }
     interface PpDrawer {
         "attachCloseAction"?: boolean;
@@ -242,6 +241,7 @@ declare namespace LocalJSX {
     }
     interface PpModal {
         "attachCloseAction"?: boolean;
+        "gutter"?: boolean;
         "onModalClose"?: (event: CustomEvent<any>) => void;
         "onModalOpen"?: (event: CustomEvent<any>) => void;
         "open"?: boolean;

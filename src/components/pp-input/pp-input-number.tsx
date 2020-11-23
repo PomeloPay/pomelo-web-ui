@@ -43,8 +43,6 @@ export class PpInputNumber {
       finalOptions = JSON.parse(finalOptions)
     }
 
-    console.log(finalOptions, this.options)
-
     const options = {
       ...defaultOptions,
       onValueChanged: this.handleChange,

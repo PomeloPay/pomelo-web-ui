@@ -1,17 +1,15 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, h, Host } from '@stencil/core';
 
 @Component({
   tag: 'pp-card',
   styleUrl: 'pp-card.css',
-  shadow: true,
 })
 export class PpCard {
-  @Prop() class: string = ''
   render() {
     return (
-      <div part="pp-card" class={this.class}>
+      <Host>
         <slot></slot>
-      </div>
+      </Host>
     );
   }
 

@@ -27,7 +27,29 @@
     </style>
   </head>
   <body>
-    <pp-tabs>
+
+    <button onclick="document.querySelector('pp-modal').setAttribute('open', '')">
+      open modal
+    </button>
+
+    <pp-modal attach-close-action>
+      <section slot="pp-modal-content" class="pp-modal-body">
+        Modal content
+      </section>
+    </pp-modal>
+
+    <pp-card>
+      <p class="pp-card-title">
+        The Coldest Sunset
+      </p>
+
+      <div class="pp-card-body">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+      </div>
+    </pp-card>
+
+
+    <!-- <pp-tabs>
       <pp-text slot="pp-tab" class="pp-tab pp-active">
         Tab 1
       </pp-text>
@@ -38,7 +60,7 @@
 
     <pp-fab class="justify-center">
       <i class="fas fa-info"></i>
-    </pp-fab>
+    </pp-fab> -->
     <!-- <pp-avatar src="https://i.pinimg.com/originals/c4/c9/cb/c4c9cb80ab686411c5560c94032abd22.jpg" size="sm"></pp-avatar>
     <pp-avatar src="https://i.pinimg.com/originals/c4/c9/cb/c4c9cb80ab686411c5560c94032abd22.jpg" size="lg"></pp-avatar>
 
@@ -191,9 +213,9 @@
       //   popper.toggleAttribute('open')
       // })
 
-      const modal = document.querySelector('pp-modal').addEventListener('modalOpen', (v) => {
-        console.log('tae', v)
-      })
+      // const modal = document.querySelector('pp-modal').addEventListener('modalOpen', (v) => {
+      //   console.log('tae', v)
+      // })
     </script>
   </body>
 </html>
