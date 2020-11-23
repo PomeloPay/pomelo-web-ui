@@ -7,10 +7,11 @@
 
 ## Properties
 
-| Property            | Attribute             | Description | Type      | Default |
-| ------------------- | --------------------- | ----------- | --------- | ------- |
-| `attachCloseAction` | `attach-close-action` |             | `boolean` | `false` |
-| `open`              | `open`                |             | `boolean` | `false` |
+| Property            | Attribute             | Description | Type      | Default     |
+| ------------------- | --------------------- | ----------- | --------- | ----------- |
+| `attachCloseAction` | `attach-close-action` |             | `boolean` | `false`     |
+| `gutter`            | `gutter`              |             | `boolean` | `undefined` |
+| `open`              | `open`                |             | `boolean` | `false`     |
 
 
 ## Events
@@ -19,13 +20,6 @@
 | ------------ | ----------- | ------------------ |
 | `modalClose` |             | `CustomEvent<any>` |
 | `modalOpen`  |             | `CustomEvent<any>` |
-
-
-## Shadow Parts
-
-| Part                | Description |
-| ------------------- | ----------- |
-| `"pp-modal-dialog"` |             |
 
 
 ## Dependencies

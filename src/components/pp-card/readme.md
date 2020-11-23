@@ -5,20 +5,6 @@
 <!-- Auto Generated Below -->
 
 
-## Properties
-
-| Property | Attribute | Description | Type     | Default |
-| -------- | --------- | ----------- | -------- | ------- |
-| `class`  | `class`   |             | `string` | `''`    |
-
-
-## Shadow Parts
-
-| Part        | Description |
-| ----------- | ----------- |
-| `"pp-card"` |             |
-
-
 ## Dependencies
 
 ### Used by
