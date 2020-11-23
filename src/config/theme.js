@@ -31,6 +31,10 @@ module.exports = {
     },
   },
   extend: {
+    screens: {
+      '2xs': '320px',
+      xs: '480px'
+    },
     fontFamily: {
       sans: ['Nunito Sans', ...defaultTheme.fontFamily.sans],
       body: 'Montserrat'
