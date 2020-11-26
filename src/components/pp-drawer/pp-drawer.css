@@ -43,5 +43,5 @@ div {
   right: 0;
   border: 1px solid #d3d3d3;
   background-color: white;
-  z-index: 1200;
+  @apply z-30;
 }
