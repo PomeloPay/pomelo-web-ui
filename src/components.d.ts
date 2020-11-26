@@ -49,6 +49,7 @@ export namespace Components {
         "attachCloseAction": boolean;
         "gutter"?: boolean;
         "open": boolean;
+        "portal": HTMLElement | boolean;
     }
     interface PpPopper {
         "closeOnBlur": boolean;
@@ -242,9 +243,12 @@ declare namespace LocalJSX {
     interface PpModal {
         "attachCloseAction"?: boolean;
         "gutter"?: boolean;
+        "onBackdropClick"?: (event: CustomEvent<any>) => void;
         "onModalClose"?: (event: CustomEvent<any>) => void;
+        "onModalLoad"?: (event: CustomEvent<any>) => void;
         "onModalOpen"?: (event: CustomEvent<any>) => void;
         "open"?: boolean;
+        "portal"?: HTMLElement | boolean;
     }
     interface PpPopper {
         "closeOnBlur"?: boolean;

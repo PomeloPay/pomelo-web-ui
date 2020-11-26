@@ -28,14 +28,22 @@
   </head>
   <body>
 
-    <button onclick="document.querySelector('pp-modal').setAttribute('open', '')">
+    <button onclick="document.querySelector('pp-modal').toggleAttribute('open')">
       open modal
     </button>
 
-    <pp-modal attach-close-action>
+    <pp-modal on-backdrop-click="document.querySelector('pp-modal').toggleAttribute('open')" portal attach-close-action>
       <section slot="pp-modal-content" class="pp-modal-body">
         Modal content
+
+        <button onclick="document.querySelector('pp-modal').toggleAttribute('open')">
+          close
+        </button>
       </section>
+
+      <div slot="pp-modal-backdrop">
+
+      </div>
     </pp-modal>
 
     <pp-card>
@@ -213,9 +221,9 @@
       //   popper.toggleAttribute('open')
       // })
 
-      // const modal = document.querySelector('pp-modal').addEventListener('modalOpen', (v) => {
-      //   console.log('tae', v)
-      // })
+      const modal = document.querySelector('pp-modal').addEventListener('backdropClick', (v) => {
+        console.log('tae', v)
+      })
     </script>
   </body>
 </html>

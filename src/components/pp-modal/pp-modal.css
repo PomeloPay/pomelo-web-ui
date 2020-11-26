@@ -13,8 +13,7 @@ pp-modal {
   display: none;
   opacity: 0;
   transition: all 0.35s ease-in;
-  @apply bg-black bg-opacity-75 z-30;
-
+  @apply z-30;
   &[open] {
     display: flex;
     opacity: 1;
@@ -33,7 +32,19 @@ pp-modal > pp-card {
   display: none;
   height: 100vh;
   width: 100vw;
+  z-index: 32;
   @apply bg-white rounded-none;
+}
+
+/* stylelint-disable-next-line selector-type-no-unknown */
+pp-modal > .pp-modal-backdrop {
+  @apply bg-black bg-opacity-75;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 31;
 }
 
 @media screen and (width > theme('screens.xs')) {
