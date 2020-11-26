@@ -5,9 +5,9 @@ section {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1100;
   visibility: hidden;
   transition: all 500ms;
+  @apply z-30;
 }
 
 section.pp-open {
