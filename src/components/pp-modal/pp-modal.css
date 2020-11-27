@@ -63,7 +63,7 @@ pp-modal > .pp-modal-backdrop {
 
 /* stylelint-disable-next-line selector-type-no-unknown */
 pp-modal .pp-modal-body {
-  @apply py-4 px-6 h-40;
+  @apply py-4 px-6;
 }
 /* stylelint-disable-next-line selector-type-no-unknown */
 pp-modal .pp-modal-title {
