@@ -18,8 +18,10 @@
   &::after {
     content: '';
     display: block;
-    width: 102%;
-    margin-top: theme('spacing.1');
+    width: calc(100% + 12px);
+    margin-top: theme('spacing.3');
+    position: relative;
+    left: -5px;
     height: 3px;
     background-color: var(--color-selected);
     visibility: hidden;
