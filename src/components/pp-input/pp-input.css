@@ -1,14 +1,24 @@
 @layer components {
   .pp-input {
-    @apply shadow
-      appearance-none
-      border
-      border-gray-500
-      rounded w-full py-2 px-3 text-gray-700 leading-tight
-    ;
+    @apply
+      border border-gray-500 rounded outline-none inline-block
+
+      font-semibold font-sans text-black
+
+      leading-tight
+      py-3 px-4;
 
     &:focus {
-      @apply outline-none shadow-outline;
+      @apply border-primary;
     }
   }
+
+  .pp-input.pp-error {
+    @apply border-red-600;
+
+    &:focus {
+      @apply  border-red-600;
+    }
+  }
+
 }

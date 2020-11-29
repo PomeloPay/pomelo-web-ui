@@ -45,10 +45,12 @@ module.exports = {
         50: '#fbfbfb',
         100: '#f5f5f5',
         200: '#e9e9e9',
+        210: '#dedede',
         300: '#c8c8c8',
         500: '#909090',
         600: '#484848',
         700: '#242524',
+        710: '#858585',
         800: '#9b9b9b'
       },
       green: {
@@ -101,6 +103,10 @@ module.exports = {
       primary: 'var(--pp-color-primary)',
       secondary: 'var(--pp-color-secondary)',
       tertiary: 'var(--pp-color-tertiary, transparent)',
+    },
+    width: {
+      '110': '28rem',
+      '120': '32rem'
     },
     spacing: {
       ...defaultTheme.spacing,
