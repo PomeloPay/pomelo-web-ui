@@ -3,10 +3,10 @@
   @apply rounded relative px-3 py-4 text-center;
 }
 
-:host(.pp-alert-primary) {
-  background-color: var(--color-primary);
+:host([color="primary"]) {
+  background-color: var(--pp-color-primary);
 }
 
-:host(.pp-alert-secondary) {
-  @apply bg-yellow-500;
+:host([color="secondary"]) {
+  background-color: var(--pp-color-secondary);
 }

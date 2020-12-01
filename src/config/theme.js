@@ -79,7 +79,16 @@ module.exports = {
       },
       yellow: {
         ...defaultTheme.colors.yellow,
+        50: '#fef8e1',
+        100: '#fdecb4',
+        200: '#fbe084',
+        300: '#fad553',
+        400: '#faca2f',
+        500: '#f9c118',
         600: '#f9b311',
+        700: '#f9a10d',
+        800: '#f9900a',
+        900: '#f87206',
       },
       red: {
         ...defaultTheme.colors.red,
