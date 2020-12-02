@@ -5,10 +5,8 @@ import { Component, Host, Prop, State, Element, h, Event, EventEmitter, Watch } 
   styleUrl: 'pp-modal.css'
 })
 export class Modal {
-  @State() $closeEl: HTMLElement = null;
   @Prop({ reflect: true }) open: boolean = false;
-  @Prop({ reflect: false }) attachCloseAction: boolean = false;
-  @Prop() gutter?: boolean
+  @Prop() lockScroll?: boolean = false
   @Element() $el: HTMLElement;
   @Event({ eventName: 'modalOpen' }) modalOpen: EventEmitter;
   @Event({ eventName: 'modalClose' }) modalClose: EventEmitter;
@@ -18,14 +16,35 @@ export class Modal {
   @State() originalParent: HTMLElement = null;
 
 
-  componentDidLoad() {
-    this.$closeEl = this.$el.querySelector('.pp-modal-close');
-    if (this.attachCloseAction && this.$closeEl) {
-      this.$closeEl.addEventListener('click', () => {
-        this.open = false
-      });
-    }
+  private backdrop: HTMLElement = null
 
+  handleBackdropClick = (e) => {
+    this.backdropClick.emit(e)
+  }
+
+  configureBackdrop() {
+    this.backdrop = document.createElement('div')
+    this.backdrop.setAttribute('class', 'pp-modal-backdrop hidden')
+    if (this.open) {
+      this.backdrop.classList.remove('hidden')
+    }
+    this.$el.insertAdjacentElement('beforebegin', this.backdrop)
+    this.backdrop.addEventListener('click', this.handleBackdropClick)
+  }
+
+  connectedCallback() {
+    this.configureBackdrop()
+  }
+
+  componentDidLoad() {
+    if (this.lockScroll) {
+      document.body.classList.add('pp-modal-lock-scroll')
+    }
+  }
+
+  disconnectedCallback() {
+    this.backdrop.removeEventListener('click', this.handleBackdropClick)
+    this.backdrop.parentNode.removeChild(this.backdrop)
   }
 
   componentWillLoad() {
@@ -49,8 +68,17 @@ export class Modal {
   @Watch('open')
   watchOpenHandler(openVal) {
     if (openVal) {
+      if (this.lockScroll) {
+        document.body.classList.add('pp-modal-lock-scroll')
+      }
+      this.backdrop.classList.remove('hidden')
       this.modalOpen.emit(this.$el);
     } else {
+      if (this.lockScroll) {
+        document.body.classList.remove('pp-modal-lock-scroll')
+      }
+      this.backdrop.classList.add('hidden')
+
       this.modalClose.emit(this.$el);
     }
   }
@@ -58,15 +86,10 @@ export class Modal {
   render() {
     return (
       <Host>
-        <pp-card>
-          <slot name="pp-modal-header" />
-          <slot name="pp-modal-body" />
-          <slot name="pp-modal-footer" />
-          <slot name="pp-modal-content" />
-        </pp-card>
-        <div onClick={(e) => {
-          this.backdropClick.emit(e)
-        }} class="pp-modal-backdrop"></div>
+        <slot name="pp-modal-header" />
+        <slot name="pp-modal-body" />
+        <slot name="pp-modal-footer" />
+        <slot name="pp-modal-content" />
       </Host>
     );
   }

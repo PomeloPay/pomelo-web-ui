@@ -2,69 +2,80 @@
 /* stylelint-disable-next-line selector-type-no-unknown */
 pp-modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  align-items: center;
-  justify-content: center;
-
+  height: 100%;
+  width: 100%;
   cursor: pointer;
   display: none;
   opacity: 0;
-  transition: all 0.35s ease-in;
-  @apply z-40;
-  &[open] {
-    display: flex;
-    opacity: 1;
-  }
-  /* stylelint-disable-next-line selector-type-no-unknown */
-  &[open] > pp-card {
-    display: block;
-  }
-}
-
-/* stylelint-disable-next-line selector-type-no-unknown */
-pp-modal > pp-card {
-  position: relative;
-  overflow: auto;
-  cursor: default;
-  display: none;
-  height: 100vh;
-  width: 100vw;
-  z-index: 42;
-  @apply bg-white rounded-none;
-}
-
-/* stylelint-disable-next-line selector-type-no-unknown */
-pp-modal > .pp-modal-backdrop {
-  height: 100%;
-  width: 100%;
-  position: absolute;
   top: 0;
   left: 0;
-  z-index: 41;
-  @apply bg-black bg-opacity-75 cursor-auto;
+  @apply z-40 transition-all duration-75 ease-in bg-white;
+  &[open] {
+    display: block;
+    opacity: 1;
+  }
 }
+
 
 @media screen and (width > theme('screens.xs')) {
   /* stylelint-disable-next-line selector-type-no-unknown */
-  pp-modal > pp-card {
-    max-width: 800px;
-    max-height: 80vh;
-    min-width: 300px;
+  pp-modal {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    max-height: 100%;
     height: auto;
     width: auto;
-    min-height: 200px;
     @apply shadow-none rounded-md;
   }
 }
 
+@media screen and (width > theme('screens.xs')) and (max-height: 500px) {
+    /* stylelint-disable-next-line selector-type-no-unknown */
+    pp-modal {
+      left: 50%;
+      top: 0;
+      position: absolute;
+      max-height: none;
+      transform: translate(-50%, 0);
+    }
+}
+
+/* @media screen and (height <= ) */
+
+/* stylelint-disable-next-line selector-type-no-unknown */
+.pp-modal-backdrop {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  inset: 0;
+  @apply bg-black bg-opacity-75 cursor-auto;
+}
+
+.pp-modal-lock-scroll {
+  overflow: hidden;
+}
+
+
 
 /* stylelint-disable-next-line selector-type-no-unknown */
 pp-modal .pp-modal-body {
+  width: auto;
   @apply py-4 px-6;
 }
+
+@media screen and (width > theme('screens.xs')) {
+/* stylelint-disable-next-line selector-type-no-unknown */
+  pp-modal .pp-modal-body {
+    width: 470px;
+  }
+}
+
+
 /* stylelint-disable-next-line selector-type-no-unknown */
 pp-modal .pp-modal-title {
   @apply font-bold text-xl mb-2;
