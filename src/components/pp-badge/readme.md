@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                                     | Default     |
-| -------- | --------- | ----------- | ---------------------------------------- | ----------- |
-| `color`  | `color`   |             | `"primary" \| "secondary" \| "tertiary"` | `'primary'` |
+| Property | Attribute | Description | Type                                                             | Default     |
+| -------- | --------- | ----------- | ---------------------------------------------------------------- | ----------- |
+| `color`  | `color`   |             | `"error" \| "primary" \| "secondary" \| "success" \| "tertiary"` | `'primary'` |
 
 
 ----------------------------------------------
