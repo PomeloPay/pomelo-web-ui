@@ -1,8 +1,8 @@
 export type ButtonVariants = 'text' | 'outline' | 'contained';
 
-export type ColorVariants = 'primary' | 'secondary' | 'tertiary';
+export type ColorVariants = 'primary' | 'secondary' | 'tertiary' | 'error' | 'success';
 
-export type Sizes = '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl';
+export type Sizes = '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
 
 export interface IInputNumberOptions {
   numeral?: boolean;
