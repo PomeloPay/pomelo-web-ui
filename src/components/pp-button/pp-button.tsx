@@ -1,4 +1,4 @@
-import { Component, Prop, h, Host, Element } from '@stencil/core';
+import { Component, Prop, h, Host } from '@stencil/core';
 import { JSXBase } from '@stencil/core/internal';
 // import clsx from 'clsx';
 import { ButtonVariants, ColorVariants, Sizes } from '../types';
@@ -13,8 +13,6 @@ export class PpButton implements JSXBase.ButtonHTMLAttributes<HTMLButtonElement>
   @Prop({ attribute: 'color', reflect: true }) color: ColorVariants;
   @Prop({ attribute: 'size', reflect: true }) size: Sizes;
   @Prop({ reflect: true }) disabled: boolean;
-  @Element() $el: HTMLElement
-
 
   render() {
     return (

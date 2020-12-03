@@ -10,12 +10,12 @@ button {
   appearance: none;
   outline: 0;
   cursor: pointer;
-  color: var(--color);
-  border: var(--border);
+  color: var(--color, inherit);
+  border: var(--border, inherit);
   border-radius: var(--border-radius, 0);
-  background: var(--background);
-  padding: var(--padding);
-  transform: var(--transform);
+  background: var(--background, inherit);
+  padding: var(--padding, inherit);
+  transform: var(--transform, inherit);
   @apply transition-all;
 
   &:disabled {
@@ -54,6 +54,7 @@ button {
 :host([variant="contained"]) {
   --border : none;
 }
+
 :host([variant="contained"][color="primary"]) {
   --background: theme('colors.primary');
   --color: color-mod(theme('colors.primary') l(100%));
@@ -74,7 +75,6 @@ button {
   --background: theme('colors.gray.500');
 }
 
-
 :host([variant="contained"][color="secondary"]) {
   --background: theme('colors.secondary');
   --color: color-mod(theme('colors.secondary') l(100%));
@@ -83,22 +83,30 @@ button {
 :host([variant="contained"][color="secondary"]:hover) {
   --background: var(--pp-color-secondary-tint, theme('colors.secondary'));
 }
+:host([variant="contained"][color="error"]) {
+  --background: theme('colors.red.600');
+  --color: color-mod(theme('colors.red.600') l(100%));
+}
 
-/* contained */
-/* :host([variant="contained"][color="tertiary"]) {
-  --background: theme('colors.tertiary');
-  --color: color-mod(theme('colors.tertiary') l(100%));
-} */
+:host([variant="contained"][color="error"]:hover) {
+  --background: var(--pp-color-error-tint, theme('colors.red.600'));
+}
 
 :host([variant="outline"]) {
   --background: transparent;
-  --color: theme('colors.black');
+  --color: initial;
 }
 :host([variant="outline"][color="primary"]) {
   --border: 1px solid theme('colors.primary');
 }
 :host([variant="outline"][color="primary"]:hover) {
   --background: var(--pp-color-primary-tint, theme('colors.primary'));
+}
+:host([variant="outline"][color="error"]) {
+  --border: 1px solid theme('colors.red.600');
+}
+:host([variant="outline"][color="error"]:hover) {
+  --background: var(--pp-color-error-tint, theme('colors.red.600'));
 }
 
 :host([variant="outline"][color="secondary"]) {
@@ -107,7 +115,6 @@ button {
 :host([variant="outline"][color="secondary"]:hover) {
   --background: var(--pp-color-secondary-tint, theme('colors.secondary'));
 }
-
 
 :host([variant="outline"][disabled]) {
   --border: 1px solid theme('colors.gray.500');
@@ -124,6 +131,9 @@ button {
 :host([variant="text"][color="secondary"]) {
   --color: theme('colors.secondary');
 }
+:host([variant="text"][color="error"]) {
+  --color: theme('colors.red.600');
+}
 
 :host([variant="text"][disabled]) {
   --color: theme('colors.gray.500');
@@ -131,6 +141,8 @@ button {
 :host([variant="text"][disabled]:active) {
   --transform: none;
 }
+
+
 
 
 

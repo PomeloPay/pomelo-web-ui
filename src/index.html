@@ -27,47 +27,20 @@
     </style>
   </head>
   <body>
-    <button onclick="document.querySelector('pp-modal').toggleAttribute('open')">
-      open modal
-    </button>
-    <button onclick="document.querySelector('pp-modal#modal2').toggleAttribute('open')">
-      open modal 2
-    </button>
-
-    <pp-modal id="modal1" on-backdrop-click="document.getElementById('#modal1').toggleAttribute('open')" portal attach-close-action>
-      <section slot="pp-modal-content" class="pp-modal-body">
-        Modal content
-
-        <button onclick="document.querySelector('pp-modal').toggleAttribute('open')">
-          close
-        </button>
-
-        <pp-text size="xl">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-
-        </pp-text>
-        <pp-button class="w-full text-center mt-6" size="md" variant="contained" color="primary">
-          Continue to essemm
-        </pp-button>
-      </section>
-    </pp-modal>
-    <pp-modal id="modal2" on-backdrop-click="document.getElementById('modal2').toggleAttribute('open')" portal attach-close-action>
-      <section slot="pp-modal-content" class="pp-modal-body">
-        Modal content
-
-        <button onclick="document.querySelector('#modal2').toggleAttribute('open')">
-          close
-        </button>
-
-        <pp-text size="xl">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-
-        </pp-text>
-        <pp-button class="w-full text-center mt-6" size="md" variant="contained" color="primary">
-          Continue to essemm
-        </pp-button>
-      </section>
-    </pp-modal>
+    <pp-button
+      variant="outline"
+      color="primary"
+      size="md"
+    >
+      Test tngina
+    </pp-button>
+    <pp-button
+      variant="contained"
+      color="error"
+      size="md"
+    >
+      Test tngina
+    </pp-button>
     <!-- <button onclick="document.querySelector('pp-modal').toggleAttribute('open')">
       open modal
     </button>
