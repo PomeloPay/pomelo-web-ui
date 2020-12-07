@@ -10,6 +10,7 @@
 | Property            | Attribute             | Description | Type      | Default |
 | ------------------- | --------------------- | ----------- | --------- | ------- |
 | `attachCloseAction` | `attach-close-action` |             | `boolean` | `false` |
+| `lockScroll`        | `lock-scroll`         |             | `boolean` | `false` |
 | `open`              | `open`                |             | `boolean` | `false` |
 
 

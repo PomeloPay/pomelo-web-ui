@@ -20,6 +20,10 @@ export class PpTabs {
     })
   }
 
+  componentDidLoad() {
+
+  }
+
   handleTabClick = (e) => {
     const { target } = e;
     this.$tabs.forEach(($tabEl) => {

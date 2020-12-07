@@ -13,6 +13,7 @@ export class PpDrawer {
   @Prop({ reflect: true }) open: boolean = false;
   @Event({ eventName: 'modalOpen'}) modalOpen: EventEmitter
   @Event({ eventName: 'modalClose'}) modalClose: EventEmitter
+  @Prop() lockScroll?: boolean = false
 
   @Event({ eventName: 'backdropClick' }) backdropClick: EventEmitter;
   @Prop({ reflect: false }) attachCloseAction: boolean = false;
@@ -35,6 +36,9 @@ export class PpDrawer {
     const duration = 300;
 
     if (newOpenVal) {
+      if (this.lockScroll) {
+        document.body.classList.add('pp-modal-lock-scroll')
+      }
       this.modalOpen.emit(this.$el)
       animejs({
         targets: targetContent,
@@ -45,7 +49,9 @@ export class PpDrawer {
       });
     } else {
       this.modalClose.emit(this.$el)
-
+      if (this.lockScroll) {
+        document.body.classList.remove('pp-modal-lock-scroll')
+      }
       animejs({
         targets: targetContent,
         opacity: [1, 0],

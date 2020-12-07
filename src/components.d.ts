@@ -30,6 +30,7 @@ export namespace Components {
     }
     interface PpDrawer {
         "attachCloseAction": boolean;
+        "lockScroll"?: boolean;
         "open": boolean;
     }
     interface PpFab {
@@ -220,6 +221,7 @@ declare namespace LocalJSX {
     }
     interface PpDrawer {
         "attachCloseAction"?: boolean;
+        "lockScroll"?: boolean;
         "onBackdropClick"?: (event: CustomEvent<any>) => void;
         "onModalClose"?: (event: CustomEvent<any>) => void;
         "onModalOpen"?: (event: CustomEvent<any>) => void;

@@ -36,12 +36,6 @@ export class Modal {
     this.configureBackdrop()
   }
 
-  componentDidLoad() {
-    if (this.lockScroll) {
-      document.body.classList.add('pp-modal-lock-scroll')
-    }
-  }
-
   disconnectedCallback() {
     this.backdrop.removeEventListener('click', this.handleBackdropClick)
     this.backdrop.parentNode.removeChild(this.backdrop)

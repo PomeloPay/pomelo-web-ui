@@ -27,20 +27,23 @@
     </style>
   </head>
   <body>
-    <pp-button
-      variant="outline"
-      color="primary"
-      size="md"
-    >
-      Test tngina
-    </pp-button>
-    <pp-button
-      variant="contained"
-      color="error"
-      size="md"
-    >
-      Test tngina
-    </pp-button>
+    <button onclick="document.querySelector('pp-modal').toggleAttribute('open')">
+      open modal
+    </button>
+
+    <pp-modal lock-scroll on-backdrop-click="document.querySelector('pp-modal').toggleAttribute('open')" portal attach-close-action>
+      <section slot="pp-modal-content" class="pp-modal-body">
+        Modal content
+
+        <button onclick="document.querySelector('pp-modal').toggleAttribute('open')">
+          close
+        </button>
+      </section>
+
+      <div slot="pp-modal-backdrop">
+
+      </div>
+    </pp-modal>
     <!-- <button onclick="document.querySelector('pp-modal').toggleAttribute('open')">
       open modal
     </button>
