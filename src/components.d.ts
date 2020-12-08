@@ -69,8 +69,10 @@ export namespace Components {
         "size": Sizes;
     }
     interface PpToast {
+        "height": string;
         "open": boolean;
         "position": string;
+        "width": string;
     }
     interface PpToggle {
         "on": boolean;
@@ -269,8 +271,10 @@ declare namespace LocalJSX {
         "size"?: Sizes;
     }
     interface PpToast {
+        "height"?: string;
         "open"?: boolean;
         "position"?: string;
+        "width"?: string;
     }
     interface PpToggle {
         "on"?: boolean;

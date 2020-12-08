@@ -1,5 +1,7 @@
-import { Component, h, Prop, State, Element, Watch } from '@stencil/core';
+import { Component, h, Prop, State, Element, Watch, Host } from '@stencil/core';
 import animejs from 'animejs';
+
+const propStyles = ['height', 'width']
 
 @Component({
   tag: 'pp-toast',
@@ -9,17 +11,35 @@ import animejs from 'animejs';
 export class PpToast {
   @Prop({ reflect: true }) open: boolean = false;
   @Prop({ reflect: true }) position: string = 'bottom';
-
+  @Prop() height: string
+  @Prop() width: string
   @State() ready: boolean = false;
   @State() $closeEl: HTMLElement = null;
   @Element() $el: HTMLElement;
 
   componentDidLoad() {
     this.ready = true;
+    const defaultStyles = document.createElement('style')
+    const styles = [];
+    console.log(this)
+    propStyles.forEach((s) => {
+      if (this[s]) {
+        console.log(this[s])
+        styles.push(`${s}: ${String(this[s]).replace(/;/g, '')}`)
+      }
+    })
+
+    defaultStyles.innerHTML = `
+      :host {
+        ${styles.join(';')}
+      }
+
+    `
+
+    this.$el.shadowRoot.appendChild(defaultStyles)
   }
   componentWillLoad() {
     document.body.appendChild(this.$el);
-    this.$el.style.visibility = 'hidden';
   }
 
   disconnectedCallback() {
@@ -32,33 +52,34 @@ export class PpToast {
   @Watch('open')
   handleOpenProp(newOpenVal: boolean) {
     if (newOpenVal) {
+      this.$el.style.display = 'block'
+
       animejs({
         targets: this.$el,
         opacity: [0, 1],
-        visibility: 'visible',
         easing: 'easeInOutQuad',
       });
-      this.$el.style.visibility = 'visible';
+
+
     } else {
       animejs({
         targets: this.$el,
         opacity: [1, 0],
-        visibility: 'hidden',
         easing: 'easeInOutQuad',
       });
+
       window.setTimeout(() => {
-        this.$el.style.visibility = 'hidden';
-      }, 400);
+        this.$el.style.display = 'none'
+      }, 500)
+
     }
   }
 
   render() {
     return (
-      <section data-position={this.position}>
-        <pp-card exportparts="pp-card">
-          <slot />
-        </pp-card>
-      </section>
+      <Host>
+        <slot />
+      </Host>
     );
   }
 }

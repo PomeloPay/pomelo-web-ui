@@ -27,23 +27,26 @@
     </style>
   </head>
   <body>
-    <button onclick="document.querySelector('pp-modal').toggleAttribute('open')">
-      open modal
-    </button>
+    <div>
+      <button id="toast-btn">open toast</button>
+      <pp-toast height="300px" width="300px" position="bottom">
+        <pp-card>
+          <p class="pp-card-title">
+            The Coldest Sunset
+          </p>
 
-    <pp-modal lock-scroll on-backdrop-click="document.querySelector('pp-modal').toggleAttribute('open')" portal attach-close-action>
-      <section slot="pp-modal-content" class="pp-modal-body">
-        Modal content
+          <div class="pp-card-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+          </div>
+        </pp-card>
+      </pp-toast>
+    </div>
 
-        <button onclick="document.querySelector('pp-modal').toggleAttribute('open')">
-          close
-        </button>
-      </section>
+    <div style="margin-top: 200px;height: 1000px; width: 500px;">
+      taenamo
+      <button>tae</button>
+    </div>
 
-      <div slot="pp-modal-backdrop">
-
-      </div>
-    </pp-modal>
     <!-- <button onclick="document.querySelector('pp-modal').toggleAttribute('open')">
       open modal
     </button>
@@ -210,12 +213,12 @@
     <button id="drawer-btn">open drawer</button> -->
     <script>
       // toaster
-      // var toastbtn = document.getElementById("toast-btn");
-      // toastbtn.addEventListener('click', function() {
-      //   const $toast = document.querySelector('pp-toast')
+      var toastbtn = document.getElementById("toast-btn");
+      toastbtn.addEventListener('click', function() {
+        const $toast = document.querySelector('pp-toast')
 
-      //   $toast.toggleAttribute('open')
-      // });
+        $toast.toggleAttribute('open')
+      });
 
       // drawer
       // var $drawerBtn = document.getElementById("drawer-btn");
