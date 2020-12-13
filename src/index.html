@@ -27,7 +27,69 @@
     </style>
   </head>
   <body>
+
+    <div class="bg-gray-210 flex justify-center p-10">
+
+      <pp-tabs enable-menu="false" class="relative flex items-baseline w-full bg-yellow-50 text-black">
+        <pp-text slot="pp-tab" class="pp-tab pp-active">
+          Verna Tate
+        </pp-text>
+        <pp-text slot="pp-tab" class="pp-tab">
+          Adelaide Clark
+        </pp-text>
+        <pp-text slot="pp-tab" class="pp-tab">
+          Gavin Davidson
+        </pp-text>
+        <pp-text slot="pp-tab" class="pp-tab">
+          Nora Patrick
+        </pp-text>
+        <pp-text slot="pp-tab" class="pp-tab">
+          Blake Schneider
+        </pp-text>
+        <pp-text slot="pp-tab" class="pp-tab">
+          Floyd Ross
+        </pp-text>
+        <pp-text slot="pp-tab" class="pp-tab">
+          Jordan Malone
+        </pp-text>
+        <pp-text slot="pp-tab" class="pp-tab">
+          Viola Hudson
+        </pp-text>
+        <pp-text slot="pp-tab" class="pp-tab">
+          Alta Carter
+        </pp-text>
+        <pp-text slot="pp-tab" class="pp-tab">
+          Roy Norman
+        </pp-text>
+        <pp-text slot="pp-tab" class="pp-tab">
+          Zachary Morales
+        </pp-text>
+        <pp-text slot="pp-tab" class="pp-tab">
+          Ryan McDaniel
+        </pp-text>
+        <pp-text slot="pp-tab" class="pp-tab">
+          Bettie Walton
+
+        </pp-text>
+        <pp-text slot="pp-tab" class="pp-tab">
+          Annie Bush
+        </pp-text>
+
+        <pp-text popper-anchor size="md" slot="pp-tab" class="text-black absolute top-0 right-0">
+          More
+        </pp-text>
+      </pp-tabs>
+
+    </div>
+
+    <pp-popper class="z-10 bg-white" reference="[popper-anchor]">
+      taena potana
+    </pp-popper>
     <div>
+      taena
+    </div>
+    <button>tae</button>
+    <!-- <div>
       <button id="toast-btn">open toast</button>
       <pp-toast height="300px" width="300px" position="bottom">
         <pp-card>
@@ -45,7 +107,7 @@
     <div style="margin-top: 200px;height: 1000px; width: 500px;">
       taenamo
       <button>tae</button>
-    </div>
+    </div> -->
 
     <!-- <button onclick="document.querySelector('pp-modal').toggleAttribute('open')">
       open modal
@@ -75,19 +137,6 @@
       </div>
     </pp-card> -->
 
-
-    <!-- <pp-tabs>
-      <pp-text slot="pp-tab" class="pp-tab pp-active">
-        Tab 1
-      </pp-text>
-      <pp-text slot="pp-tab" class="pp-tab">
-        Tab 2
-      </pp-text>
-    </pp-tabs>
-
-    <pp-fab class="justify-center">
-      <i class="fas fa-info"></i>
-    </pp-fab> -->
     <!-- <pp-avatar src="https://i.pinimg.com/originals/c4/c9/cb/c4c9cb80ab686411c5560c94032abd22.jpg" size="sm"></pp-avatar>
     <pp-avatar src="https://i.pinimg.com/originals/c4/c9/cb/c4c9cb80ab686411c5560c94032abd22.jpg" size="lg"></pp-avatar>
 
@@ -213,12 +262,12 @@
     <button id="drawer-btn">open drawer</button> -->
     <script>
       // toaster
-      var toastbtn = document.getElementById("toast-btn");
-      toastbtn.addEventListener('click', function() {
-        const $toast = document.querySelector('pp-toast')
+      // var toastbtn = document.getElementById("toast-btn");
+      // toastbtn.addEventListener('click', function() {
+      //   const $toast = document.querySelector('pp-toast')
 
-        $toast.toggleAttribute('open')
-      });
+      //   $toast.toggleAttribute('open')
+      // });
 
       // drawer
       // var $drawerBtn = document.getElementById("drawer-btn");
@@ -233,18 +282,24 @@
 
 
       // popper
-      // const anchor = document.querySelector('[popper-anchor]')
-      // const popper = document.querySelector('pp-popper')
+      const anchor = document.querySelector('[popper-anchor]')
+      const popper = document.querySelector('pp-popper')
 
-      // anchor.addEventListener('click', () => {
-      //   popper.toggleAttribute('open')
-      // })
+      anchor.addEventListener('click', () => {
+        popper.toggleAttribute('open')
+      })
 
-        const modal = document.querySelector('pp-modal')
+      const tabs = document.querySelector('pp-tabs')
 
-        modal.addEventListener('backdropClick', (v) => {
-          modal.toggleAttribute('open')
-        })
+      tabs.addEventListener('boundMeasureChange', (e) => {
+        console.log(e.detail)
+      })
+
+        // const modal = document.querySelector('pp-modal')
+
+        // modal.addEventListener('backdropClick', (v) => {
+        //   modal.toggleAttribute('open')
+        // })
     </script>
   </body>
 </html>

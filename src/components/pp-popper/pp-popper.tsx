@@ -1,4 +1,4 @@
-import { Component, Element, h, State, Prop, Listen } from '@stencil/core';
+import { Component, Element, h, State, Prop, Listen, Host } from '@stencil/core';
 import { createPopper, Instance, Options, Placement } from '@popperjs/core';
 // import {
 //   computeStyles,
@@ -25,14 +25,14 @@ const defaultOptions: Options = {
 export class PpPopper {
   @Prop() reference: HTMLElement | string;
   @Element() $el: HTMLElement;
-  @Prop() open: boolean = false;
-  @Prop() options: Options;
+  @Prop({ reflect: true }) open: boolean = false;
+  @Prop() options: Options| string;
   @Prop() closeOnBlur: boolean = true;
   @Prop() portal: HTMLElement | boolean = null
   @State() originalParent: HTMLElement = null;
 
-  instance: Instance = null;
-  $reference: Element = null;
+  private instance: Instance = null;
+  private $reference: HTMLElement = null;
 
   @Listen('click', { target: 'window' })
   handleCloseOnBlur(ev: MouseEvent) {
@@ -46,10 +46,22 @@ export class PpPopper {
   }
 
   create() {
+
+    let options: any = {}
+
+    try {
+      if (typeof options === 'string') {
+        options = JSON.parse(options)
+      } else
+      options = this.options
+    } catch(e) {
+      console.error('invalid options', this.options)
+    }
+
     const finalOptions: Options = {
       ...defaultOptions,
-      ...this.options,
-      modifiers: [...defaultOptions.modifiers, ...(this.options?.modifiers || [])],
+      ...options,
+      modifiers: [...defaultOptions.modifiers, ...(options?.modifiers || [])],
     };
 
     this.instance = createPopper(this.$reference, this.$el, finalOptions);
@@ -75,17 +87,16 @@ export class PpPopper {
   }
   componentDidLoad() {
     if (typeof this.reference === 'string') {
-      this.$reference = document.querySelector(this.reference);
+      this.$reference = document.querySelector(this.reference)
     }
     this.create();
   }
 
   render() {
-    const className = this.open ? 'pp-open' : '';
     return (
-      <section class={className}>
+      <Host>
         <slot></slot>
-      </section>
+      </Host>
     );
   }
 }

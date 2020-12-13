@@ -54,7 +54,7 @@ export namespace Components {
     interface PpPopper {
         "closeOnBlur": boolean;
         "open": boolean;
-        "options": Options;
+        "options": Options| string;
         "portal": HTMLElement | boolean;
         "reference": HTMLElement | string;
     }
@@ -64,6 +64,9 @@ export namespace Components {
     interface PpSpinner {
     }
     interface PpTabs {
+        "enableMenu": boolean;
+        "menuContainerWidth": number;
+        "menuLabel": string;
     }
     interface PpText {
         "size": Sizes;
@@ -255,7 +258,7 @@ declare namespace LocalJSX {
     interface PpPopper {
         "closeOnBlur"?: boolean;
         "open"?: boolean;
-        "options"?: Options;
+        "options"?: Options| string;
         "portal"?: HTMLElement | boolean;
         "reference"?: HTMLElement | string;
     }
@@ -265,6 +268,10 @@ declare namespace LocalJSX {
     interface PpSpinner {
     }
     interface PpTabs {
+        "enableMenu"?: boolean;
+        "menuContainerWidth"?: number;
+        "menuLabel"?: string;
+        "onBoundMeasureChange"?: (event: CustomEvent<any>) => void;
         "onTabChange"?: (event: CustomEvent<any>) => void;
     }
     interface PpText {

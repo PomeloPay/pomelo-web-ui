@@ -1,21 +1,18 @@
 :host {
   list-style: none;
-  display: flex;
-  align-items: baseline;
   --color-selected: var(--pp-color-tab-bar-selected, currentColor);
 }
 
-::slotted(.pp-tab) {
+:host ::slotted(.pp-tab) {
   flex: 0 0 auto;
   box-sizing: border-box;
   cursor: pointer;
   padding-left: theme('spacing.8');
-  max-width: 200px;
   &:first-child {
     padding-left: 0;
   }
 
-  &::after {
+  /* &::after {
     content: '';
     display: block;
     width: calc(100% + 12px);
@@ -25,11 +22,20 @@
     height: 3px;
     background-color: var(--color-selected);
     visibility: hidden;
-  }
+  } */
 }
 
-::slotted(.pp-tab.pp-active) {
+:host([enable-menu]) {
+  overflow: hidden;
+}
+
+:host([enable-menu]) ::slotted(.pp-tab[tab-overflow="true"]) {
+  transform: scale(0);
+}
+
+/* :host ::slotted(.pp-tab.pp-active) {
   &::after {
     visibility: visible;
   }
-}
+} */
+

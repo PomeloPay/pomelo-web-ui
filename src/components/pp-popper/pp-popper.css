@@ -1,8 +1,8 @@
-section {
+:host {
   @apply max-w-sm rounded overflow-hidden shadow-lg p-4;
-  visibility: hidden;
+  clip-path: circle(0);
 }
 
-section.pp-open {
-  visibility: visible;
+:host([open]) {
+  clip-path: none;
 }
