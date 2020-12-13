@@ -1,4 +1,4 @@
-import { Component, Element, h, State, Prop, Listen, Host } from '@stencil/core';
+import { Component, Element, h, State, Prop, Listen, Host, Event, EventEmitter, Watch } from '@stencil/core';
 import { createPopper, Instance, Options, Placement } from '@popperjs/core';
 // import {
 //   computeStyles,
@@ -30,6 +30,8 @@ export class PpPopper {
   @Prop() closeOnBlur: boolean = true;
   @Prop() portal: HTMLElement | boolean = null
   @State() originalParent: HTMLElement = null;
+  @Event() close: EventEmitter
+  @Event() popperShow: EventEmitter
 
   private instance: Instance = null;
   private $reference: HTMLElement = null;
@@ -43,6 +45,7 @@ export class PpPopper {
       return
     }
     this.open = false
+    this.close.emit()
   }
 
   create() {
@@ -71,6 +74,15 @@ export class PpPopper {
     if (this.instance) {
       this.instance.destroy();
       this.instance = null;
+    }
+  }
+
+  @Watch('open')
+  watchOpenHandler(newOpenVal) {
+    if (!newOpenVal) {
+      this.close.emit()
+    } else {
+      this.show.emit()
     }
   }
 

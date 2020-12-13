@@ -16,6 +16,14 @@
 | `reference`   | `reference`     |             | `HTMLElement \| string`                                                                                                                                          | `undefined` |
 
 
+## Events
+
+| Event        | Description | Type               |
+| ------------ | ----------- | ------------------ |
+| `close`      |             | `CustomEvent<any>` |
+| `popperShow` |             | `CustomEvent<any>` |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

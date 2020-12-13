@@ -257,6 +257,8 @@ declare namespace LocalJSX {
     }
     interface PpPopper {
         "closeOnBlur"?: boolean;
+        "onClose"?: (event: CustomEvent<any>) => void;
+        "onPopperShow"?: (event: CustomEvent<any>) => void;
         "open"?: boolean;
         "options"?: Options| string;
         "portal"?: HTMLElement | boolean;
