@@ -82,7 +82,7 @@ export class PpPopper {
     if (!newOpenVal) {
       this.close.emit()
     } else {
-      this.show.emit()
+      this.popperShow.emit()
     }
   }
 
