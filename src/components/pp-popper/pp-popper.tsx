@@ -23,6 +23,7 @@ const defaultOptions: Options = {
   shadow: true,
 })
 export class PpPopper {
+  @Prop() placement: Placement = 'bottom';
   @Prop() reference: HTMLElement | string;
   @Element() $el: HTMLElement;
   @Prop({ reflect: true }) open: boolean = false;
@@ -86,6 +87,11 @@ export class PpPopper {
     }
   }
 
+  @Watch('reference')
+  watchReferenceHandler(newRefVal) {
+    this.configure(newRefVal)
+  }
+
   componentWillLoad() {
     this.originalParent = this.$el.parentElement
 
@@ -97,11 +103,24 @@ export class PpPopper {
       (this.portal as HTMLElement).appendChild(this.$el)
     }
   }
-  componentDidLoad() {
-    if (typeof this.reference === 'string') {
-      this.$reference = document.querySelector(this.reference)
+
+  configure(ref) {
+    if (typeof ref === 'string') {
+      this.$reference = document.querySelector(ref)
     }
+
+    if (ref instanceof HTMLElement) {
+      this.$reference = this.reference as HTMLElement
+    }
+
     this.create();
+
+    window.setTimeout(() => {
+      this.instance.forceUpdate()
+    }, 500)
+  }
+  componentDidLoad() {
+    this.configure(this.reference)
   }
 
   render() {
