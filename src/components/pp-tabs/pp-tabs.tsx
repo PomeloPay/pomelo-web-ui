@@ -3,7 +3,7 @@ import ResizeObserver from 'resize-observer-polyfill';
 import { nanoid } from 'nanoid';
 
 const TAB_ATTR_REF = 'tab-id';
-const TABS_SELECTOR = 'pp-tabs .pp-tab'
+const TABS_SELECTOR = '.pp-tab'
 const TAB_OVERFLOW = 'tab-overflow'
 @Component({
   tag: 'pp-tabs',
@@ -57,40 +57,40 @@ export class PpTabs {
     let totalChildWidth = 0;
     const $children = this.getChildren();
 
-    for (let idx = 0; idx < $children.length; idx += 1) {
-      const $child: HTMLElement = $children[idx];
-      $child.setAttribute(TAB_OVERFLOW, 'false')
+    $children.forEach(($child) => {
       totalChildWidth += Math.floor($child.offsetWidth);
-    }
+    })
 
     const isCollapsible = totalChildWidth > containerWidth;
-
+    let $overflowChildren = []
     // find elem boundary
     if (isCollapsible) {
       for (let idx = 0; idx < $children.length; idx += 1) {
         const $child: HTMLElement = $children[idx];
         overflowWidth += Math.floor($child.offsetWidth);
-
+        $child.setAttribute(TAB_OVERFLOW, 'false')
         if (overflowWidth > containerWidth - this.menuContainerWidth) {
           this.boundChildRef = $child.getAttribute(TAB_ATTR_REF);
           this.boundChild = $child;
           break;
         }
       }
+
+      const lastChildOverflowIdx = $children.findIndex((x: HTMLElement) => x.getAttribute(TAB_ATTR_REF) === this.boundChildRef)
+      $overflowChildren = $children.slice(lastChildOverflowIdx + 1)
+
+      $overflowChildren.forEach(($child: HTMLElement) => {
+        $child.setAttribute(TAB_OVERFLOW, 'true')
+      })
+
     } else {
       this.boundChildRef = null;
       this.boundChild = null;
     }
 
-    const lastChildOverflowIdx = $children.findIndex((x: HTMLElement) => x.getAttribute(TAB_ATTR_REF) === this.boundChildRef)
-    const $overflowChildren = $children.slice(lastChildOverflowIdx + 1)
-
-    $overflowChildren.forEach(($child: HTMLElement) => {
-      $child.setAttribute(TAB_OVERFLOW, 'true')
-    })
-
     this.collapsible = isCollapsible;
     this.boundMeasureChange.emit({
+      containerWidth,
       overflowWidth,
       totalChildWidth,
       boundChildRef: this.boundChildRef,
