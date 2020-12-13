@@ -5,11 +5,21 @@
 <!-- Auto Generated Below -->
 
 
+## Properties
+
+| Property             | Attribute              | Description | Type      | Default  |
+| -------------------- | ---------------------- | ----------- | --------- | -------- |
+| `enableMenu`         | `enable-menu`          |             | `boolean` | `true`   |
+| `menuContainerWidth` | `menu-container-width` |             | `number`  | `300`    |
+| `menuLabel`          | `menu-label`           |             | `string`  | `'More'` |
+
+
 ## Events
 
-| Event       | Description | Type               |
-| ----------- | ----------- | ------------------ |
-| `tabChange` |             | `CustomEvent<any>` |
+| Event                | Description | Type               |
+| -------------------- | ----------- | ------------------ |
+| `boundMeasureChange` |             | `CustomEvent<any>` |
+| `tabChange`          |             | `CustomEvent<any>` |
 
 
 ----------------------------------------------
