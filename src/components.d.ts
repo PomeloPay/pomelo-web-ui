@@ -7,7 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ButtonVariants, ColorVariants, IInputNumberOptions, Sizes } from "./components/types";
 import { AvatarStatus } from "./components/pp-avatar/pp-avatar";
-import { Options, Placement } from "@popperjs/core";
+import { Options } from "@popperjs/core";
 export namespace Components {
     interface PpAlert {
     }
@@ -55,7 +55,7 @@ export namespace Components {
         "closeOnBlur": boolean;
         "open": boolean;
         "options": Options| string;
-        "placement": Placement;
+        "placement": string;
         "portal": HTMLElement | boolean;
         "reference": HTMLElement | string;
     }
@@ -262,7 +262,7 @@ declare namespace LocalJSX {
         "onPopperShow"?: (event: CustomEvent<any>) => void;
         "open"?: boolean;
         "options"?: Options| string;
-        "placement"?: Placement;
+        "placement"?: string;
         "portal"?: HTMLElement | boolean;
         "reference"?: HTMLElement | string;
     }

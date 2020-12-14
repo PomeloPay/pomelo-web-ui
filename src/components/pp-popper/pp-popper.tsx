@@ -23,7 +23,7 @@ const defaultOptions: Options = {
   shadow: true,
 })
 export class PpPopper {
-  @Prop() placement: Placement = 'bottom';
+  @Prop() placement: string = 'bottom';
   @Prop() reference: HTMLElement | string;
   @Element() $el: HTMLElement;
   @Prop({ reflect: true }) open: boolean = false;
@@ -64,6 +64,7 @@ export class PpPopper {
 
     const finalOptions: Options = {
       ...defaultOptions,
+      placement: this.placement,
       ...options,
       modifiers: [...defaultOptions.modifiers, ...(options?.modifiers || [])],
     };

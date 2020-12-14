@@ -7,14 +7,14 @@
 
 ## Properties
 
-| Property      | Attribute       | Description | Type                                                                                                                                                                                                         | Default     |
-| ------------- | --------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------- |
-| `closeOnBlur` | `close-on-blur` |             | `boolean`                                                                                                                                                                                                    | `true`      |
-| `open`        | `open`          |             | `boolean`                                                                                                                                                                                                    | `false`     |
-| `options`     | `options`       |             | `string \| ({ placement: Placement; modifiers: Partial<Modifier<any, any>>[]; strategy: PositioningStrategy; onFirstUpdate?: (arg0: Partial<State>) => void; })`                                             | `undefined` |
-| `placement`   | `placement`     |             | `"auto" \| "auto-end" \| "auto-start" \| "bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'bottom'`  |
-| `portal`      | `portal`        |             | `HTMLElement \| boolean`                                                                                                                                                                                     | `null`      |
-| `reference`   | `reference`     |             | `HTMLElement \| string`                                                                                                                                                                                      | `undefined` |
+| Property      | Attribute       | Description | Type                                                                                                                                                             | Default     |
+| ------------- | --------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| `closeOnBlur` | `close-on-blur` |             | `boolean`                                                                                                                                                        | `true`      |
+| `open`        | `open`          |             | `boolean`                                                                                                                                                        | `false`     |
+| `options`     | `options`       |             | `string \| ({ placement: Placement; modifiers: Partial<Modifier<any, any>>[]; strategy: PositioningStrategy; onFirstUpdate?: (arg0: Partial<State>) => void; })` | `undefined` |
+| `placement`   | `placement`     |             | `string`                                                                                                                                                         | `'bottom'`  |
+| `portal`      | `portal`        |             | `HTMLElement \| boolean`                                                                                                                                         | `null`      |
+| `reference`   | `reference`     |             | `HTMLElement \| string`                                                                                                                                          | `undefined` |
 
 
 ## Events
