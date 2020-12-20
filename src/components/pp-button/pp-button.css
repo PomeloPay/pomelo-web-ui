@@ -20,6 +20,7 @@ button {
 
   &:disabled {
     cursor: auto;
+    pointer-events: none;
   }
 }
 
