@@ -1,6 +1,6 @@
 {
   "name": "pomelopay-web-ui",
-  "version": "0.0.69",
+  "version": "0.0.73",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",

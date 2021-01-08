@@ -58,6 +58,7 @@ export class PpTabs {
     const $children = this.getChildren();
 
     $children.forEach(($child) => {
+      $child.setAttribute(TAB_OVERFLOW, 'false')
       totalChildWidth += Math.floor($child.offsetWidth);
     })
 
