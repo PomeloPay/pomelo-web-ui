@@ -5,6 +5,10 @@
   font-family: var(--pp-font-family);
 }
 
+:host([disabled]) {
+  pointer-events: none;
+}
+
 button {
   all: inherit;
   appearance: none;
