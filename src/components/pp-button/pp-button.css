@@ -65,18 +65,18 @@ button {
 }
 
 :host([variant="contained"][color="primary"]:hover) {
-  --background: var(--pp-color-primary-tint, theme('colors.primary'));
+  --background: var(--pp-color-primary-tint, var(--pp-color-primary));
 }
 
 :host([variant="contained"][disabled]) {
-  --background: theme('colors.gray.500');
+  --background: var(--pp-color-disabled, theme('colors.gray.300'));
   --color: theme('colors.white')
 }
 :host([variant="contained"][disabled]:active) {
   --transform: none;
 }
 :host([variant="contained"][disabled]:hover) {
-  --background: theme('colors.gray.500');
+  --background: var(--pp-color-disabled, theme('colors.gray.300'));
 }
 
 :host([variant="contained"][color="secondary"]) {
@@ -85,7 +85,7 @@ button {
 }
 
 :host([variant="contained"][color="secondary"]:hover) {
-  --background: var(--pp-color-secondary-tint, theme('colors.secondary'));
+  --background: var(--pp-color-secondary-tint, var(--pp-color-secondary));
 }
 :host([variant="contained"][color="error"]) {
   --background: theme('colors.red.600');
@@ -104,7 +104,7 @@ button {
   --border: 1px solid theme('colors.primary');
 }
 :host([variant="outline"][color="primary"]:hover) {
-  --background: var(--pp-color-primary-tint, theme('colors.primary'));
+  --background: var(--pp-color-primary-tint, transparent);
 }
 :host([variant="outline"][color="error"]) {
   --border: 1px solid theme('colors.red.600');
@@ -117,12 +117,12 @@ button {
   --border: 1px solid theme('colors.secondary');
 }
 :host([variant="outline"][color="secondary"]:hover) {
-  --background: var(--pp-color-secondary-tint, theme('colors.secondary'));
+  --background: var(--pp-color-secondary-tint, transparent);
 }
 
 :host([variant="outline"][disabled]) {
-  --border: 1px solid theme('colors.gray.500');
-  --color: theme('colors.gray.500');
+  --border: 1px solid var(--pp-color-disabled, theme('colors.gray.300'));
+  --color: var(--pp-color-disabled, theme('colors.gray.300'));
 }
 
 :host([variant="outline"][disabled]:active) {
@@ -140,7 +140,7 @@ button {
 }
 
 :host([variant="text"][disabled]) {
-  --color: theme('colors.gray.500');
+  --color: var(--pp-color-disabled, theme('colors.gray.300'));
 }
 :host([variant="text"][disabled]:active) {
   --transform: none;
