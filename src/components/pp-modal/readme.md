@@ -9,6 +9,7 @@
 
 | Property     | Attribute     | Description | Type                     | Default |
 | ------------ | ------------- | ----------- | ------------------------ | ------- |
+| `centered`   | `centered`    |             | `boolean`                | `false` |
 | `fit`        | `fit`         |             | `boolean`                | `false` |
 | `lockScroll` | `lock-scroll` |             | `boolean`                | `false` |
 | `open`       | `open`        |             | `boolean`                | `false` |

@@ -14,8 +14,6 @@
 :host([open]) {
   display: block;
   opacity: 1;
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 
 
@@ -39,6 +37,8 @@
 @screen xs {
   :host([open]) {
     display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
   /* stylelint-disable-next-line selector-type-no-unknown */
