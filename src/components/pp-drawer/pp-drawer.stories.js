@@ -12,7 +12,7 @@ const Template = ({ onClick, children }) => {
   const container = document.createElement('div')
   container.innerHTML = `
     <button onclick="document.querySelector('pp-drawer').setAttribute('open', '')">
-      open modal
+      open drawer
     </button>
 
     <pp-drawer attach-close-action="true">

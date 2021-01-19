@@ -9,6 +9,7 @@
 
 | Property     | Attribute     | Description | Type                     | Default |
 | ------------ | ------------- | ----------- | ------------------------ | ------- |
+| `fit`        | `fit`         |             | `boolean`                | `false` |
 | `lockScroll` | `lock-scroll` |             | `boolean`                | `false` |
 | `open`       | `open`        |             | `boolean`                | `false` |
 | `portal`     | `portal`      |             | `HTMLElement \| boolean` | `null`  |

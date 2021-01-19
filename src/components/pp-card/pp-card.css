@@ -1,6 +1,6 @@
 /* stylelint-disable-next-line selector-type-no-unknown */
 pp-card {
-  @apply rounded overflow-hidden shadow-lg block;
+  @apply rounded bg-white overflow-hidden shadow-lg block;
 
 
   @nest & > .pp-card-body {

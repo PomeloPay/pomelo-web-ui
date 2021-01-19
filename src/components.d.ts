@@ -47,6 +47,8 @@ export namespace Components {
         "value": string;
     }
     interface PpModal {
+        "centered": boolean;
+        "fit": boolean;
         "lockScroll"?: boolean;
         "open": boolean;
         "portal": HTMLElement | boolean;
@@ -248,6 +250,8 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface PpModal {
+        "centered"?: boolean;
+        "fit"?: boolean;
         "lockScroll"?: boolean;
         "onBackdropClick"?: (event: CustomEvent<any>) => void;
         "onModalClose"?: (event: CustomEvent<any>) => void;

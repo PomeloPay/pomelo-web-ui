@@ -1,11 +1,15 @@
 import { Component, Host, Prop, State, Element, h, Event, EventEmitter, Watch } from '@stencil/core';
+import ResizeObserver from 'resize-observer-polyfill';
 
 @Component({
   tag: 'pp-modal',
-  styleUrl: 'pp-modal.css'
+  styleUrl: 'pp-modal.css',
+  shadow: true
 })
 export class Modal {
   @Prop({ reflect: true }) open: boolean = false;
+  @Prop({ reflect: true }) centered: boolean = false;
+  @Prop({ reflect: true }) fit: boolean = false;
   @Prop() lockScroll?: boolean = false
   @Element() $el: HTMLElement;
   @Event({ eventName: 'modalOpen' }) modalOpen: EventEmitter;
@@ -24,16 +28,40 @@ export class Modal {
 
   configureBackdrop() {
     this.backdrop = document.createElement('div')
+    this.backdrop.classList.add('pp-backdrop')
+    this.$el.insertAdjacentElement('beforebegin', this.backdrop)
+
     this.backdrop.setAttribute('class', 'pp-modal-backdrop hidden')
     if (this.open) {
       this.backdrop.classList.remove('hidden')
     }
-    this.$el.insertAdjacentElement('beforebegin', this.backdrop)
     this.backdrop.addEventListener('click', this.handleBackdropClick)
+  }
+
+  configureCenterPosition() {
+    if (!this.centered) {
+      return
+    }
+    const $dialog = this.$el.querySelector('[slot="pp-dialog"]')
+    if (!$dialog || !$dialog?.firstChild) {
+      return
+    }
+
+    const rObserver = new ResizeObserver((entries) => {
+      const [$curDialog] = entries;
+      if ($curDialog.contentRect.height > window.innerHeight) {
+        $dialog.classList.remove('pp-modal-centered')
+      } else {
+        $dialog.classList.add('pp-modal-centered')
+      }
+    })
+
+    rObserver.observe($dialog?.firstElementChild)
   }
 
   connectedCallback() {
     this.configureBackdrop()
+    this.configureCenterPosition()
   }
 
   disconnectedCallback() {
@@ -80,10 +108,7 @@ export class Modal {
   render() {
     return (
       <Host>
-        <slot name="pp-modal-header" />
-        <slot name="pp-modal-body" />
-        <slot name="pp-modal-footer" />
-        <slot name="pp-modal-content" />
+        <slot name="pp-dialog" />
       </Host>
     );
   }

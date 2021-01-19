@@ -11,20 +11,35 @@ export default {
 const Template = ({ onClick, children }) => {
   const btnWrapper = document.createElement('div');
   btnWrapper.innerHTML = `
-    <pp-button size="md" color="primary" variant="contained">${children}</pp-button>
-    <pp-button size="md" color="secondary" variant="contained">${children}</pp-button>
-    <pp-button size="md" color="primary" variant="outline">${children}</pp-button>
-    <pp-button size="md" color="secondary" variant="outline">${children}</pp-button>
-    <pp-button>${children}</pp-button>
-    <pp-button size="md" color="primary">${children}</pp-button>
-    <pp-button size="lg" color="primary">${children}</pp-button>
+    <pp-text class="block">
+      Contained
+    </pp-text>
+    <div class="mt-2">
+      <pp-button size="md" color="primary" variant="contained">${children}</pp-button>
+      <pp-button size="md" color="secondary" variant="contained">${children}</pp-button>
+    </div>
+    <pp-text class="block mt-8">
+      Outline
+    </pp-text>
+    <div class="mt-2">
+      <pp-button size="md" color="primary" variant="outline">${children}</pp-button>
+      <pp-button size="md" color="secondary" variant="outline">${children}</pp-button>
+
+    </div>
+    <pp-text class="block mt-8">
+      Button Text
+    </pp-text>
+    <div class="block mt-2">
+      <pp-button>${children}</pp-button>
+
+    </div>
   `
   btnWrapper.addEventListener('click', onClick);
   return btnWrapper;
 };
 
-export const Button = Template.bind({});
-Button.args = {
+export const Variants = Template.bind({});
+Variants.args = {
   children: 'Button',
   onClick: action('onClick'),
 };
@@ -50,6 +65,16 @@ export const TextWithAction = () => {
 TextWithAction.storyName = 'With an action';
 TextWithAction.parameters = { notes: 'My notes on a button with emojis' };
 
+export const ButtonSizes = () => {
+  const btnWrapper = document.createElement('div');
+  btnWrapper.innerHTML = `
+    <pp-button size="sm" color="primary" variant="contained">Small</pp-button>
+    <pp-button size="md" color="primary" variant="contained">Medium</pp-button>
+    <pp-button size="lg" color="primary" variant="contained">Large Button</pp-button>
+    <pp-button size="xl" color="primary" variant="contained">Extra Large Button</pp-button>
+  `
+  return btnWrapper;
+}
 
 export const IconButton = ({ children, onClick }) => {
   const btnWrapper = document.createElement('div');

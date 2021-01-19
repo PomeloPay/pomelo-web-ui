@@ -27,8 +27,41 @@
     </style>
   </head>
   <body>
+    <button onclick="document.querySelector('pp-modal').toggleAttribute('open')">
+      open modal
+    </button>
 
-    <div class="bg-gray-210 flex justify-center p-10">
+      <pp-modal
+        fit
+        centered
+        attach-close-action>
+        <div slot="pp-dialog" class="pp-dialog">
+          <div class="w-full pp-modal-content">
+            <header class="pp-modal-header pp-justify-end bg-white">
+              <button
+                onclick="document.querySelector('pp-modal').toggleAttribute('open')"
+                class="pp-modal-close" aria-label="close modal" data-close>✕</button>
+            </header>
+            <section  class="pp-modal-body bg-white">
+              Modal content
+              Dolor excepteur dolore mollit exercitation mollit fugiat sint ex. Nisi do adipisicing velit Lorem sunt cupidatat qui est sit. Nulla adipisicing minim voluptate do enim velit et. Voluptate fugiat officia duis laboris non cillum do consectetur. Pariatur anim irure non tempor laborum tempor minim eiusmod ullamco sunt deserunt consequat ad. Commodo magna do consectetur consequat.
+              Deserunt aliqua irure non adipisicing occaecat nostrud cupidatat labore quis occaecat laboris. Enim sint mollit duis sunt deserunt ullamco exercitation sunt velit in qui deserunt. Consequat esse deserunt eiusmod aute irure. Aliqua magna sunt irure qui fugiat pariatur adipisicing do labore laboris tempor aute sint sint. Laborum et veniam pariatur consectetur tempor culpa do. Consectetur aute ea officia veniam sint ipsum laborum ea dolor exercitation incididunt officia velit.
+              Deserunt aliqua irure non adipisicing occaecat nostrud cupidatat labore quis occaecat laboris. Enim sint mollit duis sunt deserunt ullamco exercitation sunt velit in qui deserunt. Consequat esse deserunt eiusmod aute irure. Aliqua magna sunt irure qui fugiat pariatur adipisicing do labore laboris tempor aute sint sint. Laborum et veniam pariatur consectetur tempor culpa do. Consectetur aute ea officia veniam sint ipsum laborum ea dolor exercitation incididunt officia velit.
+              Deserunt aliqua irure non adipisicing occaecat nostrud cupidatat labore quis occaecat laboris. Enim sint mollit duis sunt deserunt ullamco exercitation sunt velit in qui deserunt. Consequat esse deserunt eiusmod aute irure. Aliqua magna sunt irure qui fugiat pariatur adipisicing do labore laboris tempor aute sint sint. Laborum et veniam pariatur consectetur tempor culpa do. Consectetur aute ea officia veniam sint ipsum laborum ea dolor exercitation incididunt officia velit.
+              Deserunt aliqua irure non adipisicing occaecat nostrud cupidatat labore quis occaecat laboris. Enim sint mollit duis sunt deserunt ullamco exercitation sunt velit in qui deserunt. Consequat esse deserunt eiusmod aute irure. Aliqua magna sunt irure qui fugiat pariatur adipisicing do labore laboris tempor aute sint sint. Laborum et veniam pariatur consectetur tempor culpa do. Consectetur aute ea officia veniam sint ipsum laborum ea dolor exercitation incididunt officia velit.
+              Deserunt aliqua irure non adipisicing occaecat nostrud cupidatat labore quis occaecat laboris. Enim sint mollit duis sunt deserunt ullamco exercitation sunt velit in qui deserunt. Consequat esse deserunt eiusmod aute irure. Aliqua magna sunt irure qui fugiat pariatur adipisicing do labore laboris tempor aute sint sint. Laborum et veniam pariatur consectetur tempor culpa do. Consectetur aute ea officia veniam sint ipsum laborum ea dolor exercitation incididunt officia velit.
+              Deserunt aliqua irure non adipisicing occaecat nostrud cupidatat labore quis occaecat laboris. Enim sint mollit duis sunt deserunt ullamco exercitation sunt velit in qui deserunt. Consequat esse deserunt eiusmod aute irure. Aliqua magna sunt irure qui fugiat pariatur adipisicing do labore laboris tempor aute sint sint. Laborum et veniam pariatur consectetur tempor culpa do. Consectetur aute ea officia veniam sint ipsum laborum ea dolor exercitation incididunt officia velit.
+              Deserunt aliqua irure non adipisicing occaecat nostrud cupidatat labore quis occaecat laboris. Enim sint mollit duis sunt deserunt ullamco exercitation sunt velit in qui deserunt. Consequat esse deserunt eiusmod aute irure. Aliqua magna sunt irure qui fugiat pariatur adipisicing do labore laboris tempor aute sint sint. Laborum et veniam pariatur consectetur tempor culpa do. Consectetur aute ea officia veniam sint ipsum laborum ea dolor exercitation incididunt officia velit.
+              Deserunt aliqua irure non adipisicing occaecat nostrud cupidatat labore quis occaecat laboris. Enim sint mollit duis sunt deserunt ullamco exercitation sunt velit in qui deserunt. Consequat esse deserunt eiusmod aute irure. Aliqua magna sunt irure qui fugiat pariatur adipisicing do labore laboris tempor aute sint sint. Laborum et veniam pariatur consectetur tempor culpa do. Consectetur aute ea officia veniam sint ipsum laborum ea dolor exercitation incididunt officia velit.
+              Deserunt aliqua irure non adipisicing occaecat nostrud cupidatat labore quis occaecat laboris. Enim sint mollit duis sunt deserunt ullamco exercitation sunt velit in qui deserunt. Consequat esse deserunt eiusmod aute irure. Aliqua magna sunt irure qui fugiat pariatur adipisicing do labore laboris tempor aute sint sint. Laborum et veniam pariatur consectetur tempor culpa do. Consectetur aute ea officia veniam sint ipsum laborum ea dolor exercitation incididunt officia velit.
+              Deserunt aliqua irure non adipisicing occaecat nostrud cupidatat labore quis occaecat laboris. Enim sint mollit duis sunt deserunt ullamco exercitation sunt velit in qui deserunt. Consequat esse deserunt eiusmod aute irure. Aliqua magna sunt irure qui fugiat pariatur adipisicing do labore laboris tempor aute sint sint. Laborum et veniam pariatur consectetur tempor culpa do. Consectetur aute ea officia veniam sint ipsum laborum ea dolor exercitation incididunt officia tae.
+            </section>
+          </div>
+        </div>
+      </pp-modal>
+
+
+    <!-- <div class="bg-gray-210 flex justify-center p-10">
 
       <pp-tabs class="relative flex items-baseline w-full bg-yellow-50 text-black">
         <pp-text slot="pp-tab" class="pp-tab pp-active">
@@ -83,15 +116,15 @@
         </pp-text>
       </pp-tabs>
 
-    </div>
-
+    </div> -->
+<!--
     <pp-popper class="z-10 bg-white" reference="[popper-anchor]">
       taena potana
     </pp-popper>
     <div>
       taena
     </div>
-    <button>tae</button>
+    <button>tae</button> -->
     <!-- <div>
       <button id="toast-btn">open toast</button>
       <pp-toast height="300px" width="300px" position="bottom">
@@ -285,18 +318,18 @@
 
 
       // popper
-      const anchor = document.querySelector('[popper-anchor]')
-      const popper = document.querySelector('pp-popper')
+      // const anchor = document.querySelector('[popper-anchor]')
+      // const popper = document.querySelector('pp-popper')
 
-      anchor.addEventListener('click', () => {
-        popper.toggleAttribute('open')
-      })
+      // anchor.addEventListener('click', () => {
+      //   popper.toggleAttribute('open')
+      // })
 
-      const tabs = document.querySelector('pp-tabs')
+      // const tabs = document.querySelector('pp-tabs')
 
-      tabs.addEventListener('boundMeasureChange', (e) => {
-        console.log(e.detail)
-      })
+      // tabs.addEventListener('boundMeasureChange', (e) => {
+      //   console.log(e.detail)
+      // })
 
         // const modal = document.querySelector('pp-modal')
 
