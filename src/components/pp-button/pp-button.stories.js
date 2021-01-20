@@ -11,14 +11,14 @@ export default {
 const Template = ({ onClick, children }) => {
   const btnWrapper = document.createElement('div');
   btnWrapper.innerHTML = `
-    <pp-text class="block">
+    <pp-text class="block text-gray-500">
       Contained
     </pp-text>
     <div class="mt-2">
       <pp-button size="md" color="primary" variant="contained">${children}</pp-button>
       <pp-button size="md" color="secondary" variant="contained">${children}</pp-button>
     </div>
-    <pp-text class="block mt-8">
+    <pp-text class="block mt-8 text-gray-500"">
       Outline
     </pp-text>
     <div class="mt-2">
@@ -26,7 +26,7 @@ const Template = ({ onClick, children }) => {
       <pp-button size="md" color="secondary" variant="outline">${children}</pp-button>
 
     </div>
-    <pp-text class="block mt-8">
+    <pp-text class="block mt-8 text-gray-500"">
       Button Text
     </pp-text>
     <div class="block mt-2">

@@ -103,21 +103,13 @@ button {
 :host([variant="outline"][color="primary"]) {
   --border: 1px solid theme('colors.primary');
 }
-:host([variant="outline"][color="primary"]:hover) {
-  --background: var(--pp-color-primary-tint, transparent);
-}
+
 :host([variant="outline"][color="error"]) {
   --border: 1px solid theme('colors.red.600');
-}
-:host([variant="outline"][color="error"]:hover) {
-  --background: var(--pp-color-error-tint, theme('colors.red.600'));
 }
 
 :host([variant="outline"][color="secondary"]) {
   --border: 1px solid theme('colors.secondary');
-}
-:host([variant="outline"][color="secondary"]:hover) {
-  --background: var(--pp-color-secondary-tint, transparent);
 }
 
 :host([variant="outline"][disabled]) {

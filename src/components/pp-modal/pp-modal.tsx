@@ -1,6 +1,12 @@
 import { Component, Host, Prop, State, Element, h, Event, EventEmitter, Watch } from '@stencil/core';
 import ResizeObserver from 'resize-observer-polyfill';
 
+const shadowStyleScrollableY = (v = 'auto') => `
+  :host([open]) {
+    overflow-y: ${v};
+  }
+`
+
 @Component({
   tag: 'pp-modal',
   styleUrl: 'pp-modal.css',
@@ -22,8 +28,35 @@ export class Modal {
 
   private backdrop: HTMLElement = null
 
+  private shadowStyle: HTMLElement = document.createElement('style')
+
+  private centerConfigObserver = null
+  private styleConfigObserver = null
+
   handleBackdropClick = (e) => {
     this.backdropClick.emit(e)
+  }
+
+  configureStyle() {
+    this.shadowStyle.innerHTML = shadowStyleScrollableY('hidden')
+    this.$el.shadowRoot.appendChild(this.shadowStyle)
+
+    const $dialog = this.$el.querySelector('[slot="pp-dialog"]')
+    if (!$dialog || !$dialog?.firstChild) {
+      return
+    }
+
+    this.styleConfigObserver = new ResizeObserver((entries) => {
+      const [$curDialog] = entries;
+      if ($curDialog.contentRect.height > window.innerHeight) {
+        this.shadowStyle.innerHTML = shadowStyleScrollableY('auto')
+      } else {
+        this.shadowStyle.innerHTML = shadowStyleScrollableY('hidden')
+      }
+    })
+
+    this.styleConfigObserver.observe($dialog?.firstElementChild)
+
   }
 
   configureBackdrop() {
@@ -47,7 +80,7 @@ export class Modal {
       return
     }
 
-    const rObserver = new ResizeObserver((entries) => {
+    this.centerConfigObserver = new ResizeObserver((entries) => {
       const [$curDialog] = entries;
       if ($curDialog.contentRect.height > window.innerHeight) {
         $dialog.classList.remove('pp-modal-centered')
@@ -56,17 +89,26 @@ export class Modal {
       }
     })
 
-    rObserver.observe($dialog?.firstElementChild)
+    this.centerConfigObserver.observe($dialog?.firstElementChild)
+
   }
 
   connectedCallback() {
+    this.configureStyle()
     this.configureBackdrop()
     this.configureCenterPosition()
   }
 
+
   disconnectedCallback() {
     this.backdrop.removeEventListener('click', this.handleBackdropClick)
     this.backdrop.parentNode.removeChild(this.backdrop)
+    if (typeof this.centerConfigObserver.disconnect === 'function') {
+      this.centerConfigObserver.disconnect()
+    }
+    if (typeof this.styleConfigObserver.disconnect === 'function') {
+      this.styleConfigObserver.disconnect()
+    }
   }
 
   componentWillLoad() {
