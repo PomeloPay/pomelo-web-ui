@@ -21,10 +21,8 @@ export class PpToast {
     this.ready = true;
     const defaultStyles = document.createElement('style')
     const styles = [];
-    console.log(this)
     propStyles.forEach((s) => {
       if (this[s]) {
-        console.log(this[s])
         styles.push(`${s}: ${String(this[s]).replace(/;/g, '')}`)
       }
     })
@@ -67,7 +65,6 @@ export class PpToast {
         opacity: [1, 0],
         easing: 'easeInOutQuad',
       });
-
       window.setTimeout(() => {
         this.$el.style.display = 'none'
       }, 500)

@@ -41,7 +41,7 @@ div {
   width: 500px;
   transform: translateX(100%);
   right: 0;
-  border: 1px solid #d3d3d3;
+  border: 1px solid theme('colors.gray.300');
   background-color: white;
   @apply z-30;
 }

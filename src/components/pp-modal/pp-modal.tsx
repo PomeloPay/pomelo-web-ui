@@ -103,8 +103,8 @@ export class Modal {
   disconnectedCallback() {
     this.backdrop.removeEventListener('click', this.handleBackdropClick)
     this.backdrop.parentNode.removeChild(this.backdrop)
-    if (typeof this.centerConfigObserver.disconnect === 'function') {
-      this.centerConfigObserver.disconnect()
+    if (typeof this.centerConfigObserver?.disconnect === 'function') {
+      this.centerConfigObserver?.disconnect()
     }
     if (typeof this.styleConfigObserver.disconnect === 'function') {
       this.styleConfigObserver.disconnect()

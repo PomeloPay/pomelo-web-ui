@@ -11,25 +11,27 @@ export default {
 const Template = ({ onClick, position }) => {
   const container = document.createElement('div')
   container.innerHTML = `
-    <button id="toast-btn">open toast</button>
+    <button id="toast-btn" onclick="document.querySelector('pp-toast').toggleAttribute('open')">open toast</button>
+    <pp-toast height="300px" width="300px" position="top">
+      <pp-card class="relative">
+        <pp-button class="absolute top-0 right-0 mr-2" onclick="document.querySelector('pp-toast').toggleAttribute('open')">
+          x
+        </pp-button>
+        <p class="pp-card-title">
+          The Coldest Sunset
+        </p>
 
-    <pp-toast position="${position}">
-      Toast Sample
+        <div class="pp-card-body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+        </div>
+      </pp-card>
     </pp-toast>
   `
-
-  container.querySelector('#toast-btn').addEventListener('click', () => {
-    const $toast = document.querySelector('pp-toast')
-
-    $toast.toggleAttribute('open')
-  })
-
   return container;
 };
 
 export const Toast = Template.bind({});
 Toast.args = {
   position: 'bottom',
-  onClick: action('onClick'),
 };
 

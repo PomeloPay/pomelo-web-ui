@@ -13,7 +13,7 @@ const Template = ({ onClick, children }) => {
   container.innerHTML = `
     <pp-text>
       New
-      <pp-badge class="pp-badge-primary">
+      <pp-badge class="text-white" color="primary">
         Badge
       </pp-badge>
     </pp-text>

@@ -11,15 +11,15 @@ export default {
 const Template = ({ onClick, children }) => {
   const container = document.createElement('div')
   container.innerHTML = `
-    <pp-alert class="pp-alert-primary">
-      <p class="pp-prose pp-prose-lg pp-font-body pp-text-white pp-font-extrabold pp-min-w-full pp-w-full">
+    <pp-alert color="primary">
+      <pp-text class="w-full text-white">
         Primary
-      </p>
+      </pp-text>
     </pp-alert>
-    <pp-alert class="pp-alert-secondary">
-      <p class="pp-prose pp-prose-lg pp-font-body pp-text-white pp-font-extrabold pp-min-w-full pp-w-full">
+    <pp-alert color="secondary" class="mt-4">
+      <pp-text class="w-full text-white">
         Secondary
-      </p>
+      </pp-text >
     </pp-alert>
   `
   return container;
