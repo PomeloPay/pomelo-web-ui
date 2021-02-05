@@ -15,9 +15,6 @@ export class PpTabs {
   @Event({ eventName: 'tabChange' }) tabChange: EventEmitter;
   @Event() boundMeasureChange: EventEmitter;
   @State() $tabs: Array<HTMLElement> = [];
-
-  @Prop() menuLabel: string = 'More';
-
   @State() collapsible: boolean;
   @Prop({ reflect: true, attribute: 'enable-menu'}) enableMenu: boolean = true
   @State() boundChildRef: string;
@@ -106,15 +103,6 @@ export class PpTabs {
     if (this.enableMenu) {
       this.computeBounds($curEl.contentRect);
     }
-  };
-
-  handleTabClick = e => {
-    const { target } = e;
-    this.$tabs.forEach($tabEl => {
-      $tabEl.classList.remove('pp-active');
-    });
-    target.classList.add('pp-active');
-    this.tabChange.emit({ id: target.id, event: e });
   };
 
   disconnectedCallback() {

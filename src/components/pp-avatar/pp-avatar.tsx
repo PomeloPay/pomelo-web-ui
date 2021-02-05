@@ -2,7 +2,7 @@ import { Component, h, Prop, Element, Host } from '@stencil/core';
 import clsx from 'clsx';
 import { Sizes } from '../types';
 
-export type AvatarStatus = 'offline' | 'online';
+export type AvatarStatus = 'offline' | 'online' | '';
 
 @Component({
   tag: 'pp-avatar',
@@ -11,16 +11,17 @@ export type AvatarStatus = 'offline' | 'online';
 })
 export class PpAvatar {
   @Prop({ reflect: true }) size: Sizes = "md";
-  @Prop() status: AvatarStatus = 'online';
+  @Prop() status: AvatarStatus = '';
   @Prop() src: string = '';
   @Prop() alt: string = '';
+  @Prop() initialLen: number = 3
   @Element() $el: HTMLElement;
 
   render() {
     const statusClass = clsx('status', this.status);
     const placholder = String(this.alt)
       .split(' ')
-      .slice(0, 3)
+      .slice(0, this.initialLen)
       .map(([initial]) => initial && String(initial).toUpperCase())
       .filter(Boolean)
       .join('');

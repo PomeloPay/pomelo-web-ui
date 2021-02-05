@@ -13,6 +13,7 @@ export namespace Components {
     }
     interface PpAvatar {
         "alt": string;
+        "initialLen": number;
         "size": Sizes;
         "src": string;
         "status": AvatarStatus;
@@ -69,7 +70,6 @@ export namespace Components {
     interface PpTabs {
         "enableMenu": boolean;
         "menuContainerWidth": number;
-        "menuLabel": string;
     }
     interface PpText {
         "size": Sizes;
@@ -212,6 +212,7 @@ declare namespace LocalJSX {
     }
     interface PpAvatar {
         "alt"?: string;
+        "initialLen"?: number;
         "size"?: Sizes;
         "src"?: string;
         "status"?: AvatarStatus;
@@ -278,7 +279,6 @@ declare namespace LocalJSX {
     interface PpTabs {
         "enableMenu"?: boolean;
         "menuContainerWidth"?: number;
-        "menuLabel"?: string;
         "onBoundMeasureChange"?: (event: CustomEvent<any>) => void;
         "onTabChange"?: (event: CustomEvent<any>) => void;
     }
