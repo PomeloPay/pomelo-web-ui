@@ -41,7 +41,7 @@ export const Usage = () => {
 
     <div class="bg-navy-200 p-4 mt-6">
       <pp-text class="font-sans">
-        Sample block padding with spacing of 16px
+        Sample block padding with space of 16px
       </pp-text>
     </div>
   `
