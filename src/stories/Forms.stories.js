@@ -20,10 +20,6 @@ export const Select = ({ onClick, children }) => {
   return container;
 };
 
-Select.args = {
-  children: 'Select',
-  onClick: action('onClick'),
-};
 
 export const Input = ({ onClick, children, type }) => {
   const container = document.createElement('div')
@@ -37,6 +33,33 @@ Input.args = {
   type: 'text',
   onClick: action('onClick'),
 };
+
+export const InputNumber = () => {
+  const container = document.createElement('div')
+  container.innerHTML = `
+    <pp-input-number  prefix-value="$" options='{"noImmediatePrefix": true}' class="pp-input p-1"></pp-input-number>
+  `
+  return container;
+};
+
+InputNumber.args = {
+  type: 'text',
+  onClick: action('onClick'),
+};
+
+export const InputIntl = () => {
+  const container = document.createElement('div')
+  container.innerHTML = `
+    <pp-intl-input style="width: 432px" ></pp-intl-input>
+  `
+  return container;
+};
+
+InputIntl.args = {
+  type: 'text',
+  onClick: action('onClick'),
+};
+
 
 export const Toggle = () => {
   const container = document.createElement('div')

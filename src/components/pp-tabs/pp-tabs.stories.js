@@ -50,7 +50,7 @@ export const TabsWithMenu = ({}) => {
   let overflowChildrenIds = []
   container.innerHTML = `
     <pp-tabs
-      class="relative flex items-baseline w-full bg-yellow-50 text-black"
+      class="relative flex items-baseline w-full text-black"
       mene-container-width="250"
       enable-menu
 
@@ -101,7 +101,7 @@ export const TabsWithMenu = ({}) => {
 
       <pp-text
         tabs-anchor
-        popper-anchor size="md" slot="pp-tab" class="text-black absolute top-0 right-0">
+        popper-anchor size="md" slot="pp-tab" class="text-black absolute top-0 right-0 cursor-pointer">
         More
       </pp-text>
     </pp-tabs>

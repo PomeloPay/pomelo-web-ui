@@ -43,8 +43,18 @@ export namespace Components {
         "focusIndex"?: number;
         "name"?: string;
         "numeralDecimalScale"?: number;
-        "options": IInputNumberOptions;
+        "options": IInputNumberOptions | string;
         "prefixValue"?: string;
+        "value": string;
+    }
+    interface PpIntlInput {
+        "config": any;
+        "dropdownZIndex": number;
+        "error": boolean;
+        "initialCountry": string;
+        "maxlength"?: string;
+        "name": string;
+        "placeholder": string;
         "value": string;
     }
     interface PpModal {
@@ -139,6 +149,12 @@ declare global {
         prototype: HTMLPpInputNumberElement;
         new (): HTMLPpInputNumberElement;
     };
+    interface HTMLPpIntlInputElement extends Components.PpIntlInput, HTMLStencilElement {
+    }
+    var HTMLPpIntlInputElement: {
+        prototype: HTMLPpIntlInputElement;
+        new (): HTMLPpIntlInputElement;
+    };
     interface HTMLPpModalElement extends Components.PpModal, HTMLStencilElement {
     }
     var HTMLPpModalElement: {
@@ -197,6 +213,7 @@ declare global {
         "pp-fab": HTMLPpFabElement;
         "pp-icon-button": HTMLPpIconButtonElement;
         "pp-input-number": HTMLPpInputNumberElement;
+        "pp-intl-input": HTMLPpIntlInputElement;
         "pp-modal": HTMLPpModalElement;
         "pp-popper": HTMLPpPopperElement;
         "pp-sandbox": HTMLPpSandboxElement;
@@ -246,8 +263,21 @@ declare namespace LocalJSX {
         "name"?: string;
         "numeralDecimalScale"?: number;
         "onInputNumberChange"?: (event: CustomEvent<any>) => void;
-        "options"?: IInputNumberOptions;
+        "options"?: IInputNumberOptions | string;
         "prefixValue"?: string;
+        "value"?: string;
+    }
+    interface PpIntlInput {
+        "config"?: any;
+        "dropdownZIndex"?: number;
+        "error"?: boolean;
+        "initialCountry"?: string;
+        "maxlength"?: string;
+        "name"?: string;
+        "onInputBlur"?: (event: CustomEvent<any>) => void;
+        "onInputChange"?: (event: CustomEvent<any>) => void;
+        "onInputLoad"?: (event: CustomEvent<any>) => void;
+        "placeholder"?: string;
         "value"?: string;
     }
     interface PpModal {
@@ -305,6 +335,7 @@ declare namespace LocalJSX {
         "pp-fab": PpFab;
         "pp-icon-button": PpIconButton;
         "pp-input-number": PpInputNumber;
+        "pp-intl-input": PpIntlInput;
         "pp-modal": PpModal;
         "pp-popper": PpPopper;
         "pp-sandbox": PpSandbox;
@@ -328,6 +359,7 @@ declare module "@stencil/core" {
             "pp-fab": LocalJSX.PpFab & JSXBase.HTMLAttributes<HTMLPpFabElement>;
             "pp-icon-button": LocalJSX.PpIconButton & JSXBase.HTMLAttributes<HTMLPpIconButtonElement>;
             "pp-input-number": LocalJSX.PpInputNumber & JSXBase.HTMLAttributes<HTMLPpInputNumberElement>;
+            "pp-intl-input": LocalJSX.PpIntlInput & JSXBase.HTMLAttributes<HTMLPpIntlInputElement>;
             "pp-modal": LocalJSX.PpModal & JSXBase.HTMLAttributes<HTMLPpModalElement>;
             "pp-popper": LocalJSX.PpPopper & JSXBase.HTMLAttributes<HTMLPpPopperElement>;
             "pp-sandbox": LocalJSX.PpSandbox & JSXBase.HTMLAttributes<HTMLPpSandboxElement>;

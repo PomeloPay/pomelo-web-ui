@@ -109,6 +109,9 @@ module.exports = {
         900: '#49195f',
         1000: '#212121'
       },
+      brown: {
+        900: '#bb5604'
+      },
       primary: 'var(--pp-color-primary)',
       secondary: 'var(--pp-color-secondary)',
       tertiary: 'var(--pp-color-tertiary, transparent)',

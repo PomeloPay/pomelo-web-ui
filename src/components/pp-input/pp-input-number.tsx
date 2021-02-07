@@ -23,7 +23,7 @@ export class PpInputNumber {
   @Prop() focusIndex?: number
   @Event({ eventName: 'inputNumberChange' }) inputNumberChange: EventEmitter;
 
-  @Prop() options: IInputNumberOptions
+  @Prop() options: IInputNumberOptions | string;
   @Element() $el: HTMLElement
   cleave = null
   $inputEl: HTMLInputElement = null
@@ -40,22 +40,28 @@ export class PpInputNumber {
     let finalOptions = this.options
 
     if (typeof finalOptions === 'string') {
-      finalOptions = JSON.parse(finalOptions)
+      try {
+        finalOptions = JSON.parse(finalOptions)
+      } catch(ex) {
+        finalOptions = {}
+        console.warn(ex.message)
+      }
     }
 
-    const options = {
+    const options: any = {
       ...defaultOptions,
       onValueChanged: this.handleChange,
-      ...finalOptions,
+      ...(finalOptions as Object),
     }
 
     if (this.prefixValue) {
       options.prefix = this.prefixValue
     }
+
     if (this.numeralDecimalScale) {
       options.numeralDecimalScale = this.numeralDecimalScale
     }
-
+    console.log(options, finalOptions, this.options)
     this.cleave = new Cleave(this.$inputEl, options)
   }
 
