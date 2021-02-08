@@ -7,12 +7,13 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                                                                                | Default    |
-| -------- | --------- | ----------- | ----------------------------------------------------------------------------------- | ---------- |
-| `alt`    | `alt`     |             | `string`                                                                            | `''`       |
-| `size`   | `size`    |             | `"2xl" \| "2xs" \| "3xl" \| "3xs" \| "4xl" \| "lg" \| "md" \| "sm" \| "xl" \| "xs"` | `"md"`     |
-| `src`    | `src`     |             | `string`                                                                            | `''`       |
-| `status` | `status`  |             | `"offline" \| "online"`                                                             | `'online'` |
+| Property     | Attribute     | Description | Type                                                                                | Default |
+| ------------ | ------------- | ----------- | ----------------------------------------------------------------------------------- | ------- |
+| `alt`        | `alt`         |             | `string`                                                                            | `''`    |
+| `initialLen` | `initial-len` |             | `number`                                                                            | `3`     |
+| `size`       | `size`        |             | `"2xl" \| "2xs" \| "3xl" \| "3xs" \| "4xl" \| "lg" \| "md" \| "sm" \| "xl" \| "xs"` | `"md"`  |
+| `src`        | `src`         |             | `string`                                                                            | `''`    |
+| `status`     | `status`      |             | `"" \| "offline" \| "online"`                                                       | `''`    |
 
 
 ## Dependencies

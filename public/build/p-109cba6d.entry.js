@@ -1,0 +1,1 @@
+import{r,h as s}from"./p-5f21a674.js";const n=class{constructor(s){r(this,s),this.val="",this.handleChange=r=>{console.log(r)}}render(){return s("pp-input-number",{onInputNumberChange:this.handleChange,options:{prefix:"$",numeralDecimalScale:3}})}};export{n as pp_sandbox}

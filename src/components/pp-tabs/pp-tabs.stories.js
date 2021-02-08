@@ -167,7 +167,6 @@ export const TabsWithMenu = ({}) => {
     const nonOverflowTabItems = [].slice.call($tabs.querySelectorAll('[tab-overflow="false"]'))
     const popperItems = [].slice.call($popper.querySelectorAll('pp-text'))
 
-    console.log(nonOverflowTabItems, popperItems)
     nonOverflowTabItems.forEach((el) => el.addEventListener && el.addEventListener('click', handleTabClick))
     popperItems.forEach((el) => el.addEventListener && el.addEventListener('click', (e) => {
       handleTabClick(e)

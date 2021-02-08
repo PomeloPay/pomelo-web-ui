@@ -56,7 +56,6 @@ export class Amount {
     this.$el.classList.add('block', 'relative')
     if (this.intlInputInstance?.countryList?.parentElement) {
       const parentEl: HTMLElement = this.intlInputInstance?.countryList?.parentElement
-      console.log(parentEl)
       parentEl.style.cssText += flagStyle
     }
 

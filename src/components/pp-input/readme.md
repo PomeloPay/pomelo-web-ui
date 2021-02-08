@@ -7,43 +7,26 @@
 
 ## Properties
 
-| Property              | Attribute               | Description | Type                  | Default     |
-| --------------------- | ----------------------- | ----------- | --------------------- | ----------- |
-| `autoFocus`           | `auto-focus`            |             | `boolean`             | `undefined` |
-| `focusIndex`          | `focus-index`           |             | `number`              | `undefined` |
-| `name`                | `name`                  |             | `string`              | `undefined` |
-| `numeralDecimalScale` | `numeral-decimal-scale` |             | `number`              | `undefined` |
-| `options`             | --                      |             | `IInputNumberOptions` | `undefined` |
-| `prefixValue`         | `prefix-value`          |             | `string`              | `''`        |
-| `value`               | `value`                 |             | `string`              | `undefined` |
+| Property         | Attribute          | Description | Type      | Default     |
+| ---------------- | ------------------ | ----------- | --------- | ----------- |
+| `config`         | `config`           |             | `any`     | `{}`        |
+| `dropdownZIndex` | `dropdown-z-index` |             | `number`  | `41`        |
+| `error`          | `error`            |             | `boolean` | `undefined` |
+| `initialCountry` | `initial-country`  |             | `string`  | `undefined` |
+| `maxlength`      | `maxlength`        |             | `string`  | `undefined` |
+| `name`           | `name`             |             | `string`  | `undefined` |
+| `placeholder`    | `placeholder`      |             | `string`  | `''`        |
+| `value`          | `value`            |             | `string`  | `undefined` |
 
 
 ## Events
 
-| Event               | Description | Type               |
-| ------------------- | ----------- | ------------------ |
-| `inputNumberChange` |             | `CustomEvent<any>` |
+| Event         | Description | Type               |
+| ------------- | ----------- | ------------------ |
+| `inputBlur`   |             | `CustomEvent<any>` |
+| `inputChange` |             | `CustomEvent<any>` |
+| `inputLoad`   |             | `CustomEvent<any>` |
 
-
-## Shadow Parts
-
-| Part                | Description |
-| ------------------- | ----------- |
-| `"pp-input-number"` |             |
-
-
-## Dependencies
-
-### Used by
-
- - [pp-sandbox](../..)
-
-### Graph
-```mermaid
-graph TD;
-  pp-sandbox --> pp-input-number
-  style pp-input-number fill:#f9f,stroke:#333,stroke-width:4px
-```
 
 ----------------------------------------------
 

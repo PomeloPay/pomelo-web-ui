@@ -61,7 +61,6 @@ export class PpInputNumber {
     if (this.numeralDecimalScale) {
       options.numeralDecimalScale = this.numeralDecimalScale
     }
-    console.log(options, finalOptions, this.options)
     this.cleave = new Cleave(this.$inputEl, options)
   }
 

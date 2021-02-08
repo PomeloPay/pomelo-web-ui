@@ -1,0 +1,1 @@
+import{r,h as s,H as p}from"./p-5f21a674.js";const t=class{constructor(s){r(this,s)}render(){return s(p,null,s("slot",null))}};t.style=":host{display:flex;align-items:center;cursor:pointer;height:2.3em;width:2.3em;box-shadow:0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);border-radius:9999px}";export{t as pp_fab}

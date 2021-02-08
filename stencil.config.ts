@@ -1,6 +1,16 @@
+import path from 'path'
 import { Config } from '@stencil/core';
 import { postcss } from '@stencil/postcss';
 import postcssConfig from './postcss.config'
+
+const www: any = {
+  type: 'www',
+  serviceWorker: null,
+}
+
+if (process.env.NODE_ENV === 'prod') {
+  www.buildDir = path.join(process.cwd(), 'public/build')
+}
 
 export const config: Config = {
   namespace: 'pomelopay-webui',
@@ -16,10 +26,7 @@ export const config: Config = {
     {
       type: 'docs-readme',
     },
-    {
-      type: 'www',
-      serviceWorker: null, // disable service workers
-    },
+    www
   ],
   plugins: [
     postcss(postcssConfig)

@@ -7,11 +7,10 @@
 
 ## Properties
 
-| Property             | Attribute              | Description | Type      | Default  |
-| -------------------- | ---------------------- | ----------- | --------- | -------- |
-| `enableMenu`         | `enable-menu`          |             | `boolean` | `true`   |
-| `menuContainerWidth` | `menu-container-width` |             | `number`  | `300`    |
-| `menuLabel`          | `menu-label`           |             | `string`  | `'More'` |
+| Property             | Attribute              | Description | Type      | Default |
+| -------------------- | ---------------------- | ----------- | --------- | ------- |
+| `enableMenu`         | `enable-menu`          |             | `boolean` | `true`  |
+| `menuContainerWidth` | `menu-container-width` |             | `number`  | `300`   |
 
 
 ## Events
