@@ -2,18 +2,20 @@ import path from 'path'
 import { Config } from '@stencil/core';
 import { postcss } from '@stencil/postcss';
 import postcssConfig from './postcss.config'
+const isProd = process.env.NODE_ENV === 'prod'
 
 const www: any = {
   type: 'www',
   serviceWorker: null,
 }
 
-if (process.env.NODE_ENV === 'prod') {
+if (isProd) {
   www.buildDir = path.join(process.cwd(), 'public/build')
 }
 
 export const config: Config = {
   namespace: 'pomelopay-webui',
+  // buildEs5: true,
   globalStyle: 'src/global.css',
   outputTargets: [
     {
@@ -40,5 +42,5 @@ export const config: Config = {
     appendChildSlotFix: false,
     cloneNodeFix: false,
     slotChildNodesFix: true,
-  }
+  },
 };

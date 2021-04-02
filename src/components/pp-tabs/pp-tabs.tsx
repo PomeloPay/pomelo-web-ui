@@ -1,10 +1,11 @@
 import { Component, Host, Element, h, State, EventEmitter, Event, Prop } from '@stencil/core';
-import ResizeObserver from 'resize-observer-polyfill';
 import { nanoid } from 'nanoid';
 
+// const ResizeObserverPolyfill = require('resize-observer-polyfill')
 const TAB_ATTR_REF = 'tab-id';
 const TABS_SELECTOR = '.pp-tab'
 const TAB_OVERFLOW = 'tab-overflow'
+
 @Component({
   tag: 'pp-tabs',
   styleUrl: 'pp-tabs.css',
@@ -43,7 +44,7 @@ export class PpTabs {
   }
 
   componentDidLoad() {
-    const resizeObserver = new ResizeObserver(this.handleResize);
+    const resizeObserver: any = new ResizeObserver(this.handleResize);
 
     resizeObserver.observe(this.$el);
   }

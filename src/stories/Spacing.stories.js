@@ -20,7 +20,7 @@ const createRow = (k, v) => {
         </pp-text>
       </td>
       <td>
-        <div style="height: ${v}; width: ${v}" class="bg-navy-200">
+        <div style="height: ${v}; width: ${v}; background-color: #e4eaff">
         </div>
       </td>
     </tr>
@@ -39,7 +39,7 @@ export const Usage = () => {
       Margin top with spacing of 24px
     </pp-text>
 
-    <div class="bg-navy-200 p-4 mt-6">
+    <div style="background-color: #e4eaff" class="bg-navy-200 p-4 mt-6">
       <pp-text class="font-sans">
         Sample block padding with space of 16px
       </pp-text>

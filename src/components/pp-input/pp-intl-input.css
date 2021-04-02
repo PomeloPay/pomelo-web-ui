@@ -1,12 +1,14 @@
+/* purgecss start ignore */
+
 @import '../../../node_modules/intl-tel-input/build/css/intlTelInput.css';
 
-.iti__selected-flag:focus,.iti__flag-container:focus {
+.iti__selected-flag:focus,
+.iti__flag-container:focus {
   outline: none;
 }
 
-
 .iti__flag {
-  background-image: var(--flags)
+  background-image: var(--flags);
   /* background-image: url("../../../../node_modules/intl-tel-input/build/img/flags@2x.png"); */
 }
 
@@ -33,8 +35,8 @@
   left: 0 !important;
 }
 
-
-.iti__country.iti__standard, .iti__country.iti__preferred {
+.iti__country.iti__standard,
+.iti__country.iti__preferred {
   font-family: theme('fontFamily.sans');
   font-weight: theme('fontWeight.semibold');
 }
@@ -48,19 +50,20 @@
   }
 }
 
-.iti--separate-dial-code .iti__selected-flag, .iti__selected-flag  {
+.iti--separate-dial-code .iti__selected-flag,
+.iti__selected-flag {
   background-color: theme('colors.transparent');
 }
 
-
 .iti-popper {
   width: 100%;
-  padding: 0 theme('spacing.10')
+  padding: 0 theme('spacing.10');
 }
 
 @screen xs {
   .iti-popper {
     width: 432px;
-    padding: 0
+    padding: 0;
   }
 }
+/* purgecss end ignore */

@@ -30,91 +30,100 @@ module.exports = {
       }
     },
   },
-  extend: {
-    screens: {
-      '2xs': '320px',
-      xs: '480px'
+  fontSize: defaultTheme.fontSize,
+  colors: {
+    ...defaultTheme.colors,
+    gray: {
+      ...defaultTheme.colors.gray,
+      50: '#fbfbfb',
+      100: '#f5f5f5',
+      200: '#e9e9e9',
+      210: '#dedede',
+      300: '#c8c8c8',
+      500: '#909090',
+      600: '#484848',
+      700: '#242524',
+      710: '#858585',
+      800: '#9b9b9b'
     },
+    green: {
+      50: '#e4f8ee',
+      100: '#beedd4',
+      200: '#91e2b9',
+      300: '#5bd79d',
+      400: '#16cd88',
+      500: '#00c371',
+      600: '#00b366',
+      700: '#00a058',
+      800: '#008f4b',
+      900: '#006e35'
+    },
+    navy: {
+      50: '#f2f8ff',
+      100: '#ecf2ff',
+      200: '#e4eaff',
+      300: '#d5dbfe',
+      400: '#b2b8d9',
+      500: '#9398b9',
+      600: '#6a708f',
+      700: '#565c7a',
+      800: '#363d59',
+      900: '#141d36'
+    },
+    yellow: {
+      ...defaultTheme.colors.yellow,
+      50: '#fef8e1',
+      100: '#fdecb4',
+      200: '#fbe084',
+      300: '#fad553',
+      400: '#faca2f',
+      500: '#f9c118',
+      600: '#f9b311',
+      700: '#f9a10d',
+      800: '#f9900a',
+      900: '#f87206',
+    },
+    red: {
+      ...defaultTheme.colors.red,
+      600: '#e01b22'
+    },
+    blue: {
+      ...defaultTheme.colors.blue,
+      600: '#2784ff'
+    },
+    orange: {
+      ...defaultTheme.colors.orange,
+      900: '#fe6901'
+    },
+    'cool-grey': {
+      500: '#6b778c'
+    },
+    purple: {
+      900: '#49195f',
+      1000: '#212121'
+    },
+    brown: {
+      900: '#bb5604'
+    },
+    primary: 'var(--pp-color-primary)',
+    secondary: 'var(--pp-color-secondary)',
+    tertiary: 'var(--pp-color-tertiary, transparent)',
+  },
+  screens: {
+    '2xs': '320px',
+    xs: '480px',
+    sm: '640px',
+
+    md: '768px',
+
+    lg: '1024px',
+
+    xl: '1280px',
+  },
+  extend: {
     fontFamily: {
       sans: ['Nunito Sans', ...defaultTheme.fontFamily.sans],
       body: 'Montserrat'
-    },
-    colors: {
-      gray: {
-        ...defaultTheme.colors.gray,
-        50: '#fbfbfb',
-        100: '#f5f5f5',
-        200: '#e9e9e9',
-        210: '#dedede',
-        300: '#c8c8c8',
-        500: '#909090',
-        600: '#484848',
-        700: '#242524',
-        710: '#858585',
-        800: '#9b9b9b'
-      },
-      green: {
-        50: '#e4f8ee',
-        100: '#beedd4',
-        200: '#91e2b9',
-        300: '#5bd79d',
-        400: '#16cd88',
-        500: '#00c371',
-        600: '#00b366',
-        700: '#00a058',
-        800: '#008f4b',
-        900: '#006e35'
-      },
-      navy: {
-        50: '#f2f8ff',
-        100: '#ecf2ff',
-        200: '#e4eaff',
-        300: '#d5dbfe',
-        400: '#b2b8d9',
-        500: '#9398b9',
-        600: '#6a708f',
-        700: '#565c7a',
-        800: '#363d59',
-        900: '#141d36'
-      },
-      yellow: {
-        ...defaultTheme.colors.yellow,
-        50: '#fef8e1',
-        100: '#fdecb4',
-        200: '#fbe084',
-        300: '#fad553',
-        400: '#faca2f',
-        500: '#f9c118',
-        600: '#f9b311',
-        700: '#f9a10d',
-        800: '#f9900a',
-        900: '#f87206',
-      },
-      red: {
-        ...defaultTheme.colors.red,
-        600: '#e01b22'
-      },
-      blue: {
-        ...defaultTheme.colors.blue,
-        600: '#2784ff'
-      },
-      orange: {
-        ...defaultTheme.colors.orange,
-        900: '#fe6901'
-      },
-      'cool-grey': {
-        500: '#6b778c'
-      },
-      purple: {
-        900: '#49195f',
-        1000: '#212121'
-      },
-      brown: {
-        900: '#bb5604'
-      },
-      primary: 'var(--pp-color-primary)',
-      secondary: 'var(--pp-color-secondary)',
-      tertiary: 'var(--pp-color-tertiary, transparent)',
     },
     width: {
       '110': '28rem',
@@ -170,6 +179,10 @@ module.exports = {
       '6xl': '72px',
       '7xl': '80px',
     },
+    boxShadow: {
+      xs: '0 0 0 1px rgba(0, 0, 0, 0.05)',
+      outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
+    }
   },
   zIndex: {
     '0': 0,

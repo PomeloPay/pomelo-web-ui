@@ -24,12 +24,12 @@ export const Modal = ({ onClick: onClickStr }) => {
       attach-close-action>
         <div slot="pp-dialog" class="pp-dialog">
           <div class="w-full pp-modal-content">
-            <header class="pp-modal-header pb-0 p-14 pp-justify-end bg-white xs:rounded-t-md">
+            <header class="pp-modal-header pb-0 p-14 pp-justify-end bg-white sm:rounded-t-md">
               <button
                 ${onClickStr}
                 class="pp-modal-close" aria-label="close modal" data-close>✕</button>
             </header>
-            <section  class="pp-modal-body pt-0 p-14 bg-white xs:rounded-b-md">
+            <section  class="pp-modal-body pt-0 p-14 bg-white sm:rounded-b-md">
               Modal content
               Dolor excepteur dolore mollit exercitation mollit fugiat sint ex. Nisi do adipisicing velit Lorem sunt cupidatat qui est sit. Nulla adipisicing minim voluptate do enim velit et. Voluptate fugiat officia duis laboris non cillum do consectetur. Pariatur anim irure non tempor laborum tempor minim eiusmod ullamco sunt deserunt consequat ad. Commodo magna do consectetur consequat.
             </section>
@@ -54,12 +54,12 @@ export const ScrollingLongContent = ({ onClick: onClickStr }) => {
       attach-close-action>
         <div slot="pp-dialog" class="pp-dialog">
           <div class="w-full pp-modal-content">
-            <header class="pp-modal-header pb-0 p-14 pp-justify-end bg-white xs:rounded-t-md">
+            <header class="pp-modal-header pb-0 p-14 pp-justify-end bg-white sm:rounded-t-md">
               <button
                 ${onClickStr}
                 class="pp-modal-close" aria-label="close modal" data-close>✕</button>
             </header>
-            <section  class="pp-modal-body pt-0 p-14 bg-white xs:rounded-b-md">
+            <section  class="pp-modal-body pt-0 p-14 bg-white sm:rounded-b-md">
               Modal content
               Dolor excepteur dolore mollit exercitation mollit fugiat sint ex. Nisi do adipisicing velit Lorem sunt cupidatat qui est sit. Nulla adipisicing minim voluptate do enim velit et. Voluptate fugiat officia duis laboris non cillum do consectetur. Pariatur anim irure non tempor laborum tempor minim eiusmod ullamco sunt deserunt consequat ad. Commodo magna do consectetur consequat.
               Deserunt aliqua irure non adipisicing occaecat nostrud cupidatat labore quis occaecat laboris. Enim sint mollit duis sunt deserunt ullamco exercitation sunt velit in qui deserunt. Consequat esse deserunt eiusmod aute irure. Aliqua magna sunt irure qui fugiat pariatur adipisicing do labore laboris tempor aute sint sint. Laborum et veniam pariatur consectetur tempor culpa do. Consectetur aute ea officia veniam sint ipsum laborum ea dolor exercitation incididunt officia velit.
@@ -98,12 +98,12 @@ export const CenterAlignment = ({ onClick: onClickStr }) => {
     attach-close-action>
       <div slot="pp-dialog" class="pp-dialog">
         <div class="w-full pp-modal-content">
-          <header class="pp-modal-header pb-0 p-14 pp-justify-end bg-white xs:rounded-t-md">
+          <header class="pp-modal-header pb-0 p-14 pp-justify-end bg-white sm:rounded-t-md">
             <button
               ${onClickStr}
               class="pp-modal-close" aria-label="close modal" data-close>✕</button>
           </header>
-          <section  class="pp-modal-body pt-0 p-14 bg-white xs:rounded-b-md">
+          <section  class="pp-modal-body pt-0 p-14 bg-white sm:rounded-b-md">
             Modal content
             Dolor excepteur dolore mollit exercitation mollit fugiat sint ex. Nisi do adipisicing velit Lorem sunt cupidatat qui est sit. Nulla adipisicing minim voluptate do enim velit et. Voluptate fugiat officia duis laboris non cillum do consectetur. Pariatur anim irure non tempor laborum tempor minim eiusmod ullamco sunt deserunt consequat ad. Commodo magna do consectetur consequat.
             Deserunt aliqua irure non adipisicing occaecat nostrud cupidatat labore quis occaecat laboris. Enim sint mollit duis sunt deserunt ullamco exercitation sunt velit in qui deserunt. Consequat esse deserunt eiusmod aute irure. Aliqua magna sunt irure qui fugiat pariatur adipisicing do labore laboris tempor aute sint sint. Laborum et veniam pariatur consectetur tempor culpa do. Consectetur aute ea officia veniam sint ipsum laborum ea dolor exercitation incididunt officia velit.

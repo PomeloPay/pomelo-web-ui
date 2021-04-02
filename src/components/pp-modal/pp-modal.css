@@ -24,7 +24,6 @@
   position: relative;
   max-height: 100vh;
   @apply transition-all duration-75 ease-in;
-
 }
 
 /* stylelint-disable-next-line selector-type-no-unknown */

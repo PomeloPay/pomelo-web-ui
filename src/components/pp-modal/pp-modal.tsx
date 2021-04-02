@@ -1,5 +1,4 @@
 import { Component, Host, Prop, State, Element, h, Event, EventEmitter, Watch } from '@stencil/core';
-import ResizeObserver from 'resize-observer-polyfill';
 
 const shadowStyleScrollableY = (v = 'auto') => `
   :host([open]) {

@@ -6,11 +6,10 @@ export default {
   title: 'Color Palette',
 };
 
-const getColor = (c) => theme.extend.colors[c]
-
+const getColor = (c) => theme.colors[c]
 const createPalette = (colorKey, colorValue, colorName) => `
   <div class="flex mt-4">
-    <div style="height: 48px; width: 48px;" class="rounded bg-${colorName}-${colorKey}">
+    <div style="height: 48px; width: 48px; background-color: ${colorValue}">
     </div>
     <div class="ml-2">
       <pp-text size="sm">
