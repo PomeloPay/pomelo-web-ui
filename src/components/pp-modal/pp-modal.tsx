@@ -1,4 +1,5 @@
 import { Component, Host, Prop, State, Element, h, Event, EventEmitter, Watch } from '@stencil/core';
+import { extractNumber } from '../../utils';
 
 const shadowStyleScrollableY = (v = 'auto') => `
   :host([open]) {
@@ -45,9 +46,14 @@ export class Modal {
       return
     }
 
+
     this.styleConfigObserver = new ResizeObserver((entries) => {
-      const [$curDialog] = entries;
-      if ($curDialog.contentRect.height > window.innerHeight) {
+      const [$curDialogChild] = entries;
+      const $dialogStyle = window.getComputedStyle($dialog)
+      const top = Number(extractNumber($dialogStyle.getPropertyValue('margin-top')))
+      const bottom = Number(extractNumber($dialogStyle.getPropertyValue('margin-bottom')))
+      const finalHeight = $curDialogChild.contentRect.height + top + bottom
+      if (finalHeight > window.innerHeight) {
         this.shadowStyle.innerHTML = shadowStyleScrollableY('auto')
       } else {
         this.shadowStyle.innerHTML = shadowStyleScrollableY('hidden')
@@ -55,7 +61,6 @@ export class Modal {
     })
 
     this.styleConfigObserver.observe($dialog?.firstElementChild)
-
   }
 
   configureBackdrop() {
