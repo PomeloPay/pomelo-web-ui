@@ -26,7 +26,7 @@ export class Modal {
   @State() originalParent: HTMLElement = null;
 
 
-  private backdrop: HTMLElement = null
+  private backdrop: HTMLElement = document.createElement('div')
 
   private shadowStyle: HTMLElement = document.createElement('style')
 
@@ -64,7 +64,6 @@ export class Modal {
   }
 
   configureBackdrop() {
-    this.backdrop = document.createElement('div')
     this.backdrop.classList.add('pp-backdrop')
     this.$el.insertAdjacentElement('beforebegin', this.backdrop)
 
