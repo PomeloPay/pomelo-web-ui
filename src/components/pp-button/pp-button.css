@@ -61,7 +61,7 @@ button {
 
 :host([variant="contained"][color="primary"]) {
   --background: theme('colors.primary');
-  --color: color-mod(theme('colors.primary') l(100%));
+  --color: theme('colors.white');
 }
 
 :host([variant="contained"][color="primary"]:hover) {
@@ -81,7 +81,7 @@ button {
 
 :host([variant="contained"][color="secondary"]) {
   --background: theme('colors.secondary');
-  --color: color-mod(theme('colors.secondary') l(100%));
+  --color: theme('colors.white');
 }
 
 :host([variant="contained"][color="secondary"]:hover) {
@@ -89,7 +89,7 @@ button {
 }
 :host([variant="contained"][color="error"]) {
   --background: theme('colors.red.600');
-  --color: color-mod(theme('colors.red.600') l(100%));
+  --color: theme('colors.white');
 }
 
 :host([variant="contained"][color="error"]:hover) {
