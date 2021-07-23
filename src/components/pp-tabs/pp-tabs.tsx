@@ -1,5 +1,6 @@
 import { Component, Host, Element, h, State, EventEmitter, Event, Prop } from '@stencil/core';
 import { nanoid } from 'nanoid';
+import { ResizeObserver as ResizeObserverPolyfill } from '@juggle/resize-observer'
 
 // const ResizeObserverPolyfill = require('resize-observer-polyfill')
 const TAB_ATTR_REF = 'tab-id';
@@ -44,7 +45,7 @@ export class PpTabs {
   }
 
   componentDidLoad() {
-    const resizeObserver: any = new ResizeObserver(this.handleResize);
+    const resizeObserver: any = new ResizeObserverPolyfill(this.handleResize);
 
     resizeObserver.observe(this.$el);
   }
