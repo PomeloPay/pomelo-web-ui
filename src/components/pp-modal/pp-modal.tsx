@@ -114,9 +114,9 @@ export class Modal {
       this.backdrop = null
     }
     if (typeof this.centerConfigObserver?.disconnect === 'function') {
-      this.centerConfigObserver?.disconnect()
+      this.centerConfigObserver.disconnect()
     }
-    if (typeof this.styleConfigObserver.disconnect === 'function') {
+    if (typeof this.styleConfigObserver?.disconnect === 'function') {
       this.styleConfigObserver.disconnect()
     }
   }

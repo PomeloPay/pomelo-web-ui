@@ -15,13 +15,15 @@
     "noUnusedParameters": true,
     "jsx": "react",
     "jsxFactory": "h",
-    "allowJs": true
+    "allowJs": true,
   },
   "include": [
     "src"
   ],
   "exclude": [
     "node_modules",
-    "node_modules/resize-observer-polyfill/src/index.d.ts"
+    "node_modules/resize-observer-polyfill/src/index.d.ts",
+    "**/*.stories.js",
+    "src/config/theme.js"
   ]
 }

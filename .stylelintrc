@@ -21,8 +21,8 @@
     "selector-type-no-unknown" : [
       true,
       {
-        ignore: ["custom-elements", "default-namespace"],
-        ignoreTypes: ["/^x-/"]
+        "ignore": ["custom-elements", "default-namespace"],
+        "ignoreTypes": ["/^x-/"]
       }
     ],
     "declaration-block-no-duplicate-custom-properties": false
