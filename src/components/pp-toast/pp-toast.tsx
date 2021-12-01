@@ -18,7 +18,6 @@ export class PpToast {
   @Element() $el: HTMLElement;
 
   componentDidLoad() {
-    this.ready = true;
     const defaultStyles = document.createElement('style')
     const styles = [];
     propStyles.forEach((s) => {
@@ -37,6 +36,7 @@ export class PpToast {
     this.$el.shadowRoot.appendChild(defaultStyles)
   }
   componentWillLoad() {
+    this.ready = true;
     document.body.appendChild(this.$el);
   }
 

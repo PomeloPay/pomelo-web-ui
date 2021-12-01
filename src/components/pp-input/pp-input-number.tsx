@@ -15,8 +15,8 @@ const defaultOptions = {
   shadow: true
 })
 export class PpInputNumber {
-  @Prop() value: string
-  @Prop() name?: string
+  @Prop({ reflect: true }) value: string
+  @Prop({ reflect: true }) name?: string
   @Prop() prefixValue?: string = ''
   @Prop() numeralDecimalScale?: number
   @Prop() autoFocus?: boolean
