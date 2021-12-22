@@ -11,7 +11,7 @@ export default {
 const Template = ({ onClick, position }) => {
   const container = document.createElement('div')
   container.innerHTML = `
-    <button id="toast-btn" onclick="document.querySelector('pp-toast').toggleAttribute('open')">open toast</button>
+    <button id="toast-btn">open toast</button>
     <pp-toast height="300px" width="300px" position="top">
       <pp-card class="relative">
         <pp-button class="absolute top-0 right-0 mr-2" onclick="document.querySelector('pp-toast').toggleAttribute('open')">
@@ -27,6 +27,11 @@ const Template = ({ onClick, position }) => {
       </pp-card>
     </pp-toast>
   `
+
+  container.querySelector('button').addEventListener('click', () => {
+    document.body.querySelector('pp-toast').toggleAttribute('open')
+  })
+
   return container;
 };
 

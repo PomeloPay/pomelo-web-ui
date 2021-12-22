@@ -1,0 +1,57 @@
+:host {
+  display: flex;
+  position: relative;
+  height: 1rem;
+  width: 1rem;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+
+
+/* Hide the browser's default radio button */
+input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+/* Create a custom radio button */
+span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+  width: inherit;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 0 0 1px theme('colors.gray.500');
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+span:after {
+  content: "";
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+input:checked ~ span:after {
+  display: flex;
+}
+
+input:checked ~ span {
+  background-color: var(var(--pp-radio-checkmark-bg), var(--pp-color-primary));
+  box-shadow: 0 0 0 1px var(var(--pp-radio-checkmark-bg), var(--pp-color-primary));
+}
+
+/* Style the indicator (dot/circle) */
+span:after {
+  width: .4em;
+  height: .9em;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}

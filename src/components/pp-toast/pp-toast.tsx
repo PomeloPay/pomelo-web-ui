@@ -17,7 +17,12 @@ export class PpToast {
   @State() $closeEl: HTMLElement = null;
   @Element() $el: HTMLElement;
 
+  load() {
+    document.body.appendChild(this.$el);
+  }
+
   componentDidLoad() {
+    window.addEventListener('load', this.load)
     const defaultStyles = document.createElement('style')
     const styles = [];
     propStyles.forEach((s) => {
@@ -35,12 +40,13 @@ export class PpToast {
 
     this.$el.shadowRoot.appendChild(defaultStyles)
   }
+
   componentWillLoad() {
     this.ready = true;
-    document.body.appendChild(this.$el);
   }
 
   disconnectedCallback() {
+    window.removeEventListener('load', this.load)
     if (this.$el.parentElement === document.body && this.ready) {
       document.body.removeChild(this.$el);
       this.ready = false;

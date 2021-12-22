@@ -1,4 +1,4 @@
-/* stylelint-disable-next-line selector-type-no-unknown */
+@import './text.css';
 :host {
   font-weight: theme('fontWeight.semibold');
   letter-spacing: 0;

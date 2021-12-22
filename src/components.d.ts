@@ -9,6 +9,10 @@ import { ButtonVariants, ColorVariants, IInputNumberOptions, Sizes } from "./com
 import { AvatarStatus } from "./components/pp-avatar/pp-avatar";
 import { Options } from "@popperjs/core";
 export namespace Components {
+    interface PpAccordion {
+    }
+    interface PpAccordionItem {
+    }
     interface PpAlert {
     }
     interface PpAvatar {
@@ -28,6 +32,12 @@ export namespace Components {
         "variant": ButtonVariants;
     }
     interface PpCard {
+    }
+    interface PpCheckbox {
+        "checked": boolean;
+        "label": string;
+        "name": string;
+        "value": string;
     }
     interface PpDrawer {
         "attachCloseAction": boolean;
@@ -72,6 +82,12 @@ export namespace Components {
         "portal": HTMLElement | boolean;
         "reference": HTMLElement | string;
     }
+    interface PpRadio {
+        "checked": boolean;
+        "label": string;
+        "name": string;
+        "value": string;
+    }
     interface PpSandbox {
         "val": string;
     }
@@ -95,6 +111,18 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLPpAccordionElement extends Components.PpAccordion, HTMLStencilElement {
+    }
+    var HTMLPpAccordionElement: {
+        prototype: HTMLPpAccordionElement;
+        new (): HTMLPpAccordionElement;
+    };
+    interface HTMLPpAccordionItemElement extends Components.PpAccordionItem, HTMLStencilElement {
+    }
+    var HTMLPpAccordionItemElement: {
+        prototype: HTMLPpAccordionItemElement;
+        new (): HTMLPpAccordionItemElement;
+    };
     interface HTMLPpAlertElement extends Components.PpAlert, HTMLStencilElement {
     }
     var HTMLPpAlertElement: {
@@ -124,6 +152,12 @@ declare global {
     var HTMLPpCardElement: {
         prototype: HTMLPpCardElement;
         new (): HTMLPpCardElement;
+    };
+    interface HTMLPpCheckboxElement extends Components.PpCheckbox, HTMLStencilElement {
+    }
+    var HTMLPpCheckboxElement: {
+        prototype: HTMLPpCheckboxElement;
+        new (): HTMLPpCheckboxElement;
     };
     interface HTMLPpDrawerElement extends Components.PpDrawer, HTMLStencilElement {
     }
@@ -167,6 +201,12 @@ declare global {
         prototype: HTMLPpPopperElement;
         new (): HTMLPpPopperElement;
     };
+    interface HTMLPpRadioElement extends Components.PpRadio, HTMLStencilElement {
+    }
+    var HTMLPpRadioElement: {
+        prototype: HTMLPpRadioElement;
+        new (): HTMLPpRadioElement;
+    };
     interface HTMLPpSandboxElement extends Components.PpSandbox, HTMLStencilElement {
     }
     var HTMLPpSandboxElement: {
@@ -204,11 +244,14 @@ declare global {
         new (): HTMLPpToggleElement;
     };
     interface HTMLElementTagNameMap {
+        "pp-accordion": HTMLPpAccordionElement;
+        "pp-accordion-item": HTMLPpAccordionItemElement;
         "pp-alert": HTMLPpAlertElement;
         "pp-avatar": HTMLPpAvatarElement;
         "pp-badge": HTMLPpBadgeElement;
         "pp-button": HTMLPpButtonElement;
         "pp-card": HTMLPpCardElement;
+        "pp-checkbox": HTMLPpCheckboxElement;
         "pp-drawer": HTMLPpDrawerElement;
         "pp-fab": HTMLPpFabElement;
         "pp-icon-button": HTMLPpIconButtonElement;
@@ -216,6 +259,7 @@ declare global {
         "pp-intl-input": HTMLPpIntlInputElement;
         "pp-modal": HTMLPpModalElement;
         "pp-popper": HTMLPpPopperElement;
+        "pp-radio": HTMLPpRadioElement;
         "pp-sandbox": HTMLPpSandboxElement;
         "pp-spinner": HTMLPpSpinnerElement;
         "pp-tabs": HTMLPpTabsElement;
@@ -225,6 +269,10 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface PpAccordion {
+    }
+    interface PpAccordionItem {
+    }
     interface PpAlert {
     }
     interface PpAvatar {
@@ -245,6 +293,15 @@ declare namespace LocalJSX {
     }
     interface PpCard {
     }
+    interface PpCheckbox {
+        "checked"?: boolean;
+        "label"?: string;
+        "name"?: string;
+        "onInputBlur"?: (event: CustomEvent<any>) => void;
+        "onInputChange"?: (event: CustomEvent<any>) => void;
+        "onInputFocus"?: (event: CustomEvent<any>) => void;
+        "value"?: string;
+    }
     interface PpDrawer {
         "attachCloseAction"?: boolean;
         "lockScroll"?: boolean;
@@ -262,7 +319,9 @@ declare namespace LocalJSX {
         "focusIndex"?: number;
         "name"?: string;
         "numeralDecimalScale"?: number;
-        "onInputNumberChange"?: (event: CustomEvent<any>) => void;
+        "onInputBlur"?: (event: CustomEvent<any>) => void;
+        "onInputChange"?: (event: CustomEvent<any>) => void;
+        "onInputFocus"?: (event: CustomEvent<any>) => void;
         "options"?: IInputNumberOptions | string;
         "prefixValue"?: string;
         "value"?: string;
@@ -276,6 +335,7 @@ declare namespace LocalJSX {
         "name"?: string;
         "onInputBlur"?: (event: CustomEvent<any>) => void;
         "onInputChange"?: (event: CustomEvent<any>) => void;
+        "onInputFocus"?: (event: CustomEvent<any>) => void;
         "onInputLoad"?: (event: CustomEvent<any>) => void;
         "placeholder"?: string;
         "value"?: string;
@@ -300,6 +360,15 @@ declare namespace LocalJSX {
         "placement"?: string;
         "portal"?: HTMLElement | boolean;
         "reference"?: HTMLElement | string;
+    }
+    interface PpRadio {
+        "checked"?: boolean;
+        "label"?: string;
+        "name"?: string;
+        "onInputBlur"?: (event: CustomEvent<any>) => void;
+        "onInputChange"?: (event: CustomEvent<any>) => void;
+        "onInputFocus"?: (event: CustomEvent<any>) => void;
+        "value"?: string;
     }
     interface PpSandbox {
         "val"?: string;
@@ -326,11 +395,14 @@ declare namespace LocalJSX {
         "onToggleChange"?: (event: CustomEvent<any>) => void;
     }
     interface IntrinsicElements {
+        "pp-accordion": PpAccordion;
+        "pp-accordion-item": PpAccordionItem;
         "pp-alert": PpAlert;
         "pp-avatar": PpAvatar;
         "pp-badge": PpBadge;
         "pp-button": PpButton;
         "pp-card": PpCard;
+        "pp-checkbox": PpCheckbox;
         "pp-drawer": PpDrawer;
         "pp-fab": PpFab;
         "pp-icon-button": PpIconButton;
@@ -338,6 +410,7 @@ declare namespace LocalJSX {
         "pp-intl-input": PpIntlInput;
         "pp-modal": PpModal;
         "pp-popper": PpPopper;
+        "pp-radio": PpRadio;
         "pp-sandbox": PpSandbox;
         "pp-spinner": PpSpinner;
         "pp-tabs": PpTabs;
@@ -350,11 +423,14 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "pp-accordion": LocalJSX.PpAccordion & JSXBase.HTMLAttributes<HTMLPpAccordionElement>;
+            "pp-accordion-item": LocalJSX.PpAccordionItem & JSXBase.HTMLAttributes<HTMLPpAccordionItemElement>;
             "pp-alert": LocalJSX.PpAlert & JSXBase.HTMLAttributes<HTMLPpAlertElement>;
             "pp-avatar": LocalJSX.PpAvatar & JSXBase.HTMLAttributes<HTMLPpAvatarElement>;
             "pp-badge": LocalJSX.PpBadge & JSXBase.HTMLAttributes<HTMLPpBadgeElement>;
             "pp-button": LocalJSX.PpButton & JSXBase.HTMLAttributes<HTMLPpButtonElement>;
             "pp-card": LocalJSX.PpCard & JSXBase.HTMLAttributes<HTMLPpCardElement>;
+            "pp-checkbox": LocalJSX.PpCheckbox & JSXBase.HTMLAttributes<HTMLPpCheckboxElement>;
             "pp-drawer": LocalJSX.PpDrawer & JSXBase.HTMLAttributes<HTMLPpDrawerElement>;
             "pp-fab": LocalJSX.PpFab & JSXBase.HTMLAttributes<HTMLPpFabElement>;
             "pp-icon-button": LocalJSX.PpIconButton & JSXBase.HTMLAttributes<HTMLPpIconButtonElement>;
@@ -362,6 +438,7 @@ declare module "@stencil/core" {
             "pp-intl-input": LocalJSX.PpIntlInput & JSXBase.HTMLAttributes<HTMLPpIntlInputElement>;
             "pp-modal": LocalJSX.PpModal & JSXBase.HTMLAttributes<HTMLPpModalElement>;
             "pp-popper": LocalJSX.PpPopper & JSXBase.HTMLAttributes<HTMLPpPopperElement>;
+            "pp-radio": LocalJSX.PpRadio & JSXBase.HTMLAttributes<HTMLPpRadioElement>;
             "pp-sandbox": LocalJSX.PpSandbox & JSXBase.HTMLAttributes<HTMLPpSandboxElement>;
             "pp-spinner": LocalJSX.PpSpinner & JSXBase.HTMLAttributes<HTMLPpSpinnerElement>;
             "pp-tabs": LocalJSX.PpTabs & JSXBase.HTMLAttributes<HTMLPpTabsElement>;

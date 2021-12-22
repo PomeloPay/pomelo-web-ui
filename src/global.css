@@ -1,45 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 
-@import "../node_modules/tailwindcss/base.css";
-@import "../src/components/pp-select/pp-select.css";
-@import "../src/components/pp-input/pp-input.css";
-@import "../src/components/pp-text/text.css";
 
 
-:root {
-  /* colors */
-  --pp-color-primary: #16cd88;
-  --pp-color-secondary: #141d36;
-  --pp-border-color: transparent;
+@import './components/base.css';
 
-  --pp-color-primary-tint: unset;
-  --pp-color-secondary-tint: unset;
-  --pp-color-disabled: unset;
+@import './components/components.css';
 
 
-  /* components */
-  --pp-modal-max-width: 560px;
-
-
-  /* fonts */
-  --pp-font-size: theme('fontSize.base');
-  --pp-font-family: theme('fontFamily.body');
-  --pp-font-weight: theme('fontWeight.semibold');
-
-  --pp-color-base: theme('colors.black');
-  --pp-color-shade: color-mod(var(--pp-color-base) b(+10%));
-
-  --pp-btn-active: scale(1.02);
-}
-
-html, body {
-  font-size: var(--pp-font-size);
-  font-family: var(--pp-font-family);
-}
-
-*, ::before, ::after {
-  border-color: var(--pp-border-color);
-}
 
 .pp-modal-backdrop {
   height: 100%;
@@ -50,11 +17,3 @@ html, body {
   z-index: calc(theme('zIndex.40') - 1);
   @apply bg-black bg-opacity-75 cursor-auto;
 }
-
-
-
-@tailwind components;
-
-@tailwind utilities;
-
-

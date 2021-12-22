@@ -1,16 +1,22 @@
-const replace = require('postcss-replace');
 const cssnano = require('cssnano');
-
+const fs = require('fs')
+const path = require('path')
 const isProd = !process.argv.includes('--dev')
+const appDirectory = fs.realpathSync(process.cwd())
+const resolveApp = (relativePath) => path.resolve(appDirectory, relativePath)
+
 
 module.exports = {
   plugins: [
+    require('postcss-import'),
+    require('tailwindcss/nesting'),
     require('tailwindcss'),
     require('postcss-preset-env')({
       stage: 3,
       features: {
-        'nesting-rules': true,
-        'color-mod-function': true,
+
+        'nesting-rules': false,
+        'color-mod-function': { unresolved: 'warn' },
         'custom-selectors': true,
         'custom-media-queries': true,
         'all-property': true,
@@ -18,7 +24,7 @@ module.exports = {
         'has-pseudo-class': true,
       },
     }),
-    replace({ pattern: 'html', data: { replaceAll: ':host' } }),
+    require('autoprefixer'),
     ...(isProd ? [cssnano()] : []),
   ],
 };

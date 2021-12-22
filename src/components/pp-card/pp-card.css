@@ -3,11 +3,11 @@ pp-card {
   @apply rounded bg-white overflow-hidden shadow-lg block;
 
 
-  @nest & > .pp-card-body {
+  & > .pp-card-body {
     @apply text-gray-700 text-base p-4;
   }
 
-  @nest & > .pp-card-title {
+  & > .pp-card-title {
     @apply font-body font-bold text-xl mb-2 px-4;
   }
 

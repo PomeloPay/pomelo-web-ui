@@ -37,7 +37,7 @@ Input.args = {
 export const InputNumber = () => {
   const container = document.createElement('div')
   container.innerHTML = `
-    <pp-input-number  prefix-value="$" options='{"noImmediatePrefix": true}' class="pp-input p-1"></pp-input-number>
+    <pp-input-number  prefix-value="$" options='{"noImmediatePrefix": false}' class="pp-input p-1"></pp-input-number>
   `
   return container;
 };

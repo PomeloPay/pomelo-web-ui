@@ -13,7 +13,7 @@ export class PpToggle {
   render() {
     return (
       <pp-input-number
-        onInputNumberChange={this.handleChange}
+        onInputChange={this.handleChange}
         options={{ prefix: '$', numeralDecimalScale: 3 }}
       ></pp-input-number>
     );

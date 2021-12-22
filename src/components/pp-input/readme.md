@@ -25,6 +25,7 @@
 | ------------- | ----------- | ------------------ |
 | `inputBlur`   |             | `CustomEvent<any>` |
 | `inputChange` |             | `CustomEvent<any>` |
+| `inputFocus`  |             | `CustomEvent<any>` |
 | `inputLoad`   |             | `CustomEvent<any>` |
 
 

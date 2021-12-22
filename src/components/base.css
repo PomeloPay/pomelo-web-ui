@@ -1,0 +1,42 @@
+
+@tailwind base;
+
+:root {
+  /* colors */
+  --pp-color-primary: #16cd88;
+  --pp-color-secondary: #141d36;
+  --pp-border-color: transparent;
+
+  --pp-color-primary-tint: unset;
+  --pp-color-secondary-tint: unset;
+  --pp-color-disabled: unset;
+
+
+  /* components */
+  --pp-modal-max-width: 560px;
+
+
+  /* fonts */
+  --pp-font-size: theme('fontSize.base');
+  --pp-font-family: theme('fontFamily.body');
+  --pp-font-weight: theme('fontWeight.semibold');
+
+  --pp-color-base: theme('colors.black');
+  --pp-color-shade: color-mod(var(--pp-color-base) b(+10%));
+
+  --pp-btn-active: scale(1.02);
+}
+
+html, body {
+  font-size: var(--pp-font-size);
+  font-family: var(--pp-font-family);
+}
+
+*, ::before, ::after {
+  border-color: var(--pp-border-color);
+}
+
+
+@tailwind utilities;
+
+@tailwind components;

@@ -1,5 +1,6 @@
 import { Component, Element, Event, EventEmitter, getAssetPath, h, Host, Prop } from '@stencil/core'
 import intlTelInput from 'intl-tel-input'
+import { ResizeObserver as ResizeObserverPolyfill } from "@juggle/resize-observer";
 import { createPopper } from '@popperjs/core'
 import { isMobile } from '../../utils'
 @Component({
@@ -7,10 +8,12 @@ import { isMobile } from '../../utils'
   styleUrl: 'pp-intl-input.css',
   assetsDirs: ['assets'],
 })
-export class Amount {
+export class InputTel {
+  resizeObserver: ResizeObserver = null;
+
   @Element() $el: HTMLElement
-  @Prop() value: string
-  @Prop() name: string
+  @Prop({ reflect: true, mutable: true }) value: string
+  @Prop({ reflect: true }) name: string
   @Prop() maxlength?: string
   @Prop() error: boolean
   @Prop() initialCountry: string
@@ -19,7 +22,10 @@ export class Amount {
   @Prop() config: any = {}
   @Event() inputChange: EventEmitter
   @Event() inputBlur: EventEmitter
+  @Event() inputFocus: EventEmitter
   @Event() inputLoad: EventEmitter
+
+  private inputRef = null
 
   private intlInputInstance = null
   private $input: HTMLElement = null
@@ -30,20 +36,23 @@ export class Amount {
 
   private isMobileDevice = isMobile()
 
-  componentDidLoad() {
+  async componentDidLoad() {
     this.$popperTip.classList.add('iti-popper')
     this.$popperContent.classList.add('relative')
     this.$popperTip.appendChild(this.$popperContent)
-    const flagStyle = `--flags: url(${getAssetPath('./assets/flags.png')});`
+
     this.$input = this.$el.querySelector('input')
 
     const options: any = {
-      ...this.config,
-      formatOnDisplay: true,
+      formatOnDisplay: false,
       separateDialCode: true,
+      autoHideDialCode: false,
+      nationalMode: false,
       preferredCountries: ['gb', 'us', 'sg'],
       initialCountry: this.initialCountry,
       customPlaceholder: () => this.placeholder,
+      ...this.config,
+      utilsScript: getAssetPath('./assets/phoneLibUtils.js')
     }
 
     if (!this.isMobileDevice) {
@@ -52,30 +61,51 @@ export class Amount {
 
     this.intlInputInstance = intlTelInput(this.$input, options)
 
-    this.$el.style.cssText += flagStyle
+    this.$el.setAttribute('style', `--flags: url(${getAssetPath('./assets/flags.png')})`)
     this.$el.classList.add('block', 'relative')
     if (this.intlInputInstance?.countryList?.parentElement) {
-      const parentEl: HTMLElement = this.intlInputInstance?.countryList?.parentElement
-      parentEl.style.cssText += flagStyle
+      this.intlInputInstance?.countryList?.parentElement.setAttribute('style', `--flags: url(${getAssetPath('./assets/flags.png')})`)
     }
 
     if (!this.isMobileDevice) {
       this.$popperTip.setAttribute(
         'style',
-        `z-index: ${this.dropdownZIndex}; top: 0; ${flagStyle}`,
+        `z-index: ${this.dropdownZIndex}; top: 0; --flags: url(${getAssetPath('./assets/flags.png')})`,
       )
-      this.popperInstance = createPopper(this.$input, this.$popperTip, {
-        strategy: 'fixed',
-        placement: 'bottom',
-      })
-      window.setTimeout(() => {
-        this.popperInstance.forceUpdate()
-      })
     }
+    this.popperInstance = createPopper(this.$el, this.$popperTip, {
+      strategy: 'fixed',
+      placement: 'bottom',
+
+      modifiers: [
+        {
+          name: 'offset',
+          options: {
+            offset: [0, 0],
+          },
+        },
+        {
+          name: 'preventOverflow'
+        },
+
+      ]
+    })
+
+    this.resizeObserver = new ResizeObserverPolyfill(() => {
+      if (this.isMobileDevice) {
+        return
+      }
+      this.$popperTip.style.width = `${this.$el.offsetWidth}px`
+      this.intlInputInstance.countryList.style.width = `${this.$el.offsetWidth}px`
+      this.popperInstance.update()
+    });
+
+    this.resizeObserver.observe(this.$el);
 
     this.inputLoad.emit({
       intlInputInstance: this.intlInputInstance,
       input: this.$input,
+      intlInstanceId: this.intlInputInstance.id
     })
 
     this.$input.addEventListener('countrychange', () => {
@@ -92,12 +122,17 @@ export class Amount {
       }
     }
   }
+
   disconnectedCallback() {
     if (!this.isMobileDevice) {
       if (this.popperInstance) {
         this.popperInstance.destroy()
       }
       document.body.removeChild(this.$popperTip)
+    }
+
+    if (this.resizeObserver) {
+      this.resizeObserver.unobserve(this.inputRef);
     }
   }
 
@@ -136,7 +171,7 @@ export class Amount {
 
   render() {
     return (
-      <Host>
+      <Host class="relative p-0">
         <input
           class={{
             'w-full': true,
@@ -144,10 +179,12 @@ export class Amount {
             'pp-error': this.error,
           }}
           type="tel"
+          ref={(elm) => this.inputRef = elm}
           name={this.name}
           maxlength={this.maxlength}
           value={this.value}
           onBlur={e => this.inputBlur.emit(e)}
+          onFocus={e => this.inputFocus.emit(e)}
           onInput={this.handleInputChange}
           onKeyDown={this.handleKeyDown}
         />
