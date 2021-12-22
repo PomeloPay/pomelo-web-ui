@@ -1,6 +1,6 @@
 /* purgecss start ignore */
 
-@import 'intl-tel-input/build/css/intlTelInput.css';
+@import "../../../node_modules/intl-tel-input/build/css/intlTelInput.css";
 .iti__selected-flag:focus,.iti__flag-container:focus {
   outline: none;
 }

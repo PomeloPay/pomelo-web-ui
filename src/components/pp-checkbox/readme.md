@@ -17,11 +17,11 @@
 
 ## Events
 
-| Event          | Description | Type               |
-| -------------- | ----------- | ------------------ |
-| `optionBlur`   |             | `CustomEvent<any>` |
-| `optionChange` |             | `CustomEvent<any>` |
-| `optionFocus`  |             | `CustomEvent<any>` |
+| Event         | Description | Type               |
+| ------------- | ----------- | ------------------ |
+| `inputBlur`   |             | `CustomEvent<any>` |
+| `inputChange` |             | `CustomEvent<any>` |
+| `inputFocus`  |             | `CustomEvent<any>` |
 
 
 ----------------------------------------------

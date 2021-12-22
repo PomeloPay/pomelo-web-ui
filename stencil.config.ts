@@ -6,7 +6,7 @@ const isProd = process.env.NODE_ENV === 'prod'
 
 const www: any = {
   type: 'www',
-  serviceWorker: null,
+  serviceWorker: null
 }
 
 if (isProd) {
@@ -15,7 +15,6 @@ if (isProd) {
 
 export const config: Config = {
   namespace: 'pomelopay-webui',
-  // buildEs5: true,
   globalStyle: 'src/global.css',
   outputTargets: [
     {
@@ -24,6 +23,9 @@ export const config: Config = {
     },
     {
       type: 'docs-readme',
+    },
+    {
+      type: 'dist-custom-elements'
     },
     www
   ],
