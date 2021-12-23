@@ -17,8 +17,10 @@ export class PpToast {
   @State() $closeEl: HTMLElement = null;
   @Element() $el: HTMLElement;
 
-  load() {
-    document.body.appendChild(this.$el);
+  load = () => {
+    if (this.$el) {
+      document.body.appendChild(this.$el);
+    }
   }
 
   componentDidLoad() {

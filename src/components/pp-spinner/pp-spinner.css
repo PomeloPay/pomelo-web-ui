@@ -1,5 +1,6 @@
 :host {
   display: block;
+  color: theme("colors.primary");
 }
 
 section {
@@ -7,7 +8,7 @@ section {
   vertical-align: middle;
   height: 2rem;
   width: 2rem;
-  color: theme("colors.primary");
+  color: inherit;
   & > svg {
     height: 100%;
     width: 100%;
