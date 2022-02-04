@@ -48,6 +48,13 @@ export namespace Components {
     }
     interface PpIconButton {
     }
+    interface PpInputDate {
+        "format"?: string;
+        "name": string;
+        "type": string;
+        "value": string;
+        "yearList": Array<number>;
+    }
     interface PpInputNumber {
         "autoFocus"?: boolean;
         "focusIndex"?: number;
@@ -177,6 +184,12 @@ declare global {
         prototype: HTMLPpIconButtonElement;
         new (): HTMLPpIconButtonElement;
     };
+    interface HTMLPpInputDateElement extends Components.PpInputDate, HTMLStencilElement {
+    }
+    var HTMLPpInputDateElement: {
+        prototype: HTMLPpInputDateElement;
+        new (): HTMLPpInputDateElement;
+    };
     interface HTMLPpInputNumberElement extends Components.PpInputNumber, HTMLStencilElement {
     }
     var HTMLPpInputNumberElement: {
@@ -255,6 +268,7 @@ declare global {
         "pp-drawer": HTMLPpDrawerElement;
         "pp-fab": HTMLPpFabElement;
         "pp-icon-button": HTMLPpIconButtonElement;
+        "pp-input-date": HTMLPpInputDateElement;
         "pp-input-number": HTMLPpInputNumberElement;
         "pp-intl-input": HTMLPpIntlInputElement;
         "pp-modal": HTMLPpModalElement;
@@ -313,6 +327,16 @@ declare namespace LocalJSX {
     interface PpFab {
     }
     interface PpIconButton {
+    }
+    interface PpInputDate {
+        "format"?: string;
+        "name"?: string;
+        "onInputBlur"?: (event: CustomEvent<any>) => void;
+        "onInputChange"?: (event: CustomEvent<any>) => void;
+        "onInputFocus"?: (event: CustomEvent<any>) => void;
+        "type"?: string;
+        "value"?: string;
+        "yearList"?: Array<number>;
     }
     interface PpInputNumber {
         "autoFocus"?: boolean;
@@ -406,6 +430,7 @@ declare namespace LocalJSX {
         "pp-drawer": PpDrawer;
         "pp-fab": PpFab;
         "pp-icon-button": PpIconButton;
+        "pp-input-date": PpInputDate;
         "pp-input-number": PpInputNumber;
         "pp-intl-input": PpIntlInput;
         "pp-modal": PpModal;
@@ -434,6 +459,7 @@ declare module "@stencil/core" {
             "pp-drawer": LocalJSX.PpDrawer & JSXBase.HTMLAttributes<HTMLPpDrawerElement>;
             "pp-fab": LocalJSX.PpFab & JSXBase.HTMLAttributes<HTMLPpFabElement>;
             "pp-icon-button": LocalJSX.PpIconButton & JSXBase.HTMLAttributes<HTMLPpIconButtonElement>;
+            "pp-input-date": LocalJSX.PpInputDate & JSXBase.HTMLAttributes<HTMLPpInputDateElement>;
             "pp-input-number": LocalJSX.PpInputNumber & JSXBase.HTMLAttributes<HTMLPpInputNumberElement>;
             "pp-intl-input": LocalJSX.PpIntlInput & JSXBase.HTMLAttributes<HTMLPpIntlInputElement>;
             "pp-modal": LocalJSX.PpModal & JSXBase.HTMLAttributes<HTMLPpModalElement>;

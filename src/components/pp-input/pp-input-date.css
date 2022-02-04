@@ -1,0 +1,23 @@
+:host {
+  @apply grid gap-x-4;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+select {
+  @apply font-body font-semibold text-lg text-gray-500 block appearance-none w-full border-none border-gray-200 py-3 pl-4 pr-2;
+  border-bottom: 1px solid theme('colors.gray.200');
+  background-image: url(data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAIBAMAAAA/ygPCAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAJFBMVEUAAABdZ25dZ25dZ25dZ25dZ25dZ25dZ25dZ25dZ25dZ24AAADaHLy8AAAACnRSTlMAZogzVZnuIhHMCbsUzQAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAA3SURBVAjXY2AUYGBgMmDwWsjAEJXO0LlKgHVVAAPHrIVRSxkYgFwgh4GBPWslAwiYzQBTHEAMAEnXCpEPACM2AAAAAElFTkSuQmCC) !important;
+  background-repeat: no-repeat;
+  background-color: theme('colors.white');
+  appearance: none;
+  background-position: 98%;
+}
+
+select:focus {
+  @apply outline-none bg-white border-gray-500;
+  background-position: 98%;
+}
+
+select::-ms-expand {
+  display: none;
+}
