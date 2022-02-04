@@ -16,7 +16,6 @@ module.exports = {
       features: {
 
         'nesting-rules': false,
-        'color-mod-function': { unresolved: 'warn' },
         'custom-selectors': true,
         'custom-media-queries': true,
         'all-property': true,
