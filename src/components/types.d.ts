@@ -4,7 +4,7 @@ export type ColorVariants = 'primary' | 'secondary' | 'tertiary' | 'error' | 'su
 
 export type Sizes = '3xs' | '2xs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
 
-export type Directions = 'top' | 'center' | 'bottom' | 'left' | 'right'
+export type Directions = 'top' | 'center' | 'bottom' | 'left' | 'right';
 export interface IInputNumberOptions {
   numeral?: boolean;
   prefix?: string;
@@ -12,6 +12,11 @@ export interface IInputNumberOptions {
   numeralDecimalScale?: number;
   noImmediatePrefix?: boolean;
   rawValueTrimPrefix?: boolean;
-  onValueChanged?: () => {}
-  [key: string]: any
+  onValueChanged?: () => {};
+  [key: string]: any;
 }
+
+export type OptionShape = {
+  value: any;
+  label: string;
+};

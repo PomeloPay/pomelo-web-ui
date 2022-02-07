@@ -1,0 +1,30 @@
+input {
+  @apply outline-none border-none inline-block font-body font-semibold text-black leading-tight py-3 px-1;
+  font-size: inherit;
+}
+
+button {
+  all: inherit;
+  appearance: none;
+  outline: 0;
+  cursor: pointer;
+  color: theme('colors.white');
+  border-radius: theme('radii.lg');
+  background: theme('colors.primary');
+  padding: theme('spacing.1') theme('spacing.m');
+  display: inline-block;
+  font-size: inherit;
+  @apply transition-all font-body font-semibold;
+}
+
+button:disabled {
+  cursor: none;
+  pointer-events: none;
+  background: theme('colors.gray.500');
+}
+
+:host {
+  @apply grid gap-x-2 py-1;
+  grid-template-columns: 1fr auto;
+  border-bottom: 1px solid theme('colors.gray.300');
+}

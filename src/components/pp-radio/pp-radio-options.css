@@ -1,0 +1,9 @@
+pp-radio-option {
+  @apply border rounded border-gray-200 grid items-center gap-x-4 p-4 shadow-sm;
+  grid-template-columns: auto 1fr;
+}
+
+.pp-radio-options {
+  @apply grid gap-y-2;
+  grid-template-columns: 1fr;
+}

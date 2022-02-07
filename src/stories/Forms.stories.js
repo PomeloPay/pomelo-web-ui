@@ -83,3 +83,16 @@ InputDate.args = {
   type: 'text',
   onClick: action('onClick'),
 };
+
+export const InputSearch = () => {
+  const container = document.createElement('div');
+  container.innerHTML = `
+    <pp-input-search placeholder="Search" class="border-b border-gray-300"></pp-input-search>
+  `;
+  return container;
+};
+
+InputSearch.args = {
+  type: 'text',
+  onClick: action('onClick'),
+};
