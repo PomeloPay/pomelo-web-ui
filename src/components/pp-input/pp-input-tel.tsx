@@ -47,7 +47,7 @@ export class InputTel {
       formatOnDisplay: true,
       separateDialCode: false,
       autoHideDialCode: false,
-      nationalMode: true,
+      nationalMode: false,
       preferredCountries: ['gb', 'us', 'sg', 'lk'],
       initialCountry: this.initialCountry,
       customPlaceholder: () => this.placeholder,
