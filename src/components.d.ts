@@ -82,6 +82,16 @@ export namespace Components {
         "searchText": string;
         "value": string;
     }
+    interface PpInputTel {
+        "config": any;
+        "dropdownZIndex": number;
+        "error": boolean;
+        "initialCountry": string;
+        "maxlength"?: string | number;
+        "name": string;
+        "placeholder": string;
+        "value": string;
+    }
     interface PpIntlInput {
         "config": any;
         "dropdownZIndex": number;
@@ -243,6 +253,12 @@ declare global {
         prototype: HTMLPpInputSearchElement;
         new (): HTMLPpInputSearchElement;
     };
+    interface HTMLPpInputTelElement extends Components.PpInputTel, HTMLStencilElement {
+    }
+    var HTMLPpInputTelElement: {
+        prototype: HTMLPpInputTelElement;
+        new (): HTMLPpInputTelElement;
+    };
     interface HTMLPpIntlInputElement extends Components.PpIntlInput, HTMLStencilElement {
     }
     var HTMLPpIntlInputElement: {
@@ -332,6 +348,7 @@ declare global {
         "pp-input-date": HTMLPpInputDateElement;
         "pp-input-number": HTMLPpInputNumberElement;
         "pp-input-search": HTMLPpInputSearchElement;
+        "pp-input-tel": HTMLPpInputTelElement;
         "pp-intl-input": HTMLPpIntlInputElement;
         "pp-modal": HTMLPpModalElement;
         "pp-popper": HTMLPpPopperElement;
@@ -436,6 +453,20 @@ declare namespace LocalJSX {
         "searchText"?: string;
         "value"?: string;
     }
+    interface PpInputTel {
+        "config"?: any;
+        "dropdownZIndex"?: number;
+        "error"?: boolean;
+        "initialCountry"?: string;
+        "maxlength"?: string | number;
+        "name"?: string;
+        "onInputBlur"?: (event: CustomEvent<any>) => void;
+        "onInputChange"?: (event: CustomEvent<any>) => void;
+        "onInputCountryChange"?: (event: CustomEvent<any>) => void;
+        "onInputLoad"?: (event: CustomEvent<any>) => void;
+        "placeholder"?: string;
+        "value"?: string;
+    }
     interface PpIntlInput {
         "config"?: any;
         "dropdownZIndex"?: number;
@@ -534,6 +565,7 @@ declare namespace LocalJSX {
         "pp-input-date": PpInputDate;
         "pp-input-number": PpInputNumber;
         "pp-input-search": PpInputSearch;
+        "pp-input-tel": PpInputTel;
         "pp-intl-input": PpIntlInput;
         "pp-modal": PpModal;
         "pp-popper": PpPopper;
@@ -568,6 +600,7 @@ declare module "@stencil/core" {
             "pp-input-date": LocalJSX.PpInputDate & JSXBase.HTMLAttributes<HTMLPpInputDateElement>;
             "pp-input-number": LocalJSX.PpInputNumber & JSXBase.HTMLAttributes<HTMLPpInputNumberElement>;
             "pp-input-search": LocalJSX.PpInputSearch & JSXBase.HTMLAttributes<HTMLPpInputSearchElement>;
+            "pp-input-tel": LocalJSX.PpInputTel & JSXBase.HTMLAttributes<HTMLPpInputTelElement>;
             "pp-intl-input": LocalJSX.PpIntlInput & JSXBase.HTMLAttributes<HTMLPpIntlInputElement>;
             "pp-modal": LocalJSX.PpModal & JSXBase.HTMLAttributes<HTMLPpModalElement>;
             "pp-popper": LocalJSX.PpPopper & JSXBase.HTMLAttributes<HTMLPpPopperElement>;

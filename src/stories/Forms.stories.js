@@ -46,16 +46,30 @@ InputNumber.args = {
   onClick: action('onClick'),
 };
 
-export const InputIntl = () => {
+// export const InputIntl = () => {
+//   const container = document.createElement('div');
+//   container.innerHTML = `
+//     <pp-intl-input style="width: 432px" ></pp-intl-input>
+//   `;
+//   return container;
+// };
+
+// InputIntl.args = {
+//   type: 'text',
+//   onClick: action('onClick'),
+// };
+
+const Template = ({ onClick, children }) => {
   const container = document.createElement('div');
   container.innerHTML = `
-    <pp-intl-input style="width: 432px" ></pp-intl-input>
+    <pp-input-tel class="border-b border-gray-300"></pp-input-tel>
   `;
   return container;
 };
 
-InputIntl.args = {
-  type: 'text',
+export const InputTel = Template.bind({});
+InputTel.args = {
+  children: '',
   onClick: action('onClick'),
 };
 
