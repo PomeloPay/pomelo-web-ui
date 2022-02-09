@@ -9,23 +9,22 @@ export default {
 };
 
 export const Select = ({ onClick, children }) => {
-  const container = document.createElement('div')
+  const container = document.createElement('div');
   container.innerHTML = `
   <select class="pp-select">
     <option>New Mexico</option>
     <option> Missouri</option>
     <option>Texas</option>
   </select>
-  `
+  `;
   return container;
 };
 
-
 export const Input = ({ onClick, children, type }) => {
-  const container = document.createElement('div')
+  const container = document.createElement('div');
   container.innerHTML = `
     <input type="${type}" value="input" class="pp-input" />
-  `
+  `;
   return container;
 };
 
@@ -35,10 +34,10 @@ Input.args = {
 };
 
 export const InputNumber = () => {
-  const container = document.createElement('div')
+  const container = document.createElement('div');
   container.innerHTML = `
     <pp-input-number  prefix-value="$" options='{"noImmediatePrefix": false}' class="pp-input p-1"></pp-input-number>
-  `
+  `;
   return container;
 };
 
@@ -47,25 +46,38 @@ InputNumber.args = {
   onClick: action('onClick'),
 };
 
-export const InputIntl = () => {
-  const container = document.createElement('div')
+// export const InputIntl = () => {
+//   const container = document.createElement('div');
+//   container.innerHTML = `
+//     <pp-intl-input style="width: 432px" ></pp-intl-input>
+//   `;
+//   return container;
+// };
+
+// InputIntl.args = {
+//   type: 'text',
+//   onClick: action('onClick'),
+// };
+
+const Template = ({ onClick, children }) => {
+  const container = document.createElement('div');
   container.innerHTML = `
-    <pp-intl-input style="width: 432px" ></pp-intl-input>
-  `
+    <pp-input-tel class="border-b border-gray-300"></pp-input-tel>
+  `;
   return container;
 };
 
-InputIntl.args = {
-  type: 'text',
+export const InputTel = Template.bind({});
+InputTel.args = {
+  children: '',
   onClick: action('onClick'),
 };
 
-
 export const Toggle = () => {
-  const container = document.createElement('div')
+  const container = document.createElement('div');
   container.innerHTML = `
     <pp-toggle on></pp-toggle>
-  `
+  `;
   return container;
 };
 
@@ -73,5 +85,28 @@ Toggle.args = {
   // onClick: action('onClick'),
 };
 
+export const InputDate = () => {
+  const container = document.createElement('div');
+  container.innerHTML = `
+    <pp-input-date></pp-input-date>
+  `;
+  return container;
+};
 
+InputDate.args = {
+  type: 'text',
+  onClick: action('onClick'),
+};
 
+export const InputSearch = () => {
+  const container = document.createElement('div');
+  container.innerHTML = `
+    <pp-input-search placeholder="Search" class="border-b border-gray-300"></pp-input-search>
+  `;
+  return container;
+};
+
+InputSearch.args = {
+  type: 'text',
+  onClick: action('onClick'),
+};
