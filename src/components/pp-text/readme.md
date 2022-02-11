@@ -17,11 +17,15 @@
 ### Used by
 
  - [pp-avatar](../pp-avatar)
+ - [pp-checkbox-option](../pp-checkbox)
+ - [pp-radio-option](../pp-radio)
 
 ### Graph
 ```mermaid
 graph TD;
   pp-avatar --> pp-text
+  pp-checkbox-option --> pp-text
+  pp-radio-option --> pp-text
   style pp-text fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

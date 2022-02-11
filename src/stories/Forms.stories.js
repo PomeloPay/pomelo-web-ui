@@ -46,18 +46,18 @@ InputNumber.args = {
   onClick: action('onClick'),
 };
 
-// export const InputIntl = () => {
-//   const container = document.createElement('div');
-//   container.innerHTML = `
-//     <pp-intl-input style="width: 432px" ></pp-intl-input>
-//   `;
-//   return container;
-// };
+export const InputIntl = () => {
+  const container = document.createElement('div');
+  container.innerHTML = `
+    <pp-intl-input style="width: 432px" ></pp-intl-input>
+  `;
+  return container;
+};
 
-// InputIntl.args = {
-//   type: 'text',
-//   onClick: action('onClick'),
-// };
+InputIntl.args = {
+  type: 'text',
+  onClick: action('onClick'),
+};
 
 const Template = ({ onClick, children }) => {
   const container = document.createElement('div');

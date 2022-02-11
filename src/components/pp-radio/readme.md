@@ -7,22 +7,34 @@
 
 ## Properties
 
-| Property  | Attribute | Description | Type      | Default     |
-| --------- | --------- | ----------- | --------- | ----------- |
-| `checked` | `checked` |             | `boolean` | `undefined` |
-| `label`   | `label`   |             | `string`  | `undefined` |
-| `name`    | `name`    |             | `string`  | `undefined` |
-| `value`   | `value`   |             | `string`  | `undefined` |
+| Property  | Attribute | Description | Type            | Default     |
+| --------- | --------- | ----------- | --------------- | ----------- |
+| `name`    | `name`    |             | `string`        | `undefined` |
+| `options` | --        |             | `OptionShape[]` | `[]`        |
+| `value`   | `value`   |             | `any`           | `undefined` |
 
 
 ## Events
 
-| Event         | Description | Type               |
-| ------------- | ----------- | ------------------ |
-| `inputBlur`   |             | `CustomEvent<any>` |
-| `inputChange` |             | `CustomEvent<any>` |
-| `inputFocus`  |             | `CustomEvent<any>` |
+| Event          | Description | Type               |
+| -------------- | ----------- | ------------------ |
+| `optionChange` |             | `CustomEvent<any>` |
 
+
+## Dependencies
+
+### Depends on
+
+- [pp-radio-option](.)
+
+### Graph
+```mermaid
+graph TD;
+  pp-radio-options --> pp-radio-option
+  pp-radio-option --> pp-text
+  pp-radio-option --> pp-radio
+  style pp-radio-options fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 
