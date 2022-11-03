@@ -40,7 +40,7 @@ export class PpPopper {
     this.close.emit()
   }
 
-  create() {
+  private create() {
 
     let options: any = {}
 
@@ -59,8 +59,9 @@ export class PpPopper {
       ...options,
       modifiers: [...defaultOptions.modifiers, ...(options?.modifiers || [])],
     };
-
-    this.instance = createPopper(this.$reference, this.$el, finalOptions);
+    if (this.$reference) {
+      this.instance = createPopper(this.$reference, this.$el, finalOptions);
+    }
   }
 
   destroy() {
