@@ -156,6 +156,70 @@ export namespace Components {
         "on": boolean;
     }
 }
+export interface PpCheckboxCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPpCheckboxElement;
+}
+export interface PpCheckboxOptionCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPpCheckboxOptionElement;
+}
+export interface PpCheckboxOptionsCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPpCheckboxOptionsElement;
+}
+export interface PpDrawerCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPpDrawerElement;
+}
+export interface PpInputDateCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPpInputDateElement;
+}
+export interface PpInputNumberCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPpInputNumberElement;
+}
+export interface PpInputSearchCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPpInputSearchElement;
+}
+export interface PpInputTelCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPpInputTelElement;
+}
+export interface PpIntlInputCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPpIntlInputElement;
+}
+export interface PpModalCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPpModalElement;
+}
+export interface PpPopperCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPpPopperElement;
+}
+export interface PpRadioCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPpRadioElement;
+}
+export interface PpRadioOptionCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPpRadioOptionElement;
+}
+export interface PpRadioOptionsCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPpRadioOptionsElement;
+}
+export interface PpTabsCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPpTabsElement;
+}
+export interface PpToggleCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPpToggleElement;
+}
 declare global {
     interface HTMLPpAccordionElement extends Components.PpAccordion, HTMLStencilElement {
     }
@@ -392,30 +456,30 @@ declare namespace LocalJSX {
         "checked"?: boolean;
         "label"?: string;
         "name"?: string;
-        "onInputBlur"?: (event: CustomEvent<any>) => void;
-        "onInputChange"?: (event: CustomEvent<any>) => void;
-        "onInputFocus"?: (event: CustomEvent<any>) => void;
+        "onInputBlur"?: (event: PpCheckboxCustomEvent<any>) => void;
+        "onInputChange"?: (event: PpCheckboxCustomEvent<any>) => void;
+        "onInputFocus"?: (event: PpCheckboxCustomEvent<any>) => void;
         "value"?: string;
     }
     interface PpCheckboxOption {
         "checked"?: boolean;
         "label"?: string;
         "name"?: string;
-        "onOptionChange"?: (event: CustomEvent<any>) => void;
+        "onOptionChange"?: (event: PpCheckboxOptionCustomEvent<any>) => void;
         "optionValue"?: string;
     }
     interface PpCheckboxOptions {
         "name"?: string;
-        "onListOptionChange"?: (event: CustomEvent<any>) => void;
+        "onListOptionChange"?: (event: PpCheckboxOptionsCustomEvent<any>) => void;
         "options"?: Array<OptionShape>;
         "value"?: Array<any>;
     }
     interface PpDrawer {
         "attachCloseAction"?: boolean;
         "lockScroll"?: boolean;
-        "onBackdropClick"?: (event: CustomEvent<any>) => void;
-        "onModalClose"?: (event: CustomEvent<any>) => void;
-        "onModalOpen"?: (event: CustomEvent<any>) => void;
+        "onBackdropClick"?: (event: PpDrawerCustomEvent<any>) => void;
+        "onModalClose"?: (event: PpDrawerCustomEvent<any>) => void;
+        "onModalOpen"?: (event: PpDrawerCustomEvent<any>) => void;
         "open"?: boolean;
     }
     interface PpFab {
@@ -425,9 +489,9 @@ declare namespace LocalJSX {
     interface PpInputDate {
         "format"?: string;
         "name"?: string;
-        "onInputBlur"?: (event: CustomEvent<any>) => void;
-        "onInputChange"?: (event: CustomEvent<any>) => void;
-        "onInputFocus"?: (event: CustomEvent<any>) => void;
+        "onInputBlur"?: (event: PpInputDateCustomEvent<any>) => void;
+        "onInputChange"?: (event: PpInputDateCustomEvent<any>) => void;
+        "onInputFocus"?: (event: PpInputDateCustomEvent<any>) => void;
         "type"?: string;
         "value"?: string;
         "yearList"?: Array<number>;
@@ -437,17 +501,17 @@ declare namespace LocalJSX {
         "focusIndex"?: number;
         "name"?: string;
         "numeralDecimalScale"?: number;
-        "onInputBlur"?: (event: CustomEvent<any>) => void;
-        "onInputChange"?: (event: CustomEvent<any>) => void;
-        "onInputFocus"?: (event: CustomEvent<any>) => void;
+        "onInputBlur"?: (event: PpInputNumberCustomEvent<any>) => void;
+        "onInputChange"?: (event: PpInputNumberCustomEvent<any>) => void;
+        "onInputFocus"?: (event: PpInputNumberCustomEvent<any>) => void;
         "options"?: IInputNumberOptions | string;
         "prefixValue"?: string;
         "value"?: string;
     }
     interface PpInputSearch {
         "name"?: string;
-        "onSearchButtonClick"?: (event: CustomEvent<any>) => void;
-        "onSearchInputChange"?: (event: CustomEvent<any>) => void;
+        "onSearchButtonClick"?: (event: PpInputSearchCustomEvent<any>) => void;
+        "onSearchInputChange"?: (event: PpInputSearchCustomEvent<any>) => void;
         "placeholder"?: string;
         "searchButtonDisabled"?: boolean;
         "searchText"?: string;
@@ -460,10 +524,10 @@ declare namespace LocalJSX {
         "initialCountry"?: string;
         "maxlength"?: string | number;
         "name"?: string;
-        "onInputBlur"?: (event: CustomEvent<any>) => void;
-        "onInputChange"?: (event: CustomEvent<any>) => void;
-        "onInputCountryChange"?: (event: CustomEvent<any>) => void;
-        "onInputLoad"?: (event: CustomEvent<any>) => void;
+        "onInputBlur"?: (event: PpInputTelCustomEvent<any>) => void;
+        "onInputChange"?: (event: PpInputTelCustomEvent<any>) => void;
+        "onInputCountryChange"?: (event: PpInputTelCustomEvent<any>) => void;
+        "onInputLoad"?: (event: PpInputTelCustomEvent<any>) => void;
         "placeholder"?: string;
         "value"?: string;
     }
@@ -474,10 +538,10 @@ declare namespace LocalJSX {
         "initialCountry"?: string;
         "maxlength"?: string;
         "name"?: string;
-        "onInputBlur"?: (event: CustomEvent<any>) => void;
-        "onInputChange"?: (event: CustomEvent<any>) => void;
-        "onInputFocus"?: (event: CustomEvent<any>) => void;
-        "onInputLoad"?: (event: CustomEvent<any>) => void;
+        "onInputBlur"?: (event: PpIntlInputCustomEvent<any>) => void;
+        "onInputChange"?: (event: PpIntlInputCustomEvent<any>) => void;
+        "onInputFocus"?: (event: PpIntlInputCustomEvent<any>) => void;
+        "onInputLoad"?: (event: PpIntlInputCustomEvent<any>) => void;
         "placeholder"?: string;
         "value"?: string;
     }
@@ -485,17 +549,17 @@ declare namespace LocalJSX {
         "centered"?: boolean;
         "fit"?: boolean;
         "lockScroll"?: boolean;
-        "onBackdropClick"?: (event: CustomEvent<any>) => void;
-        "onModalClose"?: (event: CustomEvent<any>) => void;
-        "onModalLoad"?: (event: CustomEvent<any>) => void;
-        "onModalOpen"?: (event: CustomEvent<any>) => void;
+        "onBackdropClick"?: (event: PpModalCustomEvent<any>) => void;
+        "onModalClose"?: (event: PpModalCustomEvent<any>) => void;
+        "onModalLoad"?: (event: PpModalCustomEvent<any>) => void;
+        "onModalOpen"?: (event: PpModalCustomEvent<any>) => void;
         "open"?: boolean;
         "portal"?: HTMLElement | boolean;
     }
     interface PpPopper {
         "closeOnBlur"?: boolean;
-        "onClose"?: (event: CustomEvent<any>) => void;
-        "onPopperShow"?: (event: CustomEvent<any>) => void;
+        "onClose"?: (event: PpPopperCustomEvent<any>) => void;
+        "onPopperShow"?: (event: PpPopperCustomEvent<any>) => void;
         "open"?: boolean;
         "options"?: Options| string;
         "placement"?: string;
@@ -506,9 +570,9 @@ declare namespace LocalJSX {
         "checked"?: boolean;
         "label"?: string;
         "name"?: string;
-        "onInputBlur"?: (event: CustomEvent<any>) => void;
-        "onInputChange"?: (event: CustomEvent<any>) => void;
-        "onInputFocus"?: (event: CustomEvent<any>) => void;
+        "onInputBlur"?: (event: PpRadioCustomEvent<any>) => void;
+        "onInputChange"?: (event: PpRadioCustomEvent<any>) => void;
+        "onInputFocus"?: (event: PpRadioCustomEvent<any>) => void;
         "value"?: string;
     }
     interface PpRadioOption {
@@ -516,11 +580,11 @@ declare namespace LocalJSX {
         "finalValue"?: string;
         "label"?: string;
         "name"?: string;
-        "onOptionChange"?: (event: CustomEvent<any>) => void;
+        "onOptionChange"?: (event: PpRadioOptionCustomEvent<any>) => void;
     }
     interface PpRadioOptions {
         "name"?: string;
-        "onOptionChange"?: (event: CustomEvent<any>) => void;
+        "onOptionChange"?: (event: PpRadioOptionsCustomEvent<any>) => void;
         "options"?: Array<OptionShape>;
         "value"?: any;
     }
@@ -532,8 +596,8 @@ declare namespace LocalJSX {
     interface PpTabs {
         "enableMenu"?: boolean;
         "menuContainerWidth"?: number;
-        "onBoundMeasureChange"?: (event: CustomEvent<any>) => void;
-        "onTabChange"?: (event: CustomEvent<any>) => void;
+        "onBoundMeasureChange"?: (event: PpTabsCustomEvent<any>) => void;
+        "onTabChange"?: (event: PpTabsCustomEvent<any>) => void;
     }
     interface PpText {
         "size"?: Sizes;
@@ -546,7 +610,7 @@ declare namespace LocalJSX {
     }
     interface PpToggle {
         "on"?: boolean;
-        "onToggleChange"?: (event: CustomEvent<any>) => void;
+        "onToggleChange"?: (event: PpToggleCustomEvent<any>) => void;
     }
     interface IntrinsicElements {
         "pp-accordion": PpAccordion;

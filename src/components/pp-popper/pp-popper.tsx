@@ -1,14 +1,5 @@
 import { Component, Element, h, State, Prop, Listen, Host, Event, EventEmitter, Watch } from '@stencil/core';
 import { createPopper, Instance, Options, Placement } from '@popperjs/core';
-// import {
-//   computeStyles,
-//   popperOffsets,
-//   flip,
-//   applyStyles,
-//   preventOverflow,
-//   eventListeners,
-//   offset,
-// } from '@popperjs/core/lib/modifiers';
 const placement: Placement = 'bottom';
 const strategy = 'fixed';
 const defaultOptions: Options = {
@@ -117,7 +108,9 @@ export class PpPopper {
     this.create();
 
     window.setTimeout(() => {
-      this.instance.forceUpdate()
+      if (typeof this?.instance?.forceUpdate === 'function') {
+        this.instance.forceUpdate()
+      }
     }, 500)
   }
   componentDidLoad() {
