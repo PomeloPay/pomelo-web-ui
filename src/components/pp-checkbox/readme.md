@@ -7,22 +7,34 @@
 
 ## Properties
 
-| Property  | Attribute | Description | Type      | Default     |
-| --------- | --------- | ----------- | --------- | ----------- |
-| `checked` | `checked` |             | `boolean` | `undefined` |
-| `label`   | `label`   |             | `string`  | `undefined` |
-| `name`    | `name`    |             | `string`  | `undefined` |
-| `value`   | `value`   |             | `string`  | `undefined` |
+| Property  | Attribute | Description | Type            | Default     |
+| --------- | --------- | ----------- | --------------- | ----------- |
+| `name`    | `name`    |             | `string`        | `undefined` |
+| `options` | --        |             | `OptionShape[]` | `[]`        |
+| `value`   | --        |             | `any[]`         | `[]`        |
 
 
 ## Events
 
-| Event         | Description | Type               |
-| ------------- | ----------- | ------------------ |
-| `inputBlur`   |             | `CustomEvent<any>` |
-| `inputChange` |             | `CustomEvent<any>` |
-| `inputFocus`  |             | `CustomEvent<any>` |
+| Event              | Description | Type               |
+| ------------------ | ----------- | ------------------ |
+| `listOptionChange` |             | `CustomEvent<any>` |
 
+
+## Dependencies
+
+### Depends on
+
+- [pp-checkbox-option](.)
+
+### Graph
+```mermaid
+graph TD;
+  pp-checkbox-options --> pp-checkbox-option
+  pp-checkbox-option --> pp-text
+  pp-checkbox-option --> pp-checkbox
+  style pp-checkbox-options fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 
